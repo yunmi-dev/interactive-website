@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Edensor', Arial, sens-serif;
+    background-color: #f6f6f6;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+.hero-section, .about-love-section {
+    scroll-snap-align: start;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(223, 223, 223, 0.39);
+    z-index: 1000;
+    padding: 1rem 7rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 4rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 8rem;
+    list-style: none;
+}
+
+.nav-menu li {
+    font-family: 'Edensor', Arial, sens-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu li:hover {
+    opacity: 0.7;
+}
+
+.shop-svg {
+    width: 2.5rem !important;
+    height: auto !important;
+}
+
+.products-svg {
+    width: 3.9rem !important;
+    height: auto !important;
+}
+
+.brands-svg {
+    width: 3rem !important;
+    height: auto !important;
+}
+
+.series-svg {
+    width: 2.85rem !important;
+    height: auto !important;
+}
+
+.main {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(min(100vw/1400px, 100vh/800px));
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/asset/hero-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.vure-logo-svg {
+    position: absolute;
+    top: 10.3rem;
+    left: -39.75rem;
+    width: 35rem !important;
+    height: auto !important;
+    z-index: 1;
+}
+
+.hero-tagline-svg {
+    position: absolute;
+    top: -18rem;
+    left: -430px;
+    transform: translateX(-50%);
+    width: 25rem !important;
+    height: auto !important;
+    z-index: 3;
+}
+
+.black-square {
+    position: absolute;
+    top: 9.1rem;
+    left: -41rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    background-color: rgba(26, 26, 26, 1);
+    z-index: 2;
+}
+
+.vure-text {
+    position: absolute;
+    top: 6.8rem;
+    left: -39rem;
+    width: 438.02px;
+    height: 132.85px;
+    font-family: 'Edensor';
+    font-weight: 400;
+    font-size: 180px;
+    color: black;
+    z-index: 1;
+}
+
+.about-love-section {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('/asset/about-love-background.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.series-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    height: 55px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.about-love-content {
+    position: relative;
+    width: 1400px;
+    height: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(min(100vw/1400px, 100vh/800px));
+    transform-origin: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.about-love-title-svg {
+    width: 5rem !important;
+    height: auto !important;
+}
+
+.about-love-text-svg {
+    width: 5rem !important;
+    height: auto !important;
+}
+
+.connection-button {
+    width: 159.82px !important;
+    height: auto !important;
+}
+
+.series-track {
+    display: flex;
+    width: max-content;
+    animation: slideLeft 25s linear infinite;
+}
+
+.first-series-svg {
+    white-space: nowrap;
+    font-size: 14.26px;
+    margin-right: 95px;
+    width: 200px !important;
+    height: auto !important;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
