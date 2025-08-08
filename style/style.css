@@ -13,11 +13,13 @@ body {
     overflow-x: hidden;
 }
 
-html, body {
+html,
+body {
     scroll-behavior: smooth;
 }
 
-.hero-section, .about-love-section {
+.hero-section,
+.about-love-section {
     scroll-snap-align: start;
 }
 
@@ -81,10 +83,12 @@ html, body {
 }
 
 .hero-section {
-    height: 100vh;
     width: 100%;
+    height: 100vh;
     position: relative;
     overflow: hidden;
+    margin-top: -64px;
+    margin-bottom: -100px;
 }
 
 .hero-content {
@@ -110,11 +114,12 @@ html, body {
     background-repeat: no-repeat;
     opacity: 0.5;
     z-index: -1;
+    clip-path: inset(50px 0 50px 0);
 }
 
 .vure-logo-svg {
     position: absolute;
-    top: 10.3rem;
+    top: 8.7rem;
     left: -39.75rem;
     width: 35rem !important;
     height: auto !important;
@@ -123,7 +128,7 @@ html, body {
 
 .hero-tagline-svg {
     position: absolute;
-    top: -18rem;
+    top: -14.7rem;
     left: -430px;
     transform: translateX(-50%);
     width: 25rem !important;
@@ -133,7 +138,7 @@ html, body {
 
 .black-square {
     position: absolute;
-    top: 9.1rem;
+    top: 7.5rem;
     left: -41rem;
     width: 1.9rem;
     height: 1.9rem;
@@ -141,27 +146,26 @@ html, body {
     z-index: 2;
 }
 
-.vure-text {
-    position: absolute;
-    top: 6.8rem;
-    left: -39rem;
-    width: 438.02px;
-    height: 132.85px;
-    font-family: 'Edensor';
-    font-weight: 400;
-    font-size: 180px;
-    color: black;
-    z-index: 1;
-}
-
 .about-love-section {
     position: relative;
-    min-height: 100vh;
+    height: calc(100vh - 75px);
+    overflow: hidden;
+    margin-top: -114px;
+}
+
+.about-love-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('/asset/about-love-background.png');
     background-size: cover;
     background-position: center;
-    overflow: hidden;
-    margin-top: 0;
+    opacity: 0.6;
+    z-index: -1;
+    clip-path: inset(0 0 75px 0);
 }
 
 .series-slider {
@@ -178,32 +182,42 @@ html, body {
 }
 
 .about-love-content {
-    position: relative;
-    width: 1400px;
-    height: 800px;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(min(100vw/1400px, 100vh/800px));
-    transform-origin: center;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    z-index: 5;
+    width: 100%;
+    text-align: center;
 }
 
 .about-love-title-svg {
-    width: 5rem !important;
+    width: 23rem !important;
     height: auto !important;
+    margin-bottom: 3.9rem;
 }
 
 .about-love-text-svg {
-    width: 5rem !important;
+    width: 73rem !important;
     height: auto !important;
+    margin-bottom: 5.8rem;
 }
 
 .connection-button {
-    width: 159.82px !important;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.connection-button-svg {
+    width: 15rem !important;
     height: auto !important;
 }
 
