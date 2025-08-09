@@ -275,20 +275,23 @@ body {
     height: 510px !important;
     object-fit: cover;
     opacity: 1;
-    transition: opacity 0.3s;
+    transition: opacity 0.8s;
     flex-shrink: 0;
 }
 
 .flower-full-image {
     position: absolute;
-        top: -106px;
-    left: 0;
+    top: -106px;
+    left: 50%;
+    /* 기본 상태도 중앙으로 */
+    transform: translateX(-50%);
+    /* 기본 상태도 중앙 정렬 */
     width: 566px !important;
     height: 510px !important;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    transform: translateX(0);
+    transition: opacity 0.8s ease;
+    /* transform: translateX(0); */
 }
 
 .flower-comment {
@@ -309,8 +312,8 @@ body {
 
 .concept-card:hover .flower-full-image {
     opacity: 1;
-    transform: translateX(50%) translateY(0);
-        top: -106px;
+    /* transform: translateX(50%) translateY(0); */
+    top: -106px;
 }
 
 .end {
