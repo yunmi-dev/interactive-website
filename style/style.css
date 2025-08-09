@@ -283,15 +283,12 @@ body {
     position: absolute;
     top: -106px;
     left: 50%;
-    /* 기본 상태도 중앙으로 */
     transform: translateX(-50%);
-    /* 기본 상태도 중앙 정렬 */
     width: 566px !important;
     height: 510px !important;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.8s ease;
-    /* transform: translateX(0); */
 }
 
 .flower-comment {
@@ -304,6 +301,21 @@ body {
     height: auto !important;
     min-width: 90px;
     flex-shrink: 0;
+    transition: opacity 0.8s ease;
+}
+
+.flower-comment-hover {
+    position: static;
+    background: none;
+    padding: 0;
+    margin-top: 3.3rem;
+    margin-left: -380px;
+    width: 149px !important;
+    height: auto !important;
+    min-width: 90px;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
 .concept-card:hover .flower-default-image {
@@ -312,8 +324,15 @@ body {
 
 .concept-card:hover .flower-full-image {
     opacity: 1;
-    /* transform: translateX(50%) translateY(0); */
     top: -106px;
+}
+
+.concept-card:hover .flower-comment {
+    opacity: 0;
+}
+
+.concept-card:hover .flower-comment-hover {
+    opacity: 1;
 }
 
 .end {
