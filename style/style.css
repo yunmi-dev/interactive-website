@@ -272,11 +272,11 @@ body {
 }
 
 .flower-default-image {
-    width: 566px !important;
-    height: 510px !important;
+    width: auto !important;
+    height: 450px !important;
     object-fit: cover;
     opacity: 1;
-    transition: opacity 0.8s;
+    transition: opacity 0.4s ease;
     flex-shrink: 0;
     position: relative;
     z-index: 2;
@@ -284,26 +284,26 @@ body {
 
 .flower-full-image {
     position: absolute;
-    top: -106px;
+    top: -76px;
     left: 50%;
     transform: translateX(-50%);
-    width: 566px !important;
-    height: 510px !important;
+    width: auto !important;
+    height: 450px !important;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.8s ease;
-    z-index: 2;
+    transition: opacity 0.4s ease;
+    z-index: 3;
 }
 
 .flower-hover-background-svg {
     position: absolute;
-    top: -106px;
+    top: -76px;
     left: 47%;
     transform: translateX(-50%);
-    width: 566px !important;
-    height: 510px !important;
+    width: auto !important;
+    height: 450px !important;
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.4s ease;
     z-index: 1;
 }
 
@@ -346,7 +346,7 @@ body {
     transition: opacity 0.8s ease;
 }
 
-.flower-comment-hover1 {
+.flower1-comment-hover {
     position: static;
     background: none;
     padding: 0;
@@ -360,7 +360,7 @@ body {
     transition: opacity 0.8s ease;
 }
 
-.flower-comment-hover2 {
+.flower2-comment-hover {
     position: static;
     background: none;
     padding: 0;
@@ -374,7 +374,7 @@ body {
     transition: opacity 0.8s ease;
 }
 
-.flower-comment-hover3 {
+.flower3-comment-hover {
     position: static;
     background: none;
     padding: 0;
@@ -394,11 +394,12 @@ body {
 
 .concept-card:hover .flower-full-image {
     opacity: 1;
-    top: -106px;
+    top: -76px;
 }
 
 .concept-card:hover .flower-hover-background-svg {
     opacity: 1;
+    top: -76px;
 }
 
 .concept-card:hover .flower1-comment {
