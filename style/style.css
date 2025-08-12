@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
 }
 
 body {
@@ -16,6 +24,22 @@ body {
 html,
 body {
     scroll-behavior: smooth;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* Internet Explorer 10+ */
+    -ms-overflow-style: none;
+
+    /* 기본 */
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
 }
 
 .hero-section,
@@ -457,5 +481,97 @@ body {
 
 .products-page {
     padding-top: 6rem;
-    min-height: 100vh;
+    min-height: auto;
+    height: auto;
+}
+
+#products-page .lighting-section {
+    padding: 3rem 8.3rem 0 8.3rem;
+    height: calc(100vh - 6rem);
+    overflow: hidden;
+}
+
+#products-page .lighting-title-svg {
+    margin-top: 7rem;
+    margin-bottom: 3rem !important;
+    margin-left: 5.7rem !important;
+    transform: translateX(0) !important;
+    width: 10rem !important;
+    height: auto !important;
+}
+
+#products-page .concept-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+}
+
+#products-page .concept-card:first-child {
+    margin-left: 0 !important;
+}
+
+#products-page .concept-card {
+    padding-left: 5.7rem !important;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#products-page .lighting-1-flower-svg {
+    width: 23rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-2-flower-svg {
+    margin-top: -0.6rem;
+    width: 23rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-3-flower-svg {
+    margin-top: -0.3rem;
+    width: 23rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-1-title-svg {
+    padding-top: 2rem !important;
+    width: 8.8rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-1-comment-svg {
+    padding-top: 0.2rem !important;
+    width: 3rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-2-title-svg {
+    padding-top: 2.1rem !important;
+    width: 9.3rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-2-comment-svg {
+    padding-top: 0.1rem !important;
+    width: 5.5rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-3-title-svg {
+    padding-top: 2.05rem !important;
+    width: 9.3rem !important;
+    height: auto !important;
+}
+
+#products-page .lighting-3-comment-svg {
+    margin-top: -0.4rem !important;
+    width: 5.4rem !important;
+    height: auto !important;
 }
