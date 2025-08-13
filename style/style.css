@@ -246,7 +246,7 @@ body {
     height: auto !important;
     text-align: left;
     margin-top: 12rem;
-    margin-bottom: 11rem;
+    margin-bottom: 10rem;
 }
 
 .concept-grid {
@@ -267,13 +267,14 @@ body {
     height: 300px;
     display: flex;
     align-items: center;
-    gap: 15.6rem;
+    gap: 13rem;
     margin-bottom: 15rem;
 }
 
 .flower-default-image {
+    position: relative;
     width: auto !important;
-    height: 450px !important;
+    height: 456px !important;
     object-fit: cover;
     opacity: 1;
     transition: opacity 0.4s ease;
@@ -284,11 +285,11 @@ body {
 
 .flower-full-image {
     position: absolute;
-    top: -76px;
+    top: -78px;
     left: 50%;
     transform: translateX(-50%);
     width: auto !important;
-    height: 450px !important;
+    height: 456px !important;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -297,11 +298,11 @@ body {
 
 .flower-hover-background-svg {
     position: absolute;
-    top: -76px;
+    top: -78px;
     left: 47%;
     transform: translateX(-50%);
     width: auto !important;
-    height: 450px !important;
+    height: 456px !important;
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 1;
@@ -394,12 +395,12 @@ body {
 
 .concept-card:hover .flower-full-image {
     opacity: 1;
-    top: -76px;
+    top: -78px;
 }
 
 .concept-card:hover .flower-hover-background-svg {
     opacity: 1;
-    top: -76px;
+    top: -78px;
 }
 
 .concept-card:hover .flower1-comment {
@@ -444,4 +445,17 @@ body {
     100% {
         transform: translateX(-50%);
     }
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.products-page {
+    padding-top: 6rem;
+    min-height: 100vh;
 }
