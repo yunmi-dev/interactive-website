@@ -545,7 +545,8 @@ body::-webkit-scrollbar {
     position: absolute;
     top: -1rem;
     left: 0;
-    width: 23rem !important; /*크롭 영역과 정확히 일치하도록 조정*/
+    width: 23rem !important;
+    /*크롭 영역과 정확히 일치하도록 조정*/
     height: 30rem !important;
     overflow: hidden;
 }
@@ -574,7 +575,8 @@ body::-webkit-scrollbar {
     position: absolute;
     /* top: 8rem; */
     /* left: 10rem; */
-    width: 80rem !important; /* 실제 꽃 부분에만 정확히 맞춤 */
+    width: 80rem !important;
+    /* 실제 꽃 부분에만 정확히 맞춤 */
     height: auto !important;
     cursor: pointer;
     z-index: 10;
@@ -736,4 +738,244 @@ body::-webkit-scrollbar {
     margin-top: -0.4rem !important;
     width: 5.4rem !important;
     height: auto !important;
+}
+
+.first-bg {
+    background-image: url('/asset/brands/first/first-background.svg');
+}
+
+/* brands-page 전체 레이아웃 */
+#brands-page {
+    padding-top: 4rem;
+    min-height: 100vh;
+}
+
+/* 첫 번째 섹션 */
+.first-section {
+    padding: 3rem 8rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.first-title-svg {
+    display: block;
+    margin-bottom: 2rem;
+    width: 29rem !important;
+    height: auto !important;
+}
+
+.first-image-svg {
+    display: block;
+    margin: 1.5rem 0;
+    width: 45rem !important;
+    height: auto !important;
+}
+
+.first-paragraph-svg {
+    margin-top: 2rem;
+    display: block;
+    width: 31rem !important;
+    height: auto !important;
+}
+
+/* 두 번째 섹션 */
+.second-section {
+    padding: 13rem 8rem 5rem 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.second-title-svg {
+    display: block;
+    margin-bottom: 4rem;
+    width: 23rem !important;
+    height: auto !important;
+}
+
+/* 키워드 컨테이너 - 가로 정렬 */
+.keywords-container {
+    position: relative;
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 4rem;
+}
+
+/* 각 키워드 섹션 - 세로 정렬 */
+.keyword1,
+.keyword2,
+.keyword3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.keyword1-title-svg {
+    width: 8.8rem !important;
+    height: auto !important;
+}
+
+.keyword2-title-svg {
+    width: 6rem !important;
+    height: auto !important;
+}
+
+.keyword3-title-svg {
+    width: 9rem !important;
+    height: auto !important;
+}
+
+/* 키워드 제목들 */
+.keyword1-title-svg,
+.keyword2-title-svg,
+.keyword3-title-svg {
+    margin-bottom: 2rem;
+}
+
+.keyword1-image-svg {
+    width: 5.4rem !important;
+    height: auto !important;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.keyword2-image-svg {
+    width: 7rem !important;
+    height: auto !important;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 0rem;
+}
+
+.keyword3-image-svg {
+    width: 4.6rem !important;
+    height: auto !important;
+    margin-bottom: 3rem;
+    margin-left: -1rem;
+    margin-top: 1rem;
+}
+
+/* 키워드 설명들 */
+.keyword1-paragraph-svg {
+    width: 20rem !important;
+    height: auto !important;
+    margin-top: 5rem;
+}
+
+.keyword2-paragraph-svg {
+    width: 21rem !important;
+    height: auto !important;
+    margin-top: 4.1rem;
+}
+
+.keyword3-paragraph-svg {
+    width: 14rem !important;
+    height: auto !important;
+    margin-top: 2.3rem;
+}
+
+/* .line-svg-1 {
+    position: absolute;
+    top: 45%;
+    left: 33%;
+    width: 8rem !important;
+    height: auto !important;
+    z-index: 10;
+}
+
+.line-svg-2 {
+    position: absolute;
+    top: 45%;
+    left: 66%;
+    width: 8rem !important;
+    height: auto !important;
+    z-index: 10;
+} */
+
+/* 세 번째 섹션 */
+.third-section {
+    position: relative;
+    padding: 8rem 8rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.third-paragraph-svg {
+    position: relative;
+    z-index: 10;
+    width: 37rem !important;
+    height: auto !important;
+    text-align: center;
+    padding-top: 15rem;
+    padding-bottom: 25rem;
+}
+
+/* 이펙트 컨테이너 */
+.third-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 각 이펙트들 위치 및 스타일 */
+.third-effect1 {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 8rem !important;
+    height: auto !important;
+    opacity: 0.3;
+}
+
+.third-effect2 {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 6rem !important;
+    height: auto !important;
+    opacity: 0.4;
+}
+
+.third-effect3 {
+    position: absolute;
+    bottom: 25%;
+    left: 8%;
+    width: 10rem !important;
+    height: auto !important;
+    opacity: 0.2;
+}
+
+.third-effect4 {
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    width: 7rem !important;
+    height: auto !important;
+    opacity: 0.35;
+}
+
+.third-effect5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12rem !important;
+    height: auto !important;
+    opacity: 0.15;
+    z-index: 0;
 }
