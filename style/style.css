@@ -788,7 +788,8 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
-    gap: 4rem;
+    gap: 12rem;
+    margin-right: 10rem;
 }
 
 .keyword1,
