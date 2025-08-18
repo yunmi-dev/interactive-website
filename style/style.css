@@ -42,8 +42,8 @@ body::-webkit-scrollbar {
     background: transparent;
 }
 
-.hero-section,
-.about-love-section {
+.shop-first-section,
+.shop-second-section {
     scroll-snap-align: start;
 }
 
@@ -106,7 +106,7 @@ body::-webkit-scrollbar {
     overflow-x: hidden;
 }
 
-.hero-section {
+.shop-first-section {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -115,7 +115,7 @@ body::-webkit-scrollbar {
     margin-bottom: -100px;
 }
 
-.hero-content {
+.shop-first-content {
     position: relative;
     width: 1400px;
     height: 800px;
@@ -126,13 +126,13 @@ body::-webkit-scrollbar {
     transform-style: preserve-3d;
 }
 
-.hero-bg {
+.shop-first-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/asset/shop/hero/hero-background.png');
+    background-image: url('/asset/shop/first/shop-first-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -141,7 +141,7 @@ body::-webkit-scrollbar {
     clip-path: inset(50px 0 50px 0);
 }
 
-.vure-logo-svg {
+.shop-first-vure-logo-svg {
     position: absolute;
     top: 8.7rem;
     left: -39.75rem;
@@ -150,7 +150,7 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-.hero-tagline-svg {
+.shop-first-tagline-svg {
     position: absolute;
     top: -14.7rem;
     left: -430px;
@@ -170,21 +170,21 @@ body::-webkit-scrollbar {
     z-index: 2;
 }
 
-.about-love-section {
+.shop-second-section {
     position: relative;
     height: calc(100vh - 75px);
     overflow: hidden;
     margin-top: -114px;
 }
 
-.about-love-section::before {
+.shop-second-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/asset/shop/about-love/about-love-background.png');
+    background-image: url('/asset/shop/second/shop-second-background.png');
     background-size: cover;
     background-position: center;
     opacity: 0.6;
@@ -219,7 +219,7 @@ body::-webkit-scrollbar {
     height: auto !important;
 }
 
-.about-love-content {
+.shop-second-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -233,13 +233,13 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 
-.about-love-title-svg {
+.shop-second-title-svg {
     width: 23rem !important;
     height: auto !important;
     margin-bottom: 3.9rem;
 }
 
-.about-love-text-svg {
+.shop-second-text-svg {
     width: 73rem !important;
     height: auto !important;
     margin-bottom: 5.8rem;
@@ -259,7 +259,7 @@ body::-webkit-scrollbar {
     height: auto !important;
 }
 
-.lighting-section {
+.shop-third-section {
     padding: 5rem 0 5rem 20.5rem;
 }
 
@@ -485,7 +485,7 @@ body::-webkit-scrollbar {
     height: auto;
 }
 
-#products-page .lighting-section {
+#products-page .products-section {
     padding: 3rem 8.3rem 0 8.3rem;
     height: calc(100vh - 6rem);
     overflow: hidden;
@@ -737,7 +737,7 @@ body::-webkit-scrollbar {
     min-height: 100vh;
 }
 
-.first-section {
+.brands-first-section {
     padding: 3rem 8rem;
     margin-bottom: 4rem;
     display: flex;
@@ -746,35 +746,35 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 
-.first-title-svg {
+.brands-first-title-svg {
     display: block;
     margin-bottom: 2rem;
     width: 29rem !important;
     height: auto !important;
 }
 
-.first-image-svg {
+.brands-first-image-svg {
     display: block;
     margin: 1.5rem 0;
     width: 45rem !important;
     height: auto !important;
 }
 
-.first-paragraph-svg {
+.brands-first-paragraph-svg {
     margin-top: 2rem;
     display: block;
     width: 31rem !important;
     height: auto !important;
 }
 
-.second-section {
+.brands-second-section {
     padding: 13rem 8rem 5rem 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.second-title-svg {
+.brands-second-title-svg {
     display: block;
     margin-bottom: 4rem;
     width: 23rem !important;
@@ -883,7 +883,7 @@ body::-webkit-scrollbar {
     z-index: 10;
 } */
 
-.third-section {
+.brands-third-section {
     position: relative;
     padding: 8rem 8rem;
     min-height: 80vh;
@@ -893,7 +893,7 @@ body::-webkit-scrollbar {
     overflow: hidden;
 }
 
-.third-paragraph-svg {
+.brands-third-paragraph-svg {
     position: relative;
     z-index: 10;
     width: 37rem !important;
@@ -903,7 +903,7 @@ body::-webkit-scrollbar {
     padding-bottom: 25rem;
 }
 
-.third-effects {
+.brands-third-effects {
     position: absolute;
     top: 0;
     left: 0;
@@ -912,7 +912,7 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-.third-effect1 {
+.brands-third-effect1 {
     position: absolute;
     top: 10%;
     left: 15%;
@@ -921,7 +921,7 @@ body::-webkit-scrollbar {
     opacity: 0.3;
 }
 
-.third-effect2 {
+.brands-third-effect2 {
     position: absolute;
     top: 20%;
     right: 10%;
@@ -930,7 +930,7 @@ body::-webkit-scrollbar {
     opacity: 0.4;
 }
 
-.third-effect3 {
+.brands-third-effect3 {
     position: absolute;
     bottom: 25%;
     left: 8%;
@@ -939,7 +939,7 @@ body::-webkit-scrollbar {
     opacity: 0.2;
 }
 
-.third-effect4 {
+.brands-third-effect4 {
     position: absolute;
     bottom: 15%;
     right: 20%;
@@ -948,7 +948,7 @@ body::-webkit-scrollbar {
     opacity: 0.35;
 }
 
-.third-effect5 {
+.brands-third-effect5 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -957,4 +957,35 @@ body::-webkit-scrollbar {
     height: auto !important;
     opacity: 0.15;
     z-index: 0;
+}
+
+#series-page {
+    padding-top: 4rem;
+    min-height: 100vh;
+}
+
+.series-first-section {
+    padding: 3rem 8rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.series-first-image-svg {
+    width: 45rem !important;
+    height: auto !important;
+    margin-bottom: 2rem;
+}
+
+.series-first-image-comment-svg {
+    width: 20rem !important;
+    height: auto !important;
+    margin-bottom: 2rem;
+}
+
+.series-first-comment-svg {
+    width: 30rem !important;
+    height: auto !important;
 }
