@@ -776,6 +776,7 @@ body::-webkit-scrollbar {
 
 .brands-second-title-svg {
     display: block;
+    margin-top: 2rem;
     margin-bottom: 4rem;
     width: 23rem !important;
     height: auto !important;
