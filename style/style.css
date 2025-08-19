@@ -959,24 +959,42 @@ body::-webkit-scrollbar {
     padding: 3rem 8rem;
     margin-bottom: 4rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 5rem;
+}
+
+.series-first-image-container {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-top: 2rem;
+    margin-left: 1.6rem;
+    margin-bottom: 2rem;
 }
 
 .series-first-image-svg {
-    width: 45rem !important;
+    width: 38rem !important;
     height: auto !important;
-    margin-bottom: 2rem;
+    display: block;
 }
 
 .series-first-image-comment-svg {
-    width: 20rem !important;
+    position: absolute;
+    top: 20.5%;
+    left: 42.5%;
+    transform: translate(-50%, -50%);
+    width: 30rem !important;
     height: auto !important;
-    margin-bottom: 2rem;
+    z-index: 10;
 }
 
 .series-first-comment-svg {
     width: 30rem !important;
     height: auto !important;
+    flex-shrink: 0;
+    margin-right: 5rem;
+    margin-top: 1.7rem;
 }
