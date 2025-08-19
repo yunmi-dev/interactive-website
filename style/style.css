@@ -601,7 +601,7 @@ body::-webkit-scrollbar {
 #products-page .lighting-1-flower-png:hover {
     clip-path: inset(0% 0% 0% 0%);
 
-    transform: scale(0.5) translateY(-200px);
+    transform: scale(0.7) translateY(-140px);
     filter: grayscale(0%) brightness(1.1);
 }
 
@@ -628,7 +628,7 @@ body::-webkit-scrollbar {
 #products-page .lighting-2-flower-png:hover {
     clip-path: inset(0% 0% 0% 0%);
 
-    transform: scale(0.5) translateY(0px);
+    transform: scale(1.05) translateY(-220px);
     filter: grayscale(0%) brightness(1.1);
 }
 
@@ -654,19 +654,7 @@ body::-webkit-scrollbar {
 #products-page .lighting-3-flower-png:hover {
     clip-path: inset(0% 0% 0% 0%);
 
-    transform: scale(0.5) translateY(-200px);
-    filter: grayscale(0%) brightness(1.1);
-}
-
-#products-page .concept-card:hover .lighting-2-flower-png {
-    clip-path: inset(0% 0% 0% 0%);
-    transform: scale(1.0) translateY(-205px);
-    filter: grayscale(0%) brightness(1.1);
-}
-
-#products-page .concept-card:hover .lighting-3-flower-png {
-    clip-path: inset(0% 0% 0% 0%);
-    transform: scale(1.0) translateY(-205px);
+    transform: scale(1.1) translateY(-225px);
     filter: grayscale(0%) brightness(1.1);
 }
 
