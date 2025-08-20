@@ -1080,7 +1080,7 @@ body::-webkit-scrollbar {
     padding-bottom: 25rem;
 }
 
-#first-detail-page {
+#detail1-page {
     display: none;
     padding-top: 4rem;
     min-height: 100vh;
@@ -1111,20 +1111,20 @@ body::-webkit-scrollbar {
     padding: 3.5rem 2rem;
 }
 
-.first-detail-image1-svg {
+.detail1-first-image1-svg {
     width: 20rem !important;
     height: auto !important;
     flex-shrink: 0;
     margin-top: 3.5rem;
 }
 
-.first-detail-image2-svg {
+.detail1-first-image2-svg {
     width: 40rem !important;
     height: auto !important;
     flex-shrink: 0;
 }
 
-.first-detail-image3-svg {
+.detail1-first-image3-svg {
     width: 18rem !important;
     height: auto !important;
     flex-shrink: 0;
@@ -1140,20 +1140,70 @@ body::-webkit-scrollbar {
     gap: 1.5rem;
 }
 
-.first-detail-title1-svg {
+.detail1-second-title1-svg {
     width: 20rem !important;
     height: auto !important;
 }
 
-.first-detail-title2-svg {
+.detail1-second-title2-svg {
     width: 29rem !important;
     height: auto !important;
     margin-left: -1rem;
 }
 
-.first-detail-paragraph-svg {
+.detail1-second-paragraph-svg {
     width: 43.5rem !important;
     height: auto !important;
     margin-top: 2rem;
 }
 
+.third-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 13.4rem;
+    padding: 3.8rem 2rem;
+    margin-right: 12rem;
+}
+
+#detail-color-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 2rem 4rem; */
+    /* margin-left: 17rem; */
+    gap: 1.5rem;
+}
+
+.off-on-container {
+    margin-top: 3rem;
+}
+
+.off-svg {
+    margin-left: 0.2rem;
+    margin-right: 1.6rem;
+}
+
+/* .color-box-container {
+    padding-top: -2rem;
+} */
+
+.first-detail-color1-svg {
+    margin-left: 0.1rem;
+    margin-right: 2.5rem;
+}
+
+#detail-size-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 2rem 4rem; */
+    /* margin-left: 17rem; */
+    gap: 1.5rem;
+}
+
+.wall-mount-svg {
+    width: 5rem !important;
+    height: auto !important;
+    /* margin-top: 2rem; */
+}

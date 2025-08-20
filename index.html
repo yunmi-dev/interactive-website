@@ -316,21 +316,27 @@
         <img src="asset/end-comment.svg" alt="end comment" class="end-comment-svg">
     </div>
 
-    <div id="first-detail-page">
+    <div id="detail1-page">
         <button class="back-button" onclick="goBack()">
             <img src="asset/detail/back-button.svg" alt="back button" class="detail-back-button-svg">
         </button>
 
         <section class="first-section">
-            <img src="asset/detail/first/first-detail-image1.svg" alt="image1" class="first-detail-image1-svg">
-            <img src="asset/detail/first/first-detail-image2.svg" alt="image2" class="first-detail-image2-svg">
-            <img src="asset/detail/first/first-detail-image3.svg" alt="image3" class="first-detail-image3-svg">
+            <img src="asset/detail/detail1/first/detail1-first-image1.svg" alt="image1"
+                class="detail1-first-image1-svg">
+            <img src="asset/detail/detail1/first/detail1-first-image2.svg" alt="image2"
+                class="detail1-first-image2-svg">
+            <img src="asset/detail/detail1/first/detail1-first-image3.svg" alt="image3"
+                class="detail1-first-image3-svg">
         </section>
 
         <section class="second-section">
-            <img src="asset/detail/first/first-detail-title1.svg" alt="title1" class="first-detail-title1-svg">
-            <img src="asset/detail/first/first-detail-title2.svg" alt="title2" class="first-detail-title2-svg">
-            <img src="asset/detail/first/first-detail-paragraph.svg" alt="paragraph" class="first-detail-paragraph-svg">
+            <img src="asset/detail/detail1/second/detail1-second-title1.svg" alt="title1"
+                class="detail1-second-title1-svg">
+            <img src="asset/detail/detail1/second/detail1-second-title2.svg" alt="title2"
+                class="detail1-second-title2-svg">
+            <img src="asset/detail/detail1/second/detail1-second-paragraph.svg" alt="paragraph"
+                class="detail1-second-paragraph-svg">
         </section>
 
         <section class="third-section">
@@ -341,22 +347,32 @@
                     <img src="asset/detail/on.svg" alt="on" class="on-svg">
                 </div>
                 <div id="color-box-container">
-                    <img src="asset/detail/first/first-detail-color1.svg" alt="color1 box"
+                    <img src="asset/detail/detail1/third/detail1-third-color1.svg" alt="color1 box"
                         class="first-detail-color1-svg">
-                    <img src="asset/detail/first/first-detail-color2.svg" alt="color2 box"
+                    <img src="asset/detail/detail1/third/detail1-third-color2.svg" alt="color2 box"
                         class="first-detail-color2-svg">
-                    <img src="asset/detail/first/first-detail-color3.svg" alt="color3 box"
+                    <img src="asset/detail/detail1/third/detail1-third-color3.svg" alt="color3 box"
                         class="first-detail-color3-svg">
                 </div>
             </div>
 
             <div id="detail-size-container">
-                <img src="asset/detail/Size.svg" alt="size title" class="size-svg">
-                <img src="asset/detail/first/first-detail-size.svg" alt="first size" class="first-detail-size-svg">
+                <img src="asset/detail/Size.svg" alt="size title" class="size-title-svg">
+                <img src="asset/detail/detail1/third/detail1-third-size.svg" alt="detail1 third size"
+                    class="detail1-third-size-svg">
             </div>
 
             <img src="asset/detail/wall-mount.svg" alt="wall mount svg" class="wall-mount-svg">
         </section>
+
+        <section class="fourth-section">
+            <img src="asset/detail/Details.svg" alt="details title" class="details-svg">
+            <img src="asset/detail/detail1/fourth/image/detail1-fourth-image1.svg" alt="fourth image1"
+                class="detail1-fourth-image1-svg">
+        </section>
+
+        <section class="fifth-section"></section>
+
     </div>
 
     <script>
@@ -373,12 +389,12 @@
             previousPage = 'shop';
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-            document.getElementById('first-detail-page').style.display = 'block';
+            document.getElementById('detail1-page').style.display = 'block';
             window.scrollTo(0, 0);
         }
 
         function goBack() {
-            document.getElementById('first-detail-page').style.display = 'none';
+            document.getElementById('detail1-page').style.display = 'none';
             showPage(previousPage);
         }
     </script>
