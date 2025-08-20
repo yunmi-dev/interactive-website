@@ -971,7 +971,7 @@ body::-webkit-scrollbar {
     display: inline-block;
     flex-shrink: 0;
     margin-top: 2rem;
-    margin-left: 1.6rem;
+    margin-left: 1.8rem;
     margin-bottom: 2rem;
 }
 
@@ -997,4 +997,49 @@ body::-webkit-scrollbar {
     flex-shrink: 0;
     margin-right: 5rem;
     margin-top: 1.7rem;
+}
+
+.series-second-section {
+    padding: 8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding-bottom: 30rem;
+    padding-top: 5rem;
+}
+
+.series-second-title-container {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-left: 1.8rem;
+    margin-bottom: 10rem;
+}
+
+.series-second-parentheses-svg {
+    width: 21.5rem !important;
+    height: auto !important;
+    display: block;
+}
+
+.series-second-title-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16.6rem !important;
+    height: auto !important;
+    padding-right: 0.4rem;
+    padding-top: 0.1rem;
+    z-index: 10;
+}
+
+.series-second-paragraph-svg {
+    width: 44rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+    margin-top: 2rem;
+    margin-right: 18.5rem;
 }
