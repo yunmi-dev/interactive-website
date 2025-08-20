@@ -1085,3 +1085,75 @@ body::-webkit-scrollbar {
     padding-top: 4rem;
     min-height: 100vh;
 }
+
+.back-button {
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.detail-back-button-svg {
+    width: 5rem !important;
+    height: auto !important;
+    margin-top: 6rem;
+    margin-left: 1rem;
+}
+
+.first-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 3.5rem 2rem;
+}
+
+.first-detail-image1-svg {
+    width: 20rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+    margin-top: 3.5rem;
+}
+
+.first-detail-image2-svg {
+    width: 40rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+}
+
+.first-detail-image3-svg {
+    width: 18rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+    margin-top: 3rem;
+}
+
+.second-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+    margin-left: 17rem;
+    gap: 1.5rem;
+}
+
+.first-detail-title1-svg {
+    width: 20rem !important;
+    height: auto !important;
+}
+
+.first-detail-title2-svg {
+    width: 29rem !important;
+    height: auto !important;
+    margin-left: -1rem;
+}
+
+.first-detail-paragraph-svg {
+    width: 43.5rem !important;
+    height: auto !important;
+    margin-top: 2rem;
+}
+
