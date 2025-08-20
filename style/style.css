@@ -112,7 +112,7 @@ body::-webkit-scrollbar {
     position: relative;
     overflow: hidden;
     margin-top: -64px;
-    margin-bottom: -100px;
+    margin-bottom: 0;
 }
 
 .shop-first-content {
@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
     position: relative;
     height: calc(100vh - 75px);
     overflow: hidden;
-    margin-top: -114px;
+    margin-top: -3.14rem;
 }
 
 .shop-second-section::before {
@@ -208,13 +208,13 @@ body::-webkit-scrollbar {
 .series-track {
     display: flex;
     width: max-content;
-    animation: slideLeft 25s linear infinite;
+    animation: slideLeft 32s linear infinite;
 }
 
 .first-series-svg {
     white-space: nowrap;
     font-size: 14.26px;
-    margin-right: 95px;
+    margin-right: 96px;
     width: 200px !important;
     height: auto !important;
 }
