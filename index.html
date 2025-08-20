@@ -141,7 +141,7 @@
             <section class="shop-third-section">
                 <img src="asset/products/Lighting-title.svg" alt="lighting title svg" class="lighting-title-svg">
 
-                <div class="concept-grid">
+                <div class="concept-grid" onclick="showDetail()">
                     <!-- Self-esteem 카드 -->
                     <div class="concept-card">
                         <img src="asset/shop/third/flower1/flower1-focus.png" alt="flower1 focus image"
@@ -341,9 +341,12 @@
                     <img src="asset/detail/on.svg" alt="on" class="on-svg">
                 </div>
                 <div id="color-box-container">
-                    <img src="asset/detail/first/first-detail-color1.svg" alt="color1 box" class="first-detail-color1-svg">
-                    <img src="asset/detail/first/first-detail-color2.svg" alt="color2 box" class="first-detail-color2-svg">
-                    <img src="asset/detail/first/first-detail-color3.svg" alt="color3 box" class="first-detail-color3-svg">
+                    <img src="asset/detail/first/first-detail-color1.svg" alt="color1 box"
+                        class="first-detail-color1-svg">
+                    <img src="asset/detail/first/first-detail-color2.svg" alt="color2 box"
+                        class="first-detail-color2-svg">
+                    <img src="asset/detail/first/first-detail-color3.svg" alt="color3 box"
+                        class="first-detail-color3-svg">
                 </div>
             </div>
 
@@ -360,17 +363,23 @@
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-
             document.getElementById(pageId + '-page').classList.add('active');
-
             window.scrollTo(0, 0);
-        } function showPage(pageId) {
+        }
+
+        let previousPage = 'shop';
+
+        function showDetail() {
+            previousPage = 'shop';
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-
-            document.getElementById(pageId + '-page').classList.add('active');
-
+            document.getElementById('first-detail-page').style.display = 'block';
             window.scrollTo(0, 0);
+        }
+
+        function goBack() {
+            document.getElementById('first-detail-page').style.display = 'none';
+            showPage(previousPage);
         }
     </script>
 </body>
