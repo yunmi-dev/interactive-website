@@ -130,7 +130,7 @@
                         class="shop-second-title-svg">
                     <img src="asset/shop/second/shop-second-text-svg.svg" alt="about love text svg"
                         class="shop-second-text-svg">
-                    <button class="connection-button">
+                    <button class="connection-button" onclick="showPage('series')">
                         <img src="asset/shop/second/shop-second-connection.svg" alt="connection button svg"
                             class="connection-button-svg">
                     </button>
@@ -322,6 +322,15 @@
             pages.forEach(page => page.classList.remove('active'));
 
             document.getElementById(pageId + '-page').classList.add('active');
+
+            window.scrollTo(0, 0);
+        } function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            document.getElementById(pageId + '-page').classList.add('active');
+
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
