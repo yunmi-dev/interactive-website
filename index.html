@@ -197,7 +197,7 @@
             <img src="asset/products/Lighting-title.svg" alt="lighting title svg" class="lighting-title-svg">
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <div class="concept-card" onclick="showDetailFromProducts()">
                     <div class="image-container lighting-1-container">
                         <img src="asset/products/Lighting-1/Lighting-1-full.png" alt="lighting 1 flower full"
                             class="lighting-1-flower-png">
@@ -321,7 +321,7 @@
             <img src="asset/detail/back-button.svg" alt="back button" class="detail-back-button-svg">
         </button>
 
-        <section class="first-section">
+        <section class="detail1-first-section">
             <img src="asset/detail/detail1/first/detail1-first-image1.svg" alt="image1"
                 class="detail1-first-image1-svg">
             <img src="asset/detail/detail1/first/detail1-first-image2.svg" alt="image2"
@@ -330,7 +330,7 @@
                 class="detail1-first-image3-svg">
         </section>
 
-        <section class="second-section">
+        <section class="detail1-second-section">
             <img src="asset/detail/detail1/second/detail1-second-title1.svg" alt="title1"
                 class="detail1-second-title1-svg">
             <img src="asset/detail/detail1/second/detail1-second-title2.svg" alt="title2"
@@ -339,7 +339,7 @@
                 class="detail1-second-paragraph-svg">
         </section>
 
-        <section class="third-section">
+        <section class="detail1-third-section">
             <div id="detail-color-container">
                 <img src="asset/detail/Color.svg" alt="color title" class="color-title-svg">
                 <div id="off-on-container">
@@ -375,17 +375,20 @@
             <img src="asset/detail/Light.svg" alt="light title" class="light-title-svg">
 
             <div class="fifth-image-container">
-                <img src="asset/detail/detail1/fifth/detail1-fifth-image1.svg" alt="fifth image1" class="detail1-fifth-image-svg">
-                <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
-            </div>
-            
-            <div class="fifth-image-container">
-                <img src="asset/detail/detail1/fifth/detail1-fifth-image2.svg" alt="fifth image2" class="detail1-fifth-image-svg">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image1.svg" alt="fifth image1"
+                    class="detail1-fifth-image-svg">
                 <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
             </div>
 
             <div class="fifth-image-container">
-                <img src="asset/detail/detail1/fifth/detail1-fifth-image3.svg" alt="fifth image3" class="detail1-fifth-image-svg">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image2.svg" alt="fifth image2"
+                    class="detail1-fifth-image-svg">
+                <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
+            </div>
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image3.svg" alt="fifth image3"
+                    class="detail1-fifth-image-svg">
                 <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
             </div>
 
@@ -414,6 +417,14 @@
         function goBack() {
             document.getElementById('detail1-page').style.display = 'none';
             showPage(previousPage);
+        }
+
+        function showDetailFromProducts() {
+            previousPage = 'products';
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById('detail1-page').style.display = 'block';
+            window.scrollTo(0, 0);
         }
     </script>
 </body>

@@ -1103,7 +1103,7 @@ body::-webkit-scrollbar {
     margin-left: 1rem;
 }
 
-.first-section {
+.detail1-first-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1131,7 +1131,7 @@ body::-webkit-scrollbar {
     margin-top: 3rem;
 }
 
-.second-section {
+.detail1-second-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1154,47 +1154,47 @@ body::-webkit-scrollbar {
 .detail1-second-paragraph-svg {
     width: 43.5rem !important;
     height: auto !important;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
 }
 
-.third-section {
+.detail1-third-section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 13.4rem;
     padding: 3.8rem 2rem;
-    margin-right: 12rem;
+    margin-right: 0;
+    margin-left: -11.5rem;
 }
 
 #detail-color-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* padding: 2rem 4rem; */
-    /* margin-left: 17rem; */
     gap: 2rem;
 }
 
-/* .color-title-svg {
-    margin-bottom: 5rem;
-} */
+.color-title-svg {
+    width: 5.3rem !important;
+    height: auto !important;
+    margin-bottom: 0.4rem;
+}
 
-/* .off-on-container {
+.off-on-container {
     margin-top: 10rem;
-} */
+    /* margin-bottom: -5rem; */
+}
+
+#color-box-container {
+    position: relative;
+    top: 3.5rem !important;
+    margin-top: -5rem !important;
+}
 
 .off-svg {
     margin-left: 0.2rem;
     margin-right: 1.6rem;
 }
-
-/* .color-box-container {
-    padding-top: -2rem;
-} */
-
-/* .detail-size-container {
-    gap: 7rem;
-} */
 
 .first-detail-color1-svg {
     margin-left: 0.1rem;
@@ -1210,10 +1210,22 @@ body::-webkit-scrollbar {
     gap: 1.5rem;
 }
 
-.wall-mount-svg {
-    width: 5rem !important;
+.size-title-svg {
+    width: 3.9rem !important;
     height: auto !important;
-    /* margin-top: 2rem; */
+    margin-bottom: -1.1rem;
+    /* size-title과 아래 요소 사이 간격 */
+}
+
+.detail1-third-size-svg {
+    margin-top: 2rem;
+}
+
+.wall-mount-svg {
+    width: 5.5rem !important;
+    height: auto !important;
+    margin-top: -0.4rem;
+    margin-left: 0.2rem;
 }
 
 .fourth-section {
@@ -1229,7 +1241,9 @@ body::-webkit-scrollbar {
 .details-title-svg {
     width: 6.5rem !important;
     height: auto !important;
-    margin-left: 0.3rem;
+    margin-left: 0.25rem;
+    padding-top: 6rem;
+    margin-bottom: -0.7rem;
 }
 
 .detail1-fourth-image1-svg {
