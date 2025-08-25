@@ -1271,6 +1271,8 @@ body::-webkit-scrollbar {
     width: 65.5rem !important;
     height: auto !important;
     transition: filter 0.1s ease;
+    image-rendering: auto;
+    shape-rendering: auto;
 }
 
 .thumbnail-container {
