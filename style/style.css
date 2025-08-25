@@ -1098,7 +1098,6 @@ body::-webkit-scrollbar {
 }
 
 #detail1-page {
-    display: none;
     padding-top: 4rem;
     min-height: 100vh;
 }
