@@ -365,13 +365,45 @@
             <img src="asset/detail/wall-mount.svg" alt="wall mount svg" class="wall-mount-svg">
         </section>
 
-        <section class="fourth-section">
+        <section class="detail1-fourth-section">
             <img src="asset/detail/Details.svg" alt="details title" class="details-title-svg">
-            <img src="asset/detail/detail1/fourth/image/detail1-fourth-image1.svg" alt="fourth image1"
-                class="detail1-fourth-image1-svg">
+
+            <!-- 메인 이미지 컨테이너 -->
+            <div class="main-image-container">
+                <img src="asset/detail/detail1/fourth/image/detail1-fourth-image1.svg" alt="main image"
+                    class="main-detail-image" id="mainDetailImage">
+            </div>
+
+            <!-- 썸네일 이미지들 -->
+            <div class="thumbnail-container">
+                <img src="asset/detail/detail1/fourth/image/detail1-fourth-image1.svg"
+                    data-main="asset/detail/detail1/fourth/image/detail1-fourth-image1.svg"
+                    data-blur="asset/detail/detail1/fourth/image-blur/detail1-fourth-image1-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail1/fourth/image-blur/detail1-fourth-image2-blur.svg"
+                    data-main="asset/detail/detail1/fourth/image/detail1-fourth-image2.svg"
+                    data-blur="asset/detail/detail1/fourth/image-blur/detail1-fourth-image2-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail1/fourth/image-blur/detail1-fourth-image3-blur.svg"
+                    data-main="asset/detail/detail1/fourth/image/detail1-fourth-image3.svg"
+                    data-blur="asset/detail/detail1/fourth/image-blur/detail1-fourth-image3-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail1/fourth/image-blur/detail1-fourth-image4-blur.svg"
+                    data-main="asset/detail/detail1/fourth/image/detail1-fourth-image4.svg"
+                    data-blur="asset/detail/detail1/fourth/image-blur/detail1-fourth-image4-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail1/fourth/image-blur/detail1-fourth-image5-blur.svg"
+                    data-main="asset/detail/detail1/fourth/image/detail1-fourth-image5.svg"
+                    data-blur="asset/detail/detail1/fourth/image-blur/detail1-fourth-image5-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail1/fourth/image-blur/detail1-fourth-image6-blur.svg"
+                    data-main="asset/detail/detail1/fourth/image/detail1-fourth-image6.svg"
+                    data-blur="asset/detail/detail1/fourth/image-blur/detail1-fourth-image6-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+            </div>
         </section>
 
-        <section class="fifth-section">
+        <section class="detail1-fifth-section">
             <img src="asset/detail/Light.svg" alt="light title" class="light-title-svg">
 
             <div class="fifth-image-container">
@@ -425,6 +457,21 @@
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById('detail1-page').style.display = 'block';
             window.scrollTo(0, 0);
+        }
+
+        function changeMainImage(thumbnail) {
+            // 메인 이미지 변경
+            document.getElementById('mainDetailImage').src = thumbnail.dataset.main;
+
+            // 모든 썸네일을 blur 이미지로 변경하고 active 제거
+            document.querySelectorAll('.thumbnail').forEach(t => {
+                t.classList.remove('active');
+                t.src = t.dataset.blur;
+            });
+
+            // 선택된 썸네일을 clear 이미지로 변경하고 active 추가
+            thumbnail.classList.add('active');
+            thumbnail.src = thumbnail.dataset.main;
         }
     </script>
 </body>

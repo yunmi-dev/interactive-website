@@ -1228,7 +1228,7 @@ body::-webkit-scrollbar {
     margin-left: 0.2rem;
 }
 
-.fourth-section {
+.detail1-fourth-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1246,12 +1246,31 @@ body::-webkit-scrollbar {
     margin-bottom: -0.7rem;
 }
 
-.detail1-fourth-image1-svg {
+.main-image-container {
+    margin-bottom: 2rem;
+}
+
+.main-detail-image {
     width: 65.5rem !important;
     height: auto !important;
 }
 
-.fifth-section {
+.thumbnail-container {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: -2.7rem;
+}
+
+.thumbnail {
+    width: 10.5rem !important;
+    height: auto !important;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.detail1-fifth-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
