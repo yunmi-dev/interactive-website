@@ -1087,9 +1087,9 @@ body::-webkit-scrollbar {
 }
 
 .back-button {
-    position: absolute;
-    top: 2rem;
-    left: 4rem;
+    position: fixed;
+    top: 8.5rem;
+    left: 5.3rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -1099,8 +1099,8 @@ body::-webkit-scrollbar {
 .detail-back-button-svg {
     width: 5rem !important;
     height: auto !important;
-    margin-top: 6rem;
-    margin-left: 1rem;
+    /* margin-top: 6rem;
+    margin-left: 1rem; */
 }
 
 .detail1-first-section {
