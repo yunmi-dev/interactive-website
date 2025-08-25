@@ -1253,6 +1253,7 @@ body::-webkit-scrollbar {
 .main-detail-image {
     width: 65.5rem !important;
     height: auto !important;
+    transition: filter 0.1s ease;
 }
 
 .thumbnail-container {

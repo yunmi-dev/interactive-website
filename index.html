@@ -460,16 +460,26 @@
         }
 
         function changeMainImage(thumbnail) {
-            // 메인 이미지 변경
-            document.getElementById('mainDetailImage').src = thumbnail.dataset.main;
+            const mainImage = document.getElementById('mainDetailImage');
 
-            // 모든 썸네일을 blur 이미지로 변경하고 active 제거
+            if (mainImage.src === thumbnail.dataset.main ||
+                mainImage.src.endsWith(thumbnail.dataset.main)) {
+                return;
+            }
+
+            mainImage.style.transition = 'opacity 0.2s ease';
+            mainImage.style.opacity = '0.8';
+
+            setTimeout(() => {
+                mainImage.src = thumbnail.dataset.main;
+                mainImage.style.opacity = '1';
+            }, 150);
+
             document.querySelectorAll('.thumbnail').forEach(t => {
                 t.classList.remove('active');
                 t.src = t.dataset.blur;
             });
 
-            // 선택된 썸네일을 clear 이미지로 변경하고 active 추가
             thumbnail.classList.add('active');
             thumbnail.src = thumbnail.dataset.main;
         }
