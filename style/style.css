@@ -96,6 +96,23 @@ body::-webkit-scrollbar {
     height: auto !important;
 }
 
+.fixed-home-button {
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    padding: 0;
+}
+
+.fixed-home-button-svg {
+    width: 9rem !important;
+    height: auto !important;
+}
+
 .series-svg {
     width: 2.85rem !important;
     height: auto !important;

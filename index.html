@@ -432,17 +432,31 @@
                         class="detail1-toggle-svg toggle-btn" id="toggleBtn3" onclick="toggleLight(3)">
                 </div>
             </div>
-
-
         </section>
-
     </div>
 
+    <button class="fixed-home-button" onclick="goToHome()">
+        <img src="asset/go-home-button.svg" alt="home button" class="fixed-home-button-svg">
+    </button>
+
     <script>
+        function goToHome() {
+            showPage('shop');
+        }
+
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
+            const homeButton = document.querySelector('.fixed-home-button');
+
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById(pageId + '-page').classList.add('active');
+
+            if (pageId === 'brands' || pageId === 'series') {
+                homeButton.style.display = 'flex';
+            } else {
+                homeButton.style.display = 'none';
+            }
+
             window.scrollTo(0, 0);
         }
 
