@@ -408,21 +408,31 @@
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image1.svg" alt="fifth image1"
-                    class="detail1-fifth-image-svg">
-                <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
+                    class="detail1-fifth-image-svg light-image" id="lightImage1">
+                <div class="toggle-container">
+                    <img src="asset/detail/detail1/fifth/detail1-toggle.svg" alt="detail1 toggle"
+                        class="detail1-toggle-svg toggle-btn" id="toggleBtn1" onclick="toggleLight(1)">
+                </div>
             </div>
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image2.svg" alt="fifth image2"
-                    class="detail1-fifth-image-svg">
-                <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
+                    class="detail1-fifth-image-svg light-image" id="lightImage2">
+                <div class="toggle-container">
+                    <img src="asset/detail/detail1/fifth/detail1-toggle.svg" alt="detail1 toggle"
+                        class="detail1-toggle-svg toggle-btn" id="toggleBtn2" onclick="toggleLight(2)">
+                </div>
             </div>
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image3.svg" alt="fifth image3"
-                    class="detail1-fifth-image-svg">
-                <img src="asset/detail/detail1/detail1-toggle.svg" alt="detail1 toggle" class="detail1-toggle-svg">
+                    class="detail1-fifth-image-svg light-image" id="lightImage3">
+                <div class="toggle-container">
+                    <img src="asset/detail/detail1/fifth/detail1-toggle.svg" alt="detail1 toggle"
+                        class="detail1-toggle-svg toggle-btn" id="toggleBtn3" onclick="toggleLight(3)">
+                </div>
             </div>
+
 
         </section>
 
@@ -482,6 +492,29 @@
 
             thumbnail.classList.add('active');
             thumbnail.src = thumbnail.dataset.main;
+        }
+
+        function toggleLight(imageNumber) {
+            const lightImg = document.getElementById(`lightImage${imageNumber}`);
+            const toggleBtn = document.getElementById(`toggleBtn${imageNumber}`);
+
+            const currentSrc = lightImg.src;
+            const basePath = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}`;
+            const normalImageSrc = `${basePath}.svg`;
+            const lightImageSrc = `${basePath}-light.svg`;
+
+            const toggleOff = `asset/detail/detail1/fifth/detail1-toggle.svg`;
+            const toggleOn = `asset/detail/detail1/fifth/detail1-toggle-on.svg`;
+
+            if (currentSrc.includes('-light.svg')) {
+                // 켜져있으면 끄기
+                lightImg.src = normalImageSrc;
+                toggleBtn.src = toggleOff;
+            } else {
+                // 꺼져있으면 켜기
+                lightImg.src = lightImageSrc;
+                toggleBtn.src = toggleOn;
+            }
         }
     </script>
 </body>

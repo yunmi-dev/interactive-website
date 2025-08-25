@@ -1234,7 +1234,7 @@ body::-webkit-scrollbar {
     align-items: flex-start;
     padding: 2rem 4rem;
     margin-left: 17rem;
-    padding-bottom: 10rem;
+    padding-bottom: 8rem;
     gap: 2.8rem;
 }
 
@@ -1302,4 +1302,18 @@ body::-webkit-scrollbar {
 .detail1-toggle-svg {
     width: 7.2rem !important;
     height: auto !important;
+}
+
+.light-image {
+    transition: all 0.8s ease;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
