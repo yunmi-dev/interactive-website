@@ -24,14 +24,8 @@ body {
 html,
 body {
     scroll-behavior: smooth;
-
-    /* Firefox */
     scrollbar-width: none;
-
-    /* Internet Explorer 10+ */
     -ms-overflow-style: none;
-
-    /* 기본 */
     overflow-x: hidden;
 }
 
@@ -149,7 +143,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/asset/shop/first/shop-first-background.png');
+    background-image: url('asset/shop/first/shop-first-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -201,7 +195,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/asset/shop/second/shop-second-background.png');
+    background-image: url('asset/shop/second/shop-second-background.png');
     background-size: cover;
     background-position: center;
     opacity: 0.6;
@@ -556,11 +550,8 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 1rem;
     left: 3.5rem;
-
-    /* 원하는 크롭 영역 크기 */
     width: 23.5rem !important;
     height: 30.3rem !important;
-
     overflow: hidden;
     pointer-events: none;
     cursor: pointer;
@@ -570,10 +561,8 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 1rem;
     left: 5rem;
-
     width: 23.5rem;
     height: 30.3rem;
-
     overflow: hidden;
     pointer-events: none;
     cursor: pointer;
@@ -583,10 +572,8 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 1rem;
     left: 6.5rem;
-
     width: 23.5rem;
     height: 30.3rem;
-
     overflow: hidden;
     pointer-events: none;
     cursor: pointer;
@@ -600,54 +587,42 @@ body::-webkit-scrollbar {
 
 #products-page .lighting-1-flower-png {
     position: absolute;
-
     top: -1rem;
     left: -27.7rem;
-
     width: 80rem !important;
     height: auto !important;
-
     clip-path: none;
-
     transform: scale(1.3) translateY(5px);
     filter: grayscale(80%) brightness(1);
     transform-origin: center center;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
     cursor: pointer;
     pointer-events: auto;
 }
 
 #products-page .lighting-1-flower-png:hover {
     clip-path: inset(0% 0% 0% 0%);
-
     transform: scale(0.7) translateY(-140px);
     filter: grayscale(0%) brightness(1.1);
 }
 
 #products-page .lighting-2-flower-png {
     position: absolute;
-
     top: 15.5rem;
     left: -1.3rem;
-    /* margin: 0; */
-
     width: 28.5rem !important;
     height: auto !important;
-
     clip-path: none;
     transform: scale(2.5) translateY(10px);
     filter: grayscale(100%) brightness(1.25);
     transform-origin: center center;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
     cursor: pointer;
     pointer-events: auto;
 }
 
 #products-page .lighting-2-flower-png:hover {
     clip-path: inset(0% 0% 0% 0%);
-
     transform: scale(1.05) translateY(-220px);
     filter: grayscale(0%) brightness(1.1);
 }
@@ -657,23 +632,19 @@ body::-webkit-scrollbar {
     top: 16.5rem;
     left: -13.5rem;
     margin: 0;
-
     width: 49.5rem !important;
     height: auto !important;
-
     clip-path: inset(0% 40.5% 51% 40.7%);
     transform: scale(2.5) translateY(5px);
     filter: grayscale(100%) brightness(1.25);
     transform-origin: center center;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
     cursor: pointer;
     pointer-events: auto;
 }
 
 #products-page .lighting-3-flower-png:hover {
     clip-path: inset(0% 0% 0% 0%);
-
     transform: scale(1.1) translateY(-225px);
     filter: grayscale(0%) brightness(1.1);
 }
@@ -739,7 +710,7 @@ body::-webkit-scrollbar {
 }
 
 .first-bg {
-    background-image: url('/asset/brands/first/first-background.svg');
+    background-image: url('asset/brands/first/first-background.svg');
 }
 
 #brands-page {
@@ -875,24 +846,6 @@ body::-webkit-scrollbar {
     height: auto !important;
     margin-top: 2.3rem;
 }
-
-/* .line-svg-1 {
-    position: absolute;
-    top: 45%;
-    left: 33%;
-    width: 8rem !important;
-    height: auto !important;
-    z-index: 10;
-}
-
-.line-svg-2 {
-    position: absolute;
-    top: 45%;
-    left: 66%;
-    width: 8rem !important;
-    height: auto !important;
-    z-index: 10;
-} */
 
 .brands-third-section {
     position: relative;
@@ -1116,8 +1069,6 @@ body::-webkit-scrollbar {
 .detail-back-button-svg {
     width: 5rem !important;
     height: auto !important;
-    /* margin-top: 6rem;
-    margin-left: 1rem; */
 }
 
 .detail1-first-section {
@@ -1199,7 +1150,6 @@ body::-webkit-scrollbar {
 
 .off-on-container {
     margin-top: 10rem;
-    /* margin-bottom: -5rem; */
 }
 
 #color-box-container {
@@ -1222,8 +1172,6 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* padding: 2rem 4rem; */
-    /* margin-left: 17rem; */
     gap: 1.5rem;
 }
 
@@ -1231,7 +1179,6 @@ body::-webkit-scrollbar {
     width: 3.9rem !important;
     height: auto !important;
     margin-bottom: -1.1rem;
-    /* size-title과 아래 요소 사이 간격 */
 }
 
 .detail1-third-size-svg {
