@@ -907,7 +907,7 @@ body::-webkit-scrollbar {
 .brands-third-paragraph-svg {
     position: relative;
     z-index: 10;
-    width: 37rem !important;
+    width: 35rem !important;
     height: auto !important;
     text-align: center;
     padding-top: 15rem;
@@ -925,29 +925,28 @@ body::-webkit-scrollbar {
 
 .brands-third-effect1 {
     position: absolute;
-    top: 10%;
-    left: 15%;
-    width: 8rem !important;
+    top: 15.5rem;
+    left: 0rem;
+    width: 48rem !important;
     height: auto !important;
-    opacity: 0.3;
 }
 
 .brands-third-effect2 {
     position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 6rem !important;
+    top: 3.5rem;
+    right: 0rem;
+    width: 39rem !important;
     height: auto !important;
-    opacity: 0.4;
 }
 
 .brands-third-effect3 {
     position: absolute;
-    bottom: 25%;
-    left: 8%;
-    width: 10rem !important;
+    top: -2rem;
+    left: 18.8rem;
+    width: 33rem !important;
     height: auto !important;
-    opacity: 0.2;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
 }
 
 .brands-third-effect4 {
