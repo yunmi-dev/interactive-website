@@ -28,7 +28,8 @@
                     <img src="asset/shop/first/shop-first-tagline.svg" class="shop-first-tagline-svg">
                     <img src="asset/shop/first/shop-first-vure-logo.png" class="shop-first-vure-logo-svg">
                     <div class="black-square">
-                        <img src="asset/shop/first/shop-first-black-square.svg" alt="black square" class="shop-first-black-square-svg">
+                        <img src="asset/shop/first/shop-first-black-square.svg" alt="black square"
+                            class="shop-first-black-square-svg">
                     </div>
                 </div>
             </section>
@@ -528,6 +529,24 @@
                 lightImg.src = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.svg`;
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const secondSection = document.querySelector('.shop-second-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            if (secondSection) {
+                observer.observe(secondSection);
+            }
+        });
     </script>
 </body>
 

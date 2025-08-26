@@ -202,6 +202,9 @@ body::-webkit-scrollbar {
     height: 100vh;
     overflow: visible;
     margin-top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease, visibility 2s ease;
 }
 
 .shop-second-section::before {
@@ -214,9 +217,28 @@ body::-webkit-scrollbar {
     background-image: url('../asset/shop/second/shop-second-background.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.6;
+    opacity: 0;
     z-index: -1;
-    /* clip-path: inset(0 0 75px 0); */
+    transition: opacity 2s ease;
+}
+
+.shop-second-section.animate {
+    opacity: 1;
+    visibility: visible;
+}
+
+.shop-second-section.animate::before {
+    opacity: 0.6;
+}
+
+.shop-second-section.animate .shop-second-title-svg {
+    opacity: 1;
+    /* transform: translateY(0); */
+}
+
+.shop-second-section.animate .shop-second-text-svg {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .series-slider {
@@ -264,6 +286,8 @@ body::-webkit-scrollbar {
     width: 23rem !important;
     height: auto !important;
     margin-bottom: 3.9rem;
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
 .shop-second-text-svg {
@@ -272,6 +296,9 @@ body::-webkit-scrollbar {
     width: 73rem !important;
     height: auto !important;
     margin-bottom: 5.8rem;
+    opacity: 0;
+    transform: translateY(10rem);
+    transition: opacity 2s ease, transform 1.7s ease;
 }
 
 .connection-button {
@@ -281,13 +308,21 @@ body::-webkit-scrollbar {
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease;
     display: inline-block;
+    opacity: 0;
+    transform: translateY(15rem) scale(0.7);
+    transition: opacity 1.7s ease, transform 1.7s ease;
 }
 
 .connection-button-svg {
     position: relative;
-    top: 4rem;
+    top: 3.5rem;
     width: 15rem !important;
     height: auto !important;
+}
+
+.shop-second-section.animate .connection-button {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .shop-third-section {
