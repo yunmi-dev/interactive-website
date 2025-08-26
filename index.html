@@ -516,18 +516,37 @@
             const toggle = lightImg.parentElement.querySelector('.toggle-switch');
             const background = toggle.querySelector('.toggle-background');
             const circle = toggle.querySelector('.toggle-circle');
+            const container = lightImg.parentElement;
 
             toggle.classList.toggle('active');
+
+            const targetSrc = toggle.classList.contains('active')
+                ? `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light.svg`
+                : `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.svg`;
 
             if (toggle.classList.contains('active')) {
                 background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-on.svg';
                 circle.src = 'asset/detail/detail1/fifth/toggle/detail1-circle-on.svg';
-                lightImg.src = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light.svg`;
             } else {
                 background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-off.svg';
                 circle.src = 'asset/detail/detail1/fifth/toggle/detail1-circle-off.svg';
-                lightImg.src = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.svg`;
             }
+
+            const transitionImg = document.createElement('img');
+            transitionImg.src = targetSrc;
+            transitionImg.className = 'light-transition';
+            transitionImg.style.opacity = '0';
+
+            container.appendChild(transitionImg);
+
+            setTimeout(() => {
+                transitionImg.style.opacity = '1';
+            }, 10);
+
+            setTimeout(() => {
+                lightImg.src = targetSrc;
+                container.removeChild(transitionImg);
+            }, 400);
         }
 
         document.addEventListener('DOMContentLoaded', function () {
