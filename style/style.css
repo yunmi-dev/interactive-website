@@ -312,6 +312,10 @@ body::-webkit-scrollbar {
     margin-bottom: 15rem;
 }
 
+.concept-card.reverse {
+    flex-direction: row-reverse;
+}
+
 .flower-default-image {
     position: relative;
     width: auto !important;
