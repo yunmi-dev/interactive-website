@@ -165,6 +165,9 @@ body::-webkit-scrollbar {
     width: 35rem !important;
     height: auto !important;
     z-index: 1;
+
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.35s forwards;
 }
 
 .shop-first-tagline-svg {
@@ -175,16 +178,21 @@ body::-webkit-scrollbar {
     width: 25rem !important;
     height: auto !important;
     z-index: 3;
+
+    opacity: 0;
+    animation: taglineDropIn 0.35s ease-out 0.35s forwards;
 }
 
-.black-square {
+.shop-first-black-square-svg {
     position: absolute;
-    top: 7.5rem;
-    left: -41rem;
-    width: 1.9rem;
-    height: 1.9rem;
-    background-color: rgba(26, 26, 26, 1);
+    top: 7.45rem;
+    left: -40.9rem;
+    width: 1.9rem !important;
+    height: auto !important;
     z-index: 2;
+
+    opacity: 0;
+    animation: squareSpinIn 0.3s ease-out 0.35s forwards;
 }
 
 .shop-second-section {
@@ -885,8 +893,9 @@ body::-webkit-scrollbar {
 .brands-second-title-svg {
     display: block;
     margin-top: 2rem;
-    margin-bottom: 4rem;
-    width: 23rem !important;
+    margin-bottom: 3.8rem;
+    margin-left: 0.4rem;
+    width: 21rem !important;
     height: auto !important;
 }
 
@@ -898,7 +907,7 @@ body::-webkit-scrollbar {
     width: 100%;
     max-width: 1200px;
     gap: 12rem;
-    margin-right: 10rem;
+    margin-right: 3.5rem;
 }
 
 .keyword1,
@@ -912,17 +921,17 @@ body::-webkit-scrollbar {
 }
 
 .keyword1-title-svg {
-    width: 8.8rem !important;
+    width: 8.4rem !important;
     height: auto !important;
 }
 
 .keyword2-title-svg {
-    width: 6rem !important;
+    width: 5.5rem !important;
     height: auto !important;
 }
 
 .keyword3-title-svg {
-    width: 9rem !important;
+    width: 8.7rem !important;
     height: auto !important;
 }
 
@@ -933,7 +942,9 @@ body::-webkit-scrollbar {
 }
 
 .keyword1-image-svg {
-    width: 5.4rem !important;
+    position: relative;
+    top: 0.5rem;
+    width: 5.7rem !important;
     height: auto !important;
     margin-bottom: 1rem;
     margin-left: 1rem;
@@ -941,7 +952,9 @@ body::-webkit-scrollbar {
 }
 
 .keyword2-image-svg {
-    width: 7rem !important;
+    position: relative;
+    top: 0.5rem;
+    width: 6.9rem !important;
     height: auto !important;
     margin-bottom: 1rem;
     margin-left: 0.5rem;
@@ -949,7 +962,9 @@ body::-webkit-scrollbar {
 }
 
 .keyword3-image-svg {
-    width: 4.6rem !important;
+    position: relative;
+    top: 0.45rem;
+    width: 4.4rem !important;
     height: auto !important;
     margin-bottom: 3rem;
     margin-left: -1rem;
@@ -957,21 +972,21 @@ body::-webkit-scrollbar {
 }
 
 .keyword1-paragraph-svg {
-    width: 20rem !important;
+    width: 18rem !important;
     height: auto !important;
     margin-top: 5rem;
 }
 
 .keyword2-paragraph-svg {
-    width: 21rem !important;
+    width: 18.9rem !important;
     height: auto !important;
-    margin-top: 4.1rem;
+    margin-top: 4.65rem;
 }
 
 .keyword3-paragraph-svg {
-    width: 14rem !important;
+    width: 12.5rem !important;
     height: auto !important;
-    margin-top: 2.3rem;
+    margin-top: 2.75rem;
 }
 
 /* .line-svg-1 {
@@ -1005,7 +1020,7 @@ body::-webkit-scrollbar {
 .brands-third-paragraph-svg {
     position: relative;
     z-index: 10;
-    width: 35rem !important;
+    width: 32rem !important;
     height: auto !important;
     text-align: center;
     padding-top: 16rem;
@@ -1455,4 +1470,38 @@ body::-webkit-scrollbar {
 
 .light-image {
     transition: all 0.6s ease;
+}
+
+@keyframes taglineDropIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-6rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes squareSpinIn {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
 }
