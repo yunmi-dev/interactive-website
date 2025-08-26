@@ -409,27 +409,27 @@
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image1.svg" alt="fifth image1"
                     class="detail1-fifth-image-svg light-image" id="lightImage1">
-                <div class="toggle-container">
-                    <img src="asset/detail/detail1/fifth/detail1-toggle.svg" alt="detail1 toggle"
-                        class="detail1-toggle-svg toggle-btn" id="toggleBtn1" onclick="toggleLight(1)">
+                <div class="toggle-switch" onclick="toggleLight(1)">
+                    <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
                 </div>
             </div>
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image2.svg" alt="fifth image2"
                     class="detail1-fifth-image-svg light-image" id="lightImage2">
-                <div class="toggle-container">
-                    <img src="asset/detail/detail1/fifth/detail1-toggle.svg" alt="detail1 toggle"
-                        class="detail1-toggle-svg toggle-btn" id="toggleBtn2" onclick="toggleLight(2)">
+                <div class="toggle-switch" onclick="toggleLight(2)">
+                    <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
                 </div>
             </div>
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image3.svg" alt="fifth image3"
                     class="detail1-fifth-image-svg light-image" id="lightImage3">
-                <div class="toggle-container">
-                    <img src="asset/detail/detail1/fifth/detail1-toggle.svg" alt="detail1 toggle"
-                        class="detail1-toggle-svg toggle-btn" id="toggleBtn3" onclick="toggleLight(3)">
+                <div class="toggle-switch" onclick="toggleLight(3)">
+                    <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
                 </div>
             </div>
         </section>
@@ -510,24 +510,20 @@
 
         function toggleLight(imageNumber) {
             const lightImg = document.getElementById(`lightImage${imageNumber}`);
-            const toggleBtn = document.getElementById(`toggleBtn${imageNumber}`);
+            const toggle = lightImg.parentElement.querySelector('.toggle-switch');
+            const background = toggle.querySelector('.toggle-background');
+            const circle = toggle.querySelector('.toggle-circle');
 
-            const currentSrc = lightImg.src;
-            const basePath = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}`;
-            const normalImageSrc = `${basePath}.svg`;
-            const lightImageSrc = `${basePath}-light.svg`;
+            toggle.classList.toggle('active');
 
-            const toggleOff = `asset/detail/detail1/fifth/detail1-toggle.svg`;
-            const toggleOn = `asset/detail/detail1/fifth/detail1-toggle-on.svg`;
-
-            if (currentSrc.includes('-light.svg')) {
-                // 켜져있으면 끄기
-                lightImg.src = normalImageSrc;
-                toggleBtn.src = toggleOff;
+            if (toggle.classList.contains('active')) {
+                background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-on.svg';
+                circle.src = 'asset/detail/detail1/fifth/toggle/detail1-circle-on.svg';
+                lightImg.src = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light.svg`;
             } else {
-                // 꺼져있으면 켜기
-                lightImg.src = lightImageSrc;
-                toggleBtn.src = toggleOn;
+                background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-off.svg';
+                circle.src = 'asset/detail/detail1/fifth/toggle/detail1-circle-off.svg';
+                lightImg.src = `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.svg`;
             }
         }
     </script>
