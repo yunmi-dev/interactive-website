@@ -304,12 +304,12 @@ body::-webkit-scrollbar {
     cursor: pointer;
     transition: all 0.4s ease;
     position: relative;
-    width: 80%;
+    width: 75%;
     height: 300px;
     display: flex;
     align-items: center;
     gap: 13rem;
-    margin-bottom: 15rem;
+    margin-bottom: 12.5rem;
 }
 
 .concept-card.reverse {
@@ -367,11 +367,12 @@ body::-webkit-scrollbar {
 }
 
 .flower2-comment {
-    position: static;
+    position: relative;
     background: none;
     padding: 0;
-    margin-top: 1.5rem;
-    right: 10px;
+    left: -9rem;
+    top: -0.5rem;
+    margin-left: 0;
     width: 180px !important;
     height: auto !important;
     min-width: 90px;
@@ -407,11 +408,12 @@ body::-webkit-scrollbar {
 }
 
 .flower2-comment-hover {
-    position: static;
+    position: relative;
     background: none;
     padding: 0;
-    margin-top: 3.3rem;
-    margin-left: -380px;
+    left: 13.5rem;
+    top: -0.5rem;
+    margin-left: 0;
     width: 149px !important;
     height: auto !important;
     min-width: 90px;
@@ -470,6 +472,31 @@ body::-webkit-scrollbar {
 
 .concept-card:hover .flower3-comment-hover {
     opacity: 1;
+}
+
+/* Trust of love 카드 애니메이션 */
+.concept-card.reverse .flower-default-image {
+    transition: opacity 0.75s ease, transform 0.75s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.concept-card.reverse:hover .flower-default-image {
+    opacity: 0;
+    transform: translateX(-15rem); /* 거리 조정 */
+}
+
+.concept-card.reverse .flower-full-image {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease; /* 속도 맞추기 */
+    position: absolute;
+    z-index: 3;
+    transform: translateX(calc(-50% + 10rem)); /* 시작 위치 조정 */
+}
+
+.concept-card.reverse:hover .flower-full-image {
+    opacity: 1;
+    transform: translateX(-40%);
 }
 
 .end {
