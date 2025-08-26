@@ -354,11 +354,12 @@ body::-webkit-scrollbar {
 }
 
 .flower1-comment {
-    position: static;
+    position: relative;
     background: none;
     padding: 0;
-    margin-top: 1.3rem;
-    right: 10px;
+    left: 3rem;
+    top: 0.5rem;
+    margin-top: 0;
     width: 178px !important;
     height: auto !important;
     min-width: 90px;
@@ -381,12 +382,14 @@ body::-webkit-scrollbar {
 }
 
 .flower3-comment {
-    position: static;
+    position: relative;
     background: none;
     padding: 0;
-    margin-top: 1.5rem;
-    right: 10px;
-    width: 200px !important;
+    left: 4rem;
+    top: -0.5rem;
+    margin-left: 0;
+    margin-top: 0;
+    width: 220px !important;
     height: auto !important;
     min-width: 90px;
     flex-shrink: 0;
@@ -394,11 +397,13 @@ body::-webkit-scrollbar {
 }
 
 .flower1-comment-hover {
-    position: static;
+    position: relative;
     background: none;
     padding: 0;
-    margin-top: 3.3rem;
-    margin-left: -380px;
+    left: -19.4rem;
+    top: 0.5rem;
+    margin-left: 0;
+    margin-top: 0;
     width: 149px !important;
     height: auto !important;
     min-width: 90px;
@@ -423,11 +428,13 @@ body::-webkit-scrollbar {
 }
 
 .flower3-comment-hover {
-    position: static;
+    position: relative;
     background: none;
     padding: 0;
-    margin-top: 3.3rem;
-    margin-left: -380px;
+    left: -20.5rem;
+    top: -0.3rem;
+    margin-left: 0;
+    margin-top: 0;
     width: 149px !important;
     height: auto !important;
     min-width: 90px;
@@ -483,20 +490,75 @@ body::-webkit-scrollbar {
 
 .concept-card.reverse:hover .flower-default-image {
     opacity: 0;
-    transform: translateX(-15rem); /* 거리 조정 */
+    transform: translateX(-15rem);
+    /* 거리 조정 */
 }
 
 .concept-card.reverse .flower-full-image {
     opacity: 0;
-    transition: opacity 0.8s ease, transform 0.8s ease; /* 속도 맞추기 */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    /* 속도 맞추기 */
     position: absolute;
     z-index: 3;
-    transform: translateX(calc(-50% + 10rem)); /* 시작 위치 조정 */
+    transform: translateX(calc(-50% + 10rem));
+    /* 시작 위치 조정 */
 }
 
 .concept-card.reverse:hover .flower-full-image {
     opacity: 1;
     transform: translateX(-40%);
+}
+
+/* 1번째 카드 (첫 번째 .concept-card:not(.reverse)) */
+.concept-card:not(.reverse):first-child .flower-default-image {
+    transition: opacity 0.75s ease, transform 0.75s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.concept-card:not(.reverse):first-child:hover .flower-default-image {
+    opacity: 0;
+    transform: translateX(15rem);
+}
+
+.concept-card:not(.reverse):first-child .flower-full-image {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: absolute;
+    z-index: 3;
+    transform: translateX(calc(-50% - 10rem));
+}
+
+.concept-card:not(.reverse):first-child:hover .flower-full-image {
+    opacity: 1;
+    transform: translateX(-35%);
+    /* 1번째 카드 최종 위치 */
+}
+
+/* 3번째 카드 (마지막 .concept-card:not(.reverse)) */
+.concept-card:not(.reverse):last-child .flower-default-image {
+    transition: opacity 0.75s ease, transform 0.75s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.concept-card:not(.reverse):last-child:hover .flower-default-image {
+    opacity: 0;
+    transform: translateX(15rem);
+}
+
+.concept-card:not(.reverse):last-child .flower-full-image {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: absolute;
+    z-index: 3;
+    transform: translateX(calc(-50% - 10rem));
+}
+
+.concept-card:not(.reverse):last-child:hover .flower-full-image {
+    opacity: 1;
+    transform: translateX(-50%);
+    /* 3번째 카드 최종 위치 */
 }
 
 .end {
