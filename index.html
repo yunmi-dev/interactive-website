@@ -147,9 +147,9 @@
                 <div class="concept-grid">
                     <!-- Self-esteem 카드 -->
                     <div class="concept-card" onclick="showDetail(1)">
-                        <img src="asset/shop/third/flower1/flower1-focus.svg" alt="flower1 focus image"
+                        <img src="asset/shop/third/flower1/flower1-focus.png" alt="flower1 focus image"
                             class="flower-default-image">
-                        <img src="asset/shop/third/flower1/flower1-full.svg" alt="flower1 full image"
+                        <img src="asset/shop/third/flower1/flower1-full.png" alt="flower1 full image"
                             class="flower-full-image">
                         <img src="asset/shop/third/flower-hover-background.svg" alt="flower background image"
                             class="flower-hover-background-svg">
@@ -161,9 +161,9 @@
 
                     <!-- Trust of love 카드 -->
                     <div class="concept-card reverse" onclick="showDetail(2)">
-                        <img src="asset/shop/third/flower2/flower2-focus.svg" alt="flower2 focus image"
+                        <img src="asset/shop/third/flower2/flower2-focus.png" alt="flower2 focus image"
                             class="flower-default-image">
-                        <img src="asset/shop/third/flower2/flower2-full.svg" alt="flower2 full image"
+                        <img src="asset/shop/third/flower2/flower2-full.png" alt="flower2 full image"
                             class="flower-full-image">
                         <img src="asset/shop/third/flower-hover-background.svg" alt="flower background image"
                             class="flower-hover-background-svg">
@@ -175,9 +175,9 @@
 
                     <!-- Fondness, Consideration 카드 -->
                     <div class="concept-card" onclick="showDetail(3)">
-                        <img src="asset/shop/third/flower3/flower3-focus.svg" alt="flower3 focus image"
+                        <img src="asset/shop/third/flower3/flower3-focus.png" alt="flower3 focus image"
                             class="flower-default-image">
-                        <img src="asset/shop/third/flower3/flower3-full.svg" alt="flower3 full image"
+                        <img src="asset/shop/third/flower3/flower3-full.png" alt="flower3 full image"
                             class="flower-full-image">
                         <img src="asset/shop/third/flower-hover-background.svg" alt="flower background image"
                             class="flower-hover-background-svg">
@@ -413,6 +413,7 @@
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image1.svg" alt="fifth image1"
                     class="detail1-fifth-image-svg light-image" id="lightImage1">
                 <div class="toggle-switch" onclick="toggleLight(1)">
+                    <!-- 임시 수정 -->
                     <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
                 </div>
@@ -801,7 +802,7 @@
                 : `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.svg`;
 
             if (toggle.classList.contains('active')) {
-                background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-on.svg';
+                background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-off.svg';
                 circle.src = 'asset/detail/detail1/fifth/toggle/detail1-circle-on.svg';
             } else {
                 background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-off.svg';
