@@ -913,6 +913,22 @@
             if (secondSection) {
                 observer.observe(secondSection);
             }
+
+            // 브랜드 페이지 애니메이션
+            const brandsSecondSection = document.querySelector('.brands-second-section');
+            const brandsSecondObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.8
+            });
+
+            if (brandsSecondSection) {
+                brandsSecondObserver.observe(brandsSecondSection);
+            }
         });
     </script>
 </body>

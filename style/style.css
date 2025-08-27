@@ -1020,6 +1020,9 @@ body::-webkit-scrollbar {
     margin-left: 0.4rem;
     width: 21rem !important;
     height: auto !important;
+    opacity: 0;
+    transform: translateY(-7rem);
+    transition: opacity 2s ease, transform 0.8s ease;
 }
 
 .keywords-container {
@@ -1062,10 +1065,12 @@ body::-webkit-scrollbar {
 .keyword2-title-svg,
 .keyword3-title-svg {
     margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(-7rem);
+    transition: opacity 2.4s ease, transform 0.8s ease;
 }
 
 .keyword1-image-svg {
-    position: relative;
     top: 0.5rem;
     width: 5.7rem !important;
     height: auto !important;
@@ -1075,7 +1080,6 @@ body::-webkit-scrollbar {
 }
 
 .keyword2-image-svg {
-    position: relative;
     top: 0.5rem;
     width: 6.9rem !important;
     height: auto !important;
@@ -1085,13 +1089,29 @@ body::-webkit-scrollbar {
 }
 
 .keyword3-image-svg {
-    position: relative;
     top: 0.45rem;
     width: 4.4rem !important;
     height: auto !important;
     margin-bottom: 3rem;
     margin-left: -1rem;
     margin-top: 1rem;
+}
+
+.keyword1-image-svg,
+.keyword2-image-svg,
+.keyword3-image-svg {
+    position: relative;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(6rem);
+    transition: opacity 2.4s ease, transform 0.8s ease;
+}
+
+.brands-second-section.animate .keyword1-image-svg,
+.brands-second-section.animate .keyword2-image-svg,
+.brands-second-section.animate .keyword3-image-svg {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .keyword1-paragraph-svg {
@@ -1110,6 +1130,33 @@ body::-webkit-scrollbar {
     width: 12.5rem !important;
     height: auto !important;
     margin-top: 2.75rem;
+}
+
+.keyword1-paragraph-svg,
+.keyword2-paragraph-svg,
+.keyword3-paragraph-svg {
+    opacity: 0;
+    transform: translateY(6rem);
+    transition: opacity 2.4s ease, transform 0.8s ease;
+}
+
+.brands-second-section.animate .brands-second-title-svg {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.brands-second-section.animate .keyword1-title-svg,
+.brands-second-section.animate .keyword2-title-svg,
+.brands-second-section.animate .keyword3-title-svg {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.brands-second-section.animate .keyword1-paragraph-svg,
+.brands-second-section.animate .keyword2-paragraph-svg,
+.brands-second-section.animate .keyword3-paragraph-svg {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* .line-svg-1 {
