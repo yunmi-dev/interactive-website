@@ -144,7 +144,7 @@
             <section class="shop-third-section">
                 <img src="asset/products/Lighting-title.svg" alt="lighting title svg" class="lighting-title-svg">
 
-                <div class="concept-grid" onclick="showDetail()">
+                <div class="concept-grid">
                     <!-- Self-esteem 카드 -->
                     <div class="concept-card" onclick="showDetail(1)">
                         <img src="asset/shop/third/flower1/flower1-focus.svg" alt="flower1 focus image"
@@ -557,6 +557,125 @@
         </section>
     </div>
 
+    <div id="detail3-page" class="page">
+        <button class="back-button" onclick="goBack()">
+            <img src="asset/detail/back-button.svg" alt="back button" class="detail-back-button-svg">
+        </button>
+
+        <section class="detail3-first-section">
+            <img src="asset/detail/detail3/first/detail3-first-image1.svg" alt="image1"
+                class="detail3-first-image1-svg">
+            <img src="asset/detail/detail3/first/detail3-first-image2.svg" alt="image2"
+                class="detail3-first-image2-svg">
+            <img src="asset/detail/detail3/first/detail3-first-image3.svg" alt="image3"
+                class="detail3-first-image3-svg">
+        </section>
+
+        <section class="detail3-second-section">
+            <img src="asset/detail/detail3/second/detail3-second-title1.svg" alt="title1"
+                class="detail3-second-title1-svg">
+            <img src="asset/detail/detail3/second/detail3-second-title2.svg" alt="title2"
+                class="detail3-second-title2-svg">
+            <img src="asset/detail/detail3/second/detail3-second-paragraph.svg" alt="paragraph"
+                class="detail3-second-paragraph-svg">
+        </section>
+
+        <section class="detail3-third-section">
+            <div id="detail-color-container">
+                <img src="asset/detail/Color.svg" alt="color title" class="color-title-svg">
+                <div id="off-on-container">
+                    <img src="asset/detail/off.svg" alt="off" class="off-svg">
+                    <img src="asset/detail/on.svg" alt="on" class="on-svg">
+                </div>
+                <div id="color-box-container">
+                    <img src="asset/detail/detail3/third/detail3-third-color1.svg" alt="color1 box"
+                        class="first-detail-color1-svg">
+                    <img src="asset/detail/detail3/third/detail3-third-color2.svg" alt="color2 box"
+                        class="first-detail-color2-svg">
+                    <img src="asset/detail/detail3/third/detail3-third-color3.svg" alt="color3 box"
+                        class="first-detail-color3-svg">
+                </div>
+            </div>
+
+            <div id="detail-size-container">
+                <img src="asset/detail/Size.svg" alt="size title" class="size-title-svg">
+                <img src="asset/detail/detail3/third/detail3-third-size.svg" alt="detail3 third size"
+                    class="detail3-third-size-svg">
+            </div>
+
+            <img src="asset/detail/standard.svg" alt="standard svg" class="standard-svg">
+        </section>
+
+        <section class="detail3-fourth-section">
+            <img src="asset/detail/Details.svg" alt="details title" class="details-title-svg">
+
+            <!-- 메인 이미지 컨테이너 -->
+            <div class="main-image-container">
+                <img src="asset/detail/detail3/fourth/image/detail3-fourth-image1.svg" alt="main image"
+                    class="main-detail-image" id="mainDetailImage">
+            </div>
+
+            <!-- 썸네일 이미지들 -->
+            <div class="thumbnail-container">
+                <img src="asset/detail/detail3/fourth/image/detail3-fourth-image1.svg"
+                    data-main="asset/detail/detail3/fourth/image/detail3-fourth-image1.svg"
+                    data-blur="asset/detail/detail3/fourth/image-blur/detail3-fourth-image1-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail3/fourth/image-blur/detail3-fourth-image2-blur.svg"
+                    data-main="asset/detail/detail3/fourth/image/detail3-fourth-image2.svg"
+                    data-blur="asset/detail/detail3/fourth/image-blur/detail3-fourth-image2-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail3/fourth/image-blur/detail3-fourth-image3-blur.svg"
+                    data-main="asset/detail/detail3/fourth/image/detail3-fourth-image3.svg"
+                    data-blur="asset/detail/detail3/fourth/image-blur/detail3-fourth-image3-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail3/fourth/image-blur/detail3-fourth-image4-blur.svg"
+                    data-main="asset/detail/detail3/fourth/image/detail3-fourth-image4.svg"
+                    data-blur="asset/detail/detail3/fourth/image-blur/detail3-fourth-image4-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail3/fourth/image-blur/detail3-fourth-image5-blur.svg"
+                    data-main="asset/detail/detail3/fourth/image/detail3-fourth-image5.svg"
+                    data-blur="asset/detail/detail3/fourth/image-blur/detail3-fourth-image5-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail3/fourth/image-blur/detail3-fourth-image6-blur.svg"
+                    data-main="asset/detail/detail3/fourth/image/detail3-fourth-image6.svg"
+                    data-blur="asset/detail/detail3/fourth/image-blur/detail3-fourth-image6-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+            </div>
+        </section>
+
+        <section class="detail3-fifth-section">
+            <img src="asset/detail/Light.svg" alt="light title" class="light-title-svg">
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail3/fifth/detail3-fifth-image1.svg" alt="fifth image1"
+                    class="detail3-fifth-image-svg light-image" id="lightImage1">
+                <div class="toggle-switch" onclick="toggleLight(1)">
+                    <img src="asset/detail/detail3/fifth/toggle/detail3-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail3/fifth/toggle/detail3-circle-off.svg" class="toggle-circle">
+                </div>
+            </div>
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail3/fifth/detail3-fifth-image2.svg" alt="fifth image2"
+                    class="detail3-fifth-image-svg light-image" id="lightImage2">
+                <div class="toggle-switch" onclick="toggleLight(2)">
+                    <img src="asset/detail/detail3/fifth/toggle/detail3-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail3/fifth/toggle/detail3-circle-off.svg" class="toggle-circle">
+                </div>
+            </div>
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail3/fifth/detail3-fifth-image3.svg" alt="fifth image3"
+                    class="detail3-fifth-image-svg light-image" id="lightImage3">
+                <div class="toggle-switch" onclick="toggleLight(3)">
+                    <img src="asset/detail/detail3/fifth/toggle/detail3-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail3/fifth/toggle/detail3-circle-off.svg" class="toggle-circle">
+                </div>
+            </div>
+        </section>
+    </div>
+
     <button class="fixed-home-button" onclick="goToHome()">
         <img src="asset/go-home-button.svg" alt="home button" class="fixed-home-button-svg">
     </button>
@@ -593,7 +712,7 @@
         }
 
         function goBack() {
-            document.getElementById('detail1-page').classList.remove('active');
+            document.querySelector('.page.active').classList.remove('active');
             showPage(previousPage);
         }
 
