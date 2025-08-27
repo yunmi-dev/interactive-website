@@ -1159,7 +1159,7 @@ body::-webkit-scrollbar {
     width: 30rem !important;
     height: auto !important;
     flex-shrink: 0;
-    margin-right: 5rem;
+    margin-right: 5.5rem;
     margin-top: 1.7rem;
 }
 
@@ -1217,14 +1217,15 @@ body::-webkit-scrollbar {
 }
 
 .series-third-title-svg {
+    margin-right: 0rem;
     width: 77rem !important;
     height: auto !important;
 }
 
 .series-third-paragraph-svg {
-    width: 41rem !important;
+    width: 39rem !important;
     height: auto !important;
-    margin-top: 5.5rem;
+    margin-top: 5rem;
 }
 
 #series-page .end {

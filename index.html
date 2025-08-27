@@ -146,7 +146,7 @@
 
                 <div class="concept-grid" onclick="showDetail()">
                     <!-- Self-esteem 카드 -->
-                    <div class="concept-card">
+                    <div class="concept-card" onclick="showDetail(1)">
                         <img src="asset/shop/third/flower1/flower1-focus.svg" alt="flower1 focus image"
                             class="flower-default-image">
                         <img src="asset/shop/third/flower1/flower1-full.svg" alt="flower1 full image"
@@ -160,7 +160,7 @@
                     </div>
 
                     <!-- Trust of love 카드 -->
-                    <div class="concept-card reverse">
+                    <div class="concept-card reverse" onclick="showDetail(2)">
                         <img src="asset/shop/third/flower2/flower2-focus.svg" alt="flower2 focus image"
                             class="flower-default-image">
                         <img src="asset/shop/third/flower2/flower2-full.svg" alt="flower2 full image"
@@ -174,7 +174,7 @@
                     </div>
 
                     <!-- Fondness, Consideration 카드 -->
-                    <div class="concept-card">
+                    <div class="concept-card" onclick="showDetail(3)">
                         <img src="asset/shop/third/flower3/flower3-focus.svg" alt="flower3 focus image"
                             class="flower-default-image">
                         <img src="asset/shop/third/flower3/flower3-full.svg" alt="flower3 full image"
@@ -200,7 +200,7 @@
             <img src="asset/products/Lighting-title.svg" alt="lighting title svg" class="lighting-title-svg">
 
             <div class="concept-grid">
-                <div class="concept-card" onclick="showDetailFromProducts()">
+                <div class="concept-card" onclick="showDetailFromProducts(1)">
                     <div class="image-container lighting-1-container">
                         <img src="asset/products/Lighting-1/Lighting-1-full.png" alt="lighting 1 flower full"
                             class="lighting-1-flower-png">
@@ -211,7 +211,7 @@
                         class="lighting-1-comment-svg">
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card" onclick="showDetailFromProducts(2)">
                     <div class="image-container lighting-2-container">
                         <img src="asset/products/Lighting-2/Lighting-2-full.png" alt="lighting 2 flower full"
                             class="lighting-2-flower-png">
@@ -222,7 +222,7 @@
                         class="lighting-2-comment-svg">
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card" onclick="showDetailFromProducts(3)">
                     <div class="image-container lighting-3-container">
                         <img src="asset/products/Lighting-3/Lighting-3-full.png" alt="lighting 3 flower full"
                             class="lighting-3-flower-png">
@@ -438,6 +438,125 @@
         </section>
     </div>
 
+    <div id="detail2-page" class="page">
+        <button class="back-button" onclick="goBack()">
+            <img src="asset/detail/back-button.svg" alt="back button" class="detail-back-button-svg">
+        </button>
+
+        <section class="detail2-first-section">
+            <img src="asset/detail/detail2/first/detail2-first-image1.svg" alt="image1"
+                class="detail2-first-image1-svg">
+            <img src="asset/detail/detail2/first/detail2-first-image2.svg" alt="image2"
+                class="detail2-first-image2-svg">
+            <img src="asset/detail/detail2/first/detail2-first-image3.svg" alt="image3"
+                class="detail2-first-image3-svg">
+        </section>
+
+        <section class="detail2-second-section">
+            <img src="asset/detail/detail2/second/detail2-second-title1.svg" alt="title1"
+                class="detail2-second-title1-svg">
+            <img src="asset/detail/detail2/second/detail2-second-title2.svg" alt="title2"
+                class="detail2-second-title2-svg">
+            <img src="asset/detail/detail2/second/detail2-second-paragraph.svg" alt="paragraph"
+                class="detail2-second-paragraph-svg">
+        </section>
+
+        <section class="detail2-third-section">
+            <div id="detail-color-container">
+                <img src="asset/detail/Color.svg" alt="color title" class="color-title-svg">
+                <div id="off-on-container">
+                    <img src="asset/detail/off.svg" alt="off" class="off-svg">
+                    <img src="asset/detail/on.svg" alt="on" class="on-svg">
+                </div>
+                <div id="color-box-container">
+                    <img src="asset/detail/detail2/third/detail2-third-color1.svg" alt="color1 box"
+                        class="first-detail-color1-svg">
+                    <img src="asset/detail/detail2/third/detail2-third-color2.svg" alt="color2 box"
+                        class="first-detail-color2-svg">
+                    <img src="asset/detail/detail2/third/detail2-third-color3.svg" alt="color3 box"
+                        class="first-detail-color3-svg">
+                </div>
+            </div>
+
+            <div id="detail-size-container">
+                <img src="asset/detail/Size.svg" alt="size title" class="size-title-svg">
+                <img src="asset/detail/detail2/third/detail2-third-size.svg" alt="detail2 third size"
+                    class="detail2-third-size-svg">
+            </div>
+
+            <img src="asset/detail/standard.svg" alt="standard svg" class="standard-svg">
+        </section>
+
+        <section class="detail2-fourth-section">
+            <img src="asset/detail/Details.svg" alt="details title" class="details-title-svg">
+
+            <!-- 메인 이미지 컨테이너 -->
+            <div class="main-image-container">
+                <img src="asset/detail/detail2/fourth/image/detail2-fourth-image1.svg" alt="main image"
+                    class="main-detail-image" id="mainDetailImage">
+            </div>
+
+            <!-- 썸네일 이미지들 -->
+            <div class="thumbnail-container">
+                <img src="asset/detail/detail2/fourth/image/detail2-fourth-image1.svg"
+                    data-main="asset/detail/detail2/fourth/image/detail2-fourth-image1.svg"
+                    data-blur="asset/detail/detail2/fourth/image-blur/detail2-fourth-image1-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail2/fourth/image-blur/detail2-fourth-image2-blur.svg"
+                    data-main="asset/detail/detail2/fourth/image/detail2-fourth-image2.svg"
+                    data-blur="asset/detail/detail2/fourth/image-blur/detail2-fourth-image2-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail2/fourth/image-blur/detail2-fourth-image3-blur.svg"
+                    data-main="asset/detail/detail2/fourth/image/detail2-fourth-image3.svg"
+                    data-blur="asset/detail/detail2/fourth/image-blur/detail2-fourth-image3-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail2/fourth/image-blur/detail2-fourth-image4-blur.svg"
+                    data-main="asset/detail/detail2/fourth/image/detail2-fourth-image4.svg"
+                    data-blur="asset/detail/detail2/fourth/image-blur/detail2-fourth-image4-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail2/fourth/image-blur/detail2-fourth-image5-blur.svg"
+                    data-main="asset/detail/detail2/fourth/image/detail2-fourth-image5.svg"
+                    data-blur="asset/detail/detail2/fourth/image-blur/detail2-fourth-image5-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+                <img src="asset/detail/detail2/fourth/image-blur/detail2-fourth-image6-blur.svg"
+                    data-main="asset/detail/detail2/fourth/image/detail2-fourth-image6.svg"
+                    data-blur="asset/detail/detail2/fourth/image-blur/detail2-fourth-image6-blur.svg"
+                    class="thumbnail active" onclick="changeMainImage(this)">
+            </div>
+        </section>
+
+        <section class="detail2-fifth-section">
+            <img src="asset/detail/Light.svg" alt="light title" class="light-title-svg">
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail2/fifth/detail2-fifth-image1.svg" alt="fifth image1"
+                    class="detail2-fifth-image-svg light-image" id="lightImage1">
+                <div class="toggle-switch" onclick="toggleLight(1)">
+                    <img src="asset/detail/detail2/fifth/toggle/detail2-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail2/fifth/toggle/detail2-circle-off.svg" class="toggle-circle">
+                </div>
+            </div>
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail2/fifth/detail2-fifth-image2.svg" alt="fifth image2"
+                    class="detail2-fifth-image-svg light-image" id="lightImage2">
+                <div class="toggle-switch" onclick="toggleLight(2)">
+                    <img src="asset/detail/detail2/fifth/toggle/detail2-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail2/fifth/toggle/detail2-circle-off.svg" class="toggle-circle">
+                </div>
+            </div>
+
+            <div class="fifth-image-container">
+                <img src="asset/detail/detail2/fifth/detail2-fifth-image3.svg" alt="fifth image3"
+                    class="detail2-fifth-image-svg light-image" id="lightImage3">
+                <div class="toggle-switch" onclick="toggleLight(3)">
+                    <img src="asset/detail/detail2/fifth/toggle/detail2-background-off.svg" class="toggle-background">
+                    <img src="asset/detail/detail2/fifth/toggle/detail2-circle-off.svg" class="toggle-circle">
+                </div>
+            </div>
+        </section>
+    </div>
+
     <button class="fixed-home-button" onclick="goToHome()">
         <img src="asset/go-home-button.svg" alt="home button" class="fixed-home-button-svg">
     </button>
@@ -465,11 +584,11 @@
 
         let previousPage = 'shop';
 
-        function showDetail() {
+        function showDetail(detailNumber) {
             previousPage = 'shop';
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-            document.getElementById('detail1-page').classList.add('active');
+            document.getElementById('detail' + detailNumber + '-page').classList.add('active');
             window.scrollTo(0, 0);
         }
 
@@ -478,11 +597,11 @@
             showPage(previousPage);
         }
 
-        function showDetailFromProducts() {
+        function showDetailFromProducts(detailNumber) {
             previousPage = 'products';
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-            document.getElementById('detail1-page').classList.add('active');
+            document.getElementById('detail' + detailNumber + '-page').classList.add('active');
             window.scrollTo(0, 0);
         }
 
@@ -507,6 +626,44 @@
                 t.src = t.dataset.blur;
             });
 
+            thumbnail.classList.add('active');
+            thumbnail.src = thumbnail.dataset.main;
+        }
+
+        function changeMainImage2(thumbnail) {
+            const mainImage = document.getElementById('mainDetailImage2');
+            if (mainImage.src === thumbnail.dataset.main || mainImage.src.endsWith(thumbnail.dataset.main)) return;
+
+            mainImage.style.transition = 'opacity 0.2s ease';
+            mainImage.style.opacity = '0.8';
+            setTimeout(() => {
+                mainImage.src = thumbnail.dataset.main;
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            document.querySelectorAll('#detail2-page .thumbnail').forEach(t => {
+                t.classList.remove('active');
+                t.src = t.dataset.blur;
+            });
+            thumbnail.classList.add('active');
+            thumbnail.src = thumbnail.dataset.main;
+        }
+
+        function changeMainImage3(thumbnail) {
+            const mainImage = document.getElementById('mainDetailImage3');
+            if (mainImage.src === thumbnail.dataset.main || mainImage.src.endsWith(thumbnail.dataset.main)) return;
+
+            mainImage.style.transition = 'opacity 0.2s ease';
+            mainImage.style.opacity = '0.8';
+            setTimeout(() => {
+                mainImage.src = thumbnail.dataset.main;
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            document.querySelectorAll('#detail3-page .thumbnail').forEach(t => {
+                t.classList.remove('active');
+                t.src = t.dataset.blur;
+            });
             thumbnail.classList.add('active');
             thumbnail.src = thumbnail.dataset.main;
         }
@@ -543,6 +700,74 @@
                 transitionImg.style.opacity = '1';
             }, 10);
 
+            setTimeout(() => {
+                lightImg.src = targetSrc;
+                container.removeChild(transitionImg);
+            }, 400);
+        }
+
+        function toggleLight2(imageNumber) {
+            const lightImg = document.getElementById(`lightImage2_${imageNumber}`);
+            const toggle = lightImg.parentElement.querySelector('.toggle-switch');
+            const background = toggle.querySelector('.toggle-background');
+            const circle = toggle.querySelector('.toggle-circle');
+            const container = lightImg.parentElement;
+
+            toggle.classList.toggle('active');
+
+            const targetSrc = toggle.classList.contains('active')
+                ? `asset/detail/detail2/fifth/detail2-fifth-image${imageNumber}-light.svg`
+                : `asset/detail/detail2/fifth/detail2-fifth-image${imageNumber}.svg`;
+
+            if (toggle.classList.contains('active')) {
+                background.src = 'asset/detail/detail2/fifth/toggle/detail2-background-on.svg';
+                circle.src = 'asset/detail/detail2/fifth/toggle/detail2-circle-on.svg';
+            } else {
+                background.src = 'asset/detail/detail2/fifth/toggle/detail2-background-off.svg';
+                circle.src = 'asset/detail/detail2/fifth/toggle/detail2-circle-off.svg';
+            }
+
+            const transitionImg = document.createElement('img');
+            transitionImg.src = targetSrc;
+            transitionImg.className = 'light-transition';
+            transitionImg.style.opacity = '0';
+            container.appendChild(transitionImg);
+
+            setTimeout(() => transitionImg.style.opacity = '1', 10);
+            setTimeout(() => {
+                lightImg.src = targetSrc;
+                container.removeChild(transitionImg);
+            }, 400);
+        }
+
+        function toggleLight3(imageNumber) {
+            const lightImg = document.getElementById(`lightImage3_${imageNumber}`);
+            const toggle = lightImg.parentElement.querySelector('.toggle-switch');
+            const background = toggle.querySelector('.toggle-background');
+            const circle = toggle.querySelector('.toggle-circle');
+            const container = lightImg.parentElement;
+
+            toggle.classList.toggle('active');
+
+            const targetSrc = toggle.classList.contains('active')
+                ? `asset/detail/detail3/fifth/detail3-fifth-image${imageNumber}-light.svg`
+                : `asset/detail/detail3/fifth/detail3-fifth-image${imageNumber}.svg`;
+
+            if (toggle.classList.contains('active')) {
+                background.src = 'asset/detail/detail3/fifth/toggle/detail3-background-on.svg';
+                circle.src = 'asset/detail/detail3/fifth/toggle/detail3-circle-on.svg';
+            } else {
+                background.src = 'asset/detail/detail3/fifth/toggle/detail3-background-off.svg';
+                circle.src = 'asset/detail/detail3/fifth/toggle/detail3-circle-off.svg';
+            }
+
+            const transitionImg = document.createElement('img');
+            transitionImg.src = targetSrc;
+            transitionImg.className = 'light-transition';
+            transitionImg.style.opacity = '0';
+            container.appendChild(transitionImg);
+
+            setTimeout(() => transitionImg.style.opacity = '1', 10);
             setTimeout(() => {
                 lightImg.src = targetSrc;
                 container.removeChild(transitionImg);
