@@ -155,7 +155,6 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
     opacity: 0.5;
     z-index: -1;
-    /* clip-path: inset(50px 0 50px 0); */
 }
 
 .shop-first-vure-logo-svg {
@@ -233,7 +232,6 @@ body::-webkit-scrollbar {
 
 .shop-second-section.animate .shop-second-title-svg {
     opacity: 1;
-    /* transform: translateY(0); */
 }
 
 .shop-second-section.animate .shop-second-text-svg {
@@ -530,7 +528,58 @@ body::-webkit-scrollbar {
     opacity: 1;
 }
 
-/* Trust of love 카드 애니메이션 */
+.shop-third-hover-dot1 {
+    position: absolute;
+    top: 7rem;
+    left: 53.3rem;
+    width: 1.2rem !important;
+    height: auto !important;
+    opacity: 0;
+    transform: translate(4rem, 2rem);
+    z-index: 4;
+    transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.concept-card:hover .shop-third-hover-dot1 {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.shop-third-hover-dot2 {
+    position: absolute;
+    top: 6rem;
+    left: 8rem;
+    width: 1.2rem !important;
+    height: auto !important;
+    opacity: 0;
+    transform: translate(-4rem, 2rem);
+    z-index: 4;
+    transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.concept-card:hover .shop-third-hover-dot2 {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.shop-third-hover-dot3 {
+    position: absolute;
+    top: 5.8rem;
+    left: 53.6rem;
+    width: 1.2rem !important;
+    height: auto !important;
+    opacity: 0;
+    transform: translate(4rem, 2rem);
+    z-index: 4;
+    transition: all 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.concept-card:hover .shop-third-hover-dot3 {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* 2번째 카드 애니메이션 */
 .concept-card.reverse .flower-default-image {
     transition: opacity 0.75s ease, transform 0.75s ease;
     position: relative;
@@ -540,17 +589,14 @@ body::-webkit-scrollbar {
 .concept-card.reverse:hover .flower-default-image {
     opacity: 0;
     transform: translateX(-15rem);
-    /* 거리 조정 */
 }
 
 .concept-card.reverse .flower-full-image {
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease;
-    /* 속도 맞추기 */
     position: absolute;
     z-index: 3;
     transform: translateX(calc(-50% + 10rem));
-    /* 시작 위치 조정 */
 }
 
 .concept-card.reverse:hover .flower-full-image {
@@ -607,7 +653,6 @@ body::-webkit-scrollbar {
 .concept-card:not(.reverse):last-child:hover .flower-full-image {
     opacity: 1;
     transform: translateX(-50%);
-    /* 3번째 카드 최종 위치 */
 }
 
 .end {
@@ -772,7 +817,6 @@ body::-webkit-scrollbar {
 
     top: 15.5rem;
     left: -1.3rem;
-    /* margin: 0; */
 
     width: 28.5rem !important;
     height: auto !important;
@@ -1302,8 +1346,6 @@ body::-webkit-scrollbar {
 .detail-back-button-svg {
     width: 5rem !important;
     height: auto !important;
-    /* margin-top: 6rem;
-    margin-left: 1rem; */
 }
 
 .detail1-first-section {
@@ -1386,7 +1428,6 @@ body::-webkit-scrollbar {
 
 .off-on-container {
     margin-top: 10rem;
-    /* margin-bottom: -5rem; */
 }
 
 #color-box-container {
@@ -1409,8 +1450,6 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* padding: 2rem 4rem; */
-    /* margin-left: 17rem; */
     gap: 1.5rem;
 }
 
@@ -1418,7 +1457,6 @@ body::-webkit-scrollbar {
     width: 3.9rem !important;
     height: auto !important;
     margin-bottom: -1.1rem;
-    /* size-title과 아래 요소 사이 간격 */
 }
 
 .detail1-third-size-svg {
@@ -1598,10 +1636,6 @@ body::-webkit-scrollbar {
     }
 }
 
-
-/*****************************************************/
-
-
 #detail2-page {
     padding-top: 4rem;
     min-height: 100vh;
@@ -1716,8 +1750,6 @@ body::-webkit-scrollbar {
     height: auto !important;
 }
 
-/***************************************/
-
 #detail3-page {
     padding-top: 4rem;
     min-height: 100vh;
@@ -1795,13 +1827,6 @@ body::-webkit-scrollbar {
 .detail3-third-size-svg {
     margin-top: 2rem;
 }
-
-/* .standard-svg {
-    width: 7rem !important;
-    height: auto !important;
-    margin-top: -0.4rem;
-    margin-left: 0rem;
-} */
 
 .detail3-fourth-section {
     display: flex;
