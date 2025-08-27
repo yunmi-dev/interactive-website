@@ -1316,6 +1316,7 @@ body::-webkit-scrollbar {
     width: 43.5rem !important;
     height: auto !important;
     margin-top: 1.2rem;
+    margin-left: -0.4rem;
 }
 
 .detail1-third-section {
@@ -1553,3 +1554,123 @@ body::-webkit-scrollbar {
         transform: rotate(0deg);
     }
 }
+
+
+/*****************************************************/
+
+
+#detail2-page {
+    padding-top: 4rem;
+    min-height: 100vh;
+}
+
+.detail2-first-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    padding: 3.5rem 2rem;
+}
+
+.detail2-first-image1-svg {
+    width: 20rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+    margin-top: 3.5rem;
+    margin-right: -3rem;
+}
+
+.detail2-first-image2-svg {
+    width: 41rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+    margin-right: 1.6rem;
+    margin-top: -0.5rem;
+}
+
+.detail2-first-image3-svg {
+    width: 18rem !important;
+    height: auto !important;
+    flex-shrink: 0;
+    margin-top: 2.5rem;
+    margin-left: -3rem;
+}
+
+.detail2-second-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+    margin-left: 17rem;
+    gap: 1.5rem;
+}
+
+.detail2-second-title1-svg {
+    width: 20rem !important;
+    height: auto !important;
+}
+
+.detail2-second-title2-svg {
+    width: 33rem !important;
+    height: auto !important;
+    margin-left: -1rem;
+}
+
+.detail2-second-paragraph-svg {
+    width: 26rem !important;
+    height: auto !important;
+    margin-top: 1.2rem;
+}
+
+.detail2-third-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 13.5rem;
+    padding: 3.8rem 2rem;
+    margin-right: 0;
+    margin-left: -9.9rem;
+}
+
+.detail2-third-size-svg {
+    margin-top: 2rem;
+}
+
+.standard-svg {
+    width: 7rem !important;
+    height: auto !important;
+    margin-top: -0.4rem;
+    margin-left: 0rem;
+}
+
+.detail2-fourth-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+    margin-left: 17rem;
+    padding-bottom: 8rem;
+    gap: 2.8rem;
+}
+
+.detail2-fifth-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 4rem;
+    margin-left: 17rem;
+    padding-bottom: 30rem;
+    gap: 2.8rem;
+}
+
+.detail2-fifth-image-svg {
+    width: 65.5rem !important;
+    height: auto !important;
+}
+
+.detail2-toggle-svg {
+    width: 7.2rem !important;
+    height: auto !important;
+}
+
+/***************************************/
