@@ -192,7 +192,7 @@ body::-webkit-scrollbar {
     z-index: 2;
 
     opacity: 0;
-    animation: 
+    animation:
         squareSpinOnly 0.3s ease-out 0.35s forwards,
         fadeIn 0.6s ease-out 0.35s forwards;
 }
@@ -903,6 +903,9 @@ body::-webkit-scrollbar {
     margin-bottom: 2rem;
     width: 29rem !important;
     height: auto !important;
+    opacity: 0;
+    transform: translateY(-4rem);
+    animation: titleSlideDown 0.3s ease-out 0.6s forwards;
 }
 
 .brands-first-image-svg {
@@ -910,6 +913,8 @@ body::-webkit-scrollbar {
     margin: 1.5rem 0;
     width: 45rem !important;
     height: auto !important;
+    opacity: 0.3;
+    animation: imageFrameIn 0.3s ease-out 0.6s forwards;
 }
 
 .brands-first-paragraph-svg {
@@ -917,6 +922,43 @@ body::-webkit-scrollbar {
     display: block;
     width: 31rem !important;
     height: auto !important;
+    opacity: 0;
+    transform: translateY(6rem) scale(1.1);
+    animation: paragraphSlideUpScale 0.3s ease-out 0.6s forwards;
+}
+
+@keyframes titleSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes imageFrameIn {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes paragraphSlideUpScale {
+    0% {
+        opacity: 0;
+        transform: translateY(6rem) scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .brands-second-section {
@@ -929,7 +971,7 @@ body::-webkit-scrollbar {
 
 .brands-second-title-svg {
     display: block;
-    margin-top: 2rem;
+    margin-top: 0rem;
     margin-bottom: 3.8rem;
     margin-left: 0.4rem;
     width: 21rem !important;
@@ -1076,7 +1118,7 @@ body::-webkit-scrollbar {
 
 .brands-third-effect1 {
     position: absolute;
-    top: 16.5rem;
+    top: 15.5rem;
     left: 0rem;
     width: 48rem !important;
     height: auto !important;
@@ -1313,7 +1355,7 @@ body::-webkit-scrollbar {
 }
 
 .detail1-second-paragraph-svg {
-    width: 38rem !important;
+    width: 37.5rem !important;
     height: auto !important;
     margin-top: 1.2rem;
     margin-left: -0.4rem;
@@ -1550,6 +1592,7 @@ body::-webkit-scrollbar {
     0% {
         transform: rotate(45deg);
     }
+
     100% {
         transform: rotate(0deg);
     }
@@ -1734,7 +1777,7 @@ body::-webkit-scrollbar {
 }
 
 .detail3-second-paragraph-svg {
-    width: 40rem !important;
+    width: 39rem !important;
     height: auto !important;
     margin-top: 1.2rem;
 }
