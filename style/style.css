@@ -1196,6 +1196,8 @@ body::-webkit-scrollbar {
     text-align: center;
     padding-top: 16rem;
     padding-bottom: 25rem;
+    opacity: 0;
+    transition: opacity 1.5s ease;
 }
 
 .brands-third-effects {
@@ -1245,6 +1247,29 @@ body::-webkit-scrollbar {
     left: 45.5rem;
     width: 23.5rem !important;
     height: auto !important;
+}
+
+.brands-third-effect1,
+.brands-third-effect2,
+.brands-third-effect3,
+.brands-third-effect4,
+.brands-third-effect5 {
+    opacity: 0;
+    transform: translateY(16rem);
+    transition: opacity 1.5s ease, transform 1.3s ease;
+}
+
+.brands-third-section.animate-paragraph .brands-third-paragraph-svg {
+    opacity: 1;
+}
+
+.brands-third-section.animate-effects .brands-third-effect1,
+.brands-third-section.animate-effects .brands-third-effect2,
+.brands-third-section.animate-effects .brands-third-effect3,
+.brands-third-section.animate-effects .brands-third-effect4,
+.brands-third-section.animate-effects .brands-third-effect5 {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #series-page {

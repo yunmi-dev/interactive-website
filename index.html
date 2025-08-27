@@ -914,7 +914,7 @@
                 observer.observe(secondSection);
             }
 
-            // 브랜드 페이지 애니메이션
+            // 브랜드 페이지 second-section 애니메이션
             const brandsSecondSection = document.querySelector('.brands-second-section');
             const brandsSecondObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -928,6 +928,34 @@
 
             if (brandsSecondSection) {
                 brandsSecondObserver.observe(brandsSecondSection);
+            }
+
+            // 브랜드 페이지 third-section paragraph 애니메이션
+            const brandsThirdSection = document.querySelector('.brands-third-section');
+            const brandsThirdParagraphObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+                        entry.target.classList.add('animate-paragraph');
+                    }
+                });
+            }, {
+                threshold: 0.6
+            });
+
+            // 브랜드 페이지 third-section effects 애니메이션
+            const brandsThirdEffectsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
+                        entry.target.classList.add('animate-effects');
+                    }
+                });
+            }, {
+                threshold: 0.75
+            });
+
+            if (brandsThirdSection) {
+                brandsThirdParagraphObserver.observe(brandsThirdSection);
+                brandsThirdEffectsObserver.observe(brandsThirdSection);
             }
         });
     </script>
