@@ -343,7 +343,7 @@ body::-webkit-scrollbar {
 .concept-grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.2rem;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -423,7 +423,7 @@ body::-webkit-scrollbar {
     position: relative;
     background: none;
     padding: 0;
-    left: -9rem;
+    left: 2.8rem;
     top: -0.5rem;
     margin-left: 0;
     width: 178px !important;
@@ -437,7 +437,7 @@ body::-webkit-scrollbar {
     position: relative;
     background: none;
     padding: 0;
-    left: 4rem;
+    left: 6.5rem;
     top: -0.5rem;
     margin-left: 0;
     margin-top: 0;
@@ -468,7 +468,7 @@ body::-webkit-scrollbar {
     position: relative;
     background: none;
     padding: 0;
-    left: 13.5rem;
+    left: 25.1rem;
     top: -0.5rem;
     margin-left: 0;
     width: 149px !important;
@@ -483,7 +483,7 @@ body::-webkit-scrollbar {
     position: relative;
     background: none;
     padding: 0;
-    left: -20.5rem;
+    left: -18rem;
     top: -0.3rem;
     margin-left: 0;
     margin-top: 0;
@@ -553,7 +553,7 @@ body::-webkit-scrollbar {
 .shop-third-hover-dot2 {
     position: absolute;
     top: 6rem;
-    left: 8rem;
+    left: 7.1rem;
     width: 1.2rem !important;
     height: auto !important;
     opacity: 0;
