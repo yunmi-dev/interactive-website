@@ -699,16 +699,18 @@ body::-webkit-scrollbar {
 }
 
 #products-page .products-section {
-    padding: 3rem 8.3rem 0 8.3rem;
-    height: calc(100vh - 6rem);
-    overflow: hidden;
+    padding: 3rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 6rem);
+    overflow: visible;
 }
 
 #products-page .lighting-title-svg {
-    margin-top: 6rem;
-    margin-bottom: 3rem !important;
-    margin-left: 4rem !important;
-    transform: translateX(0) !important;
+    margin-left: 10.5rem;
+    margin-top: 4.4rem;
+    margin-bottom: 2.5rem !important;
     width: 10rem !important;
     height: auto !important;
 }
@@ -716,27 +718,29 @@ body::-webkit-scrollbar {
 #products-page .concept-grid {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    justify-content: flex-start;
+    gap: 20rem;
+    justify-content: center;
     align-items: flex-start;
-    padding-left: 0;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#products-page .concept-card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: visible;
+    cursor: default;
+    padding-left: 0 !important;
 }
 
 #products-page .concept-card:first-child {
     margin-left: 0 !important;
-}
-
-#products-page .concept-card {
-    padding-left: 5.7rem !important;
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start !important;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: visible;
-    cursor: default;
 }
 
 .lighting-1-container:hover,
@@ -750,7 +754,7 @@ body::-webkit-scrollbar {
     top: 1rem;
     left: 3.5rem;
 
-    /* 원하는 크롭 영역 크기 */
+    /* 크롭 영역 크기 */
     width: 23.5rem !important;
     height: 30.3rem !important;
 
@@ -780,6 +784,20 @@ body::-webkit-scrollbar {
     width: 23.5rem;
     height: 30.3rem;
 
+    overflow: hidden;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.lighting-1-container,
+.lighting-2-container,
+.lighting-3-container {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 23.5rem !important;
+    height: 30.3rem !important;
     overflow: hidden;
     pointer-events: none;
     cursor: pointer;
@@ -871,9 +889,9 @@ body::-webkit-scrollbar {
 }
 
 #products-page .lighting-1-title-svg {
-    position: absolute !important;
-    top: 33.5rem !important;
-    left: 4rem !important;
+    position: relative !important;
+    top: 25rem !important;
+    left: -5.5rem !important;
     z-index: 100;
     padding-top: 0.2rem !important;
     width: 8.5rem !important;
@@ -881,9 +899,9 @@ body::-webkit-scrollbar {
 }
 
 #products-page .lighting-1-comment-svg {
-    position: absolute !important;
-    top: 36.2rem !important;
-    left: 4rem !important;
+    position: relative !important;
+    top: 25rem !important;
+    left: -5.5rem !important;
     z-index: 100;
     padding-top: 0.2rem !important;
     width: 3rem !important;
@@ -891,9 +909,9 @@ body::-webkit-scrollbar {
 }
 
 #products-page .lighting-2-title-svg {
-    position: absolute !important;
-    top: 31.6rem !important;
-    left: 5.3rem !important;
+    position: relative !important;
+    top: 24rem !important;
+    left: -5.5rem !important;
     z-index: 100;
     padding-top: 2.1rem !important;
     width: 8.5rem !important;
@@ -901,9 +919,9 @@ body::-webkit-scrollbar {
 }
 
 #products-page .lighting-2-comment-svg {
-    position: absolute !important;
-    top: 36.25rem !important;
-    left: 5.3rem !important;
+    position: relative !important;
+    top: 24rem !important;
+    left: -5.5rem !important;
     z-index: 100;
     padding-top: 0.1rem !important;
     width: 5.4rem !important;
@@ -911,9 +929,9 @@ body::-webkit-scrollbar {
 }
 
 #products-page .lighting-3-title-svg {
-    position: absolute !important;
-    top: 31.6rem !important;
-    left: 6.5rem !important;
+    position: relative !important;
+    top: 24rem !important;
+    left: -6rem !important;
     z-index: 100;
     padding-top: 2.05rem !important;
     width: 8.5rem !important;
@@ -921,9 +939,9 @@ body::-webkit-scrollbar {
 }
 
 #products-page .lighting-3-comment-svg {
-    position: absolute !important;
-    top: 36.7rem !important;
-    left: 6.4rem !important;
+    position: relative !important;
+    top: 24rem !important;
+    left: -6rem !important;
     z-index: 100;
     margin-top: -0.4rem !important;
     width: 5.4rem !important;
