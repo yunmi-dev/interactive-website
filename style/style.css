@@ -1325,6 +1325,22 @@ body::-webkit-scrollbar {
     width: 38rem !important;
     height: auto !important;
     display: block;
+
+    opacity: 0;
+    transform: rotate(-18deg) scale(0.8);
+    animation: fadeInRotateScale 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0.35s forwards;
+}
+
+@keyframes fadeInRotateScale {
+    0% {
+        opacity: 0;
+        transform: rotate(-18deg) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 .series-first-image-comment-svg {
@@ -1335,6 +1351,10 @@ body::-webkit-scrollbar {
     width: 30rem !important;
     height: auto !important;
     z-index: 10;
+
+    opacity: 0;
+    transform: translate(calc(-50% - 50rem), -50%);
+    animation: slideInFromLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.25) 0s forwards;
 }
 
 .series-first-comment-svg {
@@ -1343,6 +1363,42 @@ body::-webkit-scrollbar {
     flex-shrink: 0;
     margin-right: 5.5rem;
     margin-top: 1.7rem;
+
+    opacity: 0;
+    transform: translateX(50rem);
+    animation: slideInFromRight 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.25) 0s forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translate(calc(-50% - 50rem), -50%);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50rem);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .series-second-section {
