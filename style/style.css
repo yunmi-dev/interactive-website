@@ -1561,7 +1561,8 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 13.4rem;
+    gap: 13rem;
+    transform: translateX(-6.4rem);
     padding: 3.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1571,7 +1572,6 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transform: translateX(-6rem);
     gap: 2rem;
 }
 
@@ -1622,7 +1622,7 @@ body::-webkit-scrollbar {
     width: 5.5rem !important;
     height: auto !important;
     margin-top: -0.4rem;
-    margin-left: 0.2rem;
+    margin-left: 0.4rem;
 }
 
 .detail1-fourth-section {
