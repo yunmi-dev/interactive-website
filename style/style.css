@@ -1476,12 +1476,30 @@ body::-webkit-scrollbar {
     margin-right: 0rem;
     width: 77rem !important;
     height: auto !important;
+
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .series-third-paragraph-svg {
     width: 39rem !important;
     height: auto !important;
     margin-top: 5rem;
+
+    opacity: 0;
+    transform: translate(-150px, 100px) scale(1.5);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.series-third-section.animate .series-third-title-svg {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.series-third-section.animate .series-third-paragraph-svg {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
 }
 
 #series-page .end {

@@ -986,6 +986,24 @@
             if (seriesSecondSection) {
                 seriesSecondObserver.observe(seriesSecondSection);
             }
+
+            // series-third-section 애니메이션
+            const seriesThirdSection = document.querySelector('.series-third-section');
+
+            const seriesThirdObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.5,
+                rootMargin: '300px 0px -300px 0px' // 300px 일찍 트리거 (임시)
+            });
+
+            if (seriesThirdSection) {
+                seriesThirdObserver.observe(seriesThirdSection);
+            }
         });
     </script>
 </body>
