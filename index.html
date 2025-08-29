@@ -693,16 +693,26 @@
             const pages = document.querySelectorAll('.page');
             const homeButton = document.querySelector('.fixed-home-button');
 
+            // 모든 애니메이션 클래스 리셋
+            document.querySelectorAll('.animate, .animate-paragraph, .animate-effects').forEach(el => {
+                el.classList.remove('animate', 'animate-paragraph', 'animate-effects');
+            });
+
             pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId + '-page').classList.add('active');
+
+            // 강제로 스크롤 초기화
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+
+            setTimeout(() => {
+                document.getElementById(pageId + '-page').classList.add('active');
+            }, 50);
 
             if (pageId === 'brands' || pageId === 'series') {
                 homeButton.style.display = 'flex';
             } else {
                 homeButton.style.display = 'none';
             }
-
-            window.scrollTo(0, 0);
         }
 
         let previousPage = 'shop';
