@@ -1327,11 +1327,12 @@ body::-webkit-scrollbar {
     display: block;
 
     opacity: 0;
-    transform: rotate(-18deg) scale(0.8);
-    animation: fadeInRotateScale 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0.35s forwards;
+    /* transform: rotate(-18deg) scale(0.8);
+    animation: fadeInRotateScale 0.35s cubic-bezier(0.25, 0.1, 0.25, 1) 0.35s forwards; */
+    animation: fadeIn 0.4s ease-out 0.4s forwards;
 }
 
-@keyframes fadeInRotateScale {
+/* @keyframes fadeInRotateScale {
     0% {
         opacity: 0;
         transform: rotate(-18deg) scale(0.8);
@@ -1340,6 +1341,16 @@ body::-webkit-scrollbar {
     100% {
         opacity: 1;
         transform: rotate(0deg) scale(1);
+    }
+} */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
