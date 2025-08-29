@@ -958,6 +958,25 @@
                 brandsThirdEffectsObserver.observe(brandsThirdSection);
             }
         });
+
+        // series-second-section 애니메이션
+        document.addEventListener('DOMContentLoaded', function () {
+            const seriesSecondSection = document.querySelector('.series-second-section');
+
+            const seriesSecondObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 1) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 1
+            });
+
+            if (seriesSecondSection) {
+                seriesSecondObserver.observe(seriesSecondSection);
+            }
+        });
     </script>
 </body>
 
