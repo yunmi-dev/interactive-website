@@ -2043,3 +2043,668 @@ body::-webkit-scrollbar {
     width: 7.2rem !important;
     height: auto !important;
 }
+
+/* 모바일 디바이스용 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+
+    /* 기본 설정 */
+    body {
+        font-size: 14px;
+    }
+
+    /* 네비게이션바(모바일) */
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        height: 3.5rem;
+        background-color: rgba(223, 223, 223, 0.9);
+    }
+
+    .nav-menu {
+        gap: 2rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .shop-svg {
+        width: 1.8rem !important;
+    }
+
+    .products-svg {
+        width: 2.8rem !important;
+    }
+
+    .brands-svg {
+        width: 2.2rem !important;
+    }
+
+    .series-svg {
+        width: 2rem !important;
+    }
+
+    /* 첫 번째 섹션(모바일) */
+    .shop-first-section {
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shop-first-content {
+        width: 100%;
+        height: auto;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .shop-first-bg {
+        opacity: 0.4;
+    }
+
+    .shop-first-tagline-svg {
+        position: static;
+        width: 85% !important;
+        max-width: 280px !important;
+        margin: 0;
+        transform: none;
+        top: auto;
+        left: auto;
+        z-index: 3;
+    }
+
+    .shop-first-vure-logo-svg {
+        position: static;
+        width: 70% !important;
+        max-width: 220px !important;
+        margin: 0;
+        transform: none;
+        top: auto;
+        left: auto;
+        z-index: 1;
+        order: 2;
+    }
+
+    .black-square {
+        position: static;
+        order: 3;
+        margin-top: -1rem;
+    }
+
+    .shop-first-black-square-svg {
+        position: static;
+        width: 1.2rem !important;
+        transform: none;
+        top: auto;
+        left: auto;
+    }
+
+    /* 슬라이더(모바일) */
+    .series-slider {
+        height: 35px;
+        bottom: 0;
+    }
+
+    .first-series-svg {
+        width: 100px !important;
+        margin-right: 40px;
+        font-size: 12px;
+    }
+
+    /* 두 번째 섹션 - about LOVE */
+    .shop-second-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 3rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shop-second-content {
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .shop-second-title-svg {
+        width: 85% !important;
+        max-width: 280px !important;
+        margin-bottom: 2rem;
+    }
+
+    .shop-second-text-svg {
+        width: 95% !important;
+        max-width: 320px !important;
+        margin-bottom: 2.5rem;
+        top: 0;
+        transform: translateY(0);
+    }
+
+    .connection-button-svg {
+        width: 180px !important;
+        top: 0.5rem;
+    }
+
+    /* 세 번째 섹션 - 제품 카드들(모바일) */
+    .shop-third-section {
+        padding: 2rem 1rem;
+        min-height: auto;
+    }
+
+    .lighting-title-svg {
+        align-self: center;
+        margin: 1rem auto 2rem auto;
+        width: 140px !important;
+    }
+
+    .concept-grid {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .concept-card {
+        flex-direction: column !important;
+        align-items: center;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        gap: 1.5rem;
+        margin: 0 auto 3rem auto;
+        padding: 1.5rem 1rem;
+    }
+
+    .concept-card.reverse {
+        flex-direction: column !important;
+    }
+
+    .flower-default-image,
+    .flower-full-image {
+        width: 220px !important;
+        height: auto !important;
+        margin: 0;
+        position: static;
+        transform: none;
+        top: auto;
+        left: auto;
+    }
+
+    .flower-hover-background-svg {
+        display: none;
+    }
+
+    .flower1-comment,
+    .flower2-comment,
+    .flower3-comment,
+    .flower1-comment-hover,
+    .flower2-comment-hover,
+    .flower3-comment-hover {
+        position: static;
+        width: 180px !important;
+        margin: 1rem 0 0 0;
+        left: auto;
+        top: auto;
+        opacity: 1;
+    }
+
+    /* 호버 효과 제거 및 점 숨김 */
+    .shop-third-hover-dot1,
+    .shop-third-hover-dot2,
+    .shop-third-hover-dot3 {
+        display: none;
+    }
+
+    /* 고정 홈 버튼 모바일 스타일 */
+    .fixed-home-button {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .fixed-home-button-svg {
+        width: 50px !important;
+    }
+
+    /* end 섹션 */
+    .end {
+        padding: 2rem 1rem;
+    }
+
+    .end-comment-svg {
+        width: 120px !important;
+        padding-bottom: 2rem;
+    }
+
+    /* Products 페이지 모바일 스타일 */
+    #products-page {
+        padding-top: 3.5rem;
+    }
+
+    #products-page .lighting-title-svg {
+        margin: 1rem auto 2rem auto;
+        width: 140px !important;
+    }
+
+    #products-page .concept-grid {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    #products-page .concept-card {
+        width: 100%;
+        max-width: 280px;
+        margin-bottom: 2rem;
+        height: auto;
+        position: relative;
+    }
+
+    .lighting-1-container,
+    .lighting-2-container,
+    .lighting-3-container {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100% !important;
+        height: 200px !important;
+        margin-bottom: 1rem;
+    }
+
+    #products-page .lighting-1-flower-png,
+    #products-page .lighting-2-flower-png,
+    #products-page .lighting-3-flower-png {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        width: auto !important;
+        height: 180px !important;
+        filter: grayscale(0%) brightness(1.1);
+    }
+
+    #products-page .lighting-1-flower-png:hover,
+    #products-page .lighting-2-flower-png:hover,
+    #products-page .lighting-3-flower-png:hover {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    #products-page .lighting-1-title-svg,
+    #products-page .lighting-2-title-svg,
+    #products-page .lighting-3-title-svg {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 140px !important;
+        margin: 0.5rem 0;
+        padding: 0 !important;
+    }
+
+    #products-page .lighting-1-comment-svg,
+    #products-page .lighting-2-comment-svg,
+    #products-page .lighting-3-comment-svg {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 60px !important;
+        margin: 0;
+        padding: 0 !important;
+    }
+
+    /* Brands 페이지 모바일 스타일 */
+    #brands-page {
+        padding-top: 3.5rem;
+    }
+
+    .brands-first-section {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .brands-first-title-svg {
+        width: 85% !important;
+        max-width: 220px !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .brands-first-image-svg {
+        width: 90% !important;
+        max-width: 280px !important;
+        margin: 1rem 0;
+    }
+
+    .brands-first-paragraph-svg {
+        width: 90% !important;
+        max-width: 260px !important;
+        margin-top: 1.5rem;
+    }
+
+    .brands-second-section {
+        padding: 2rem 1rem;
+        padding-bottom: 3rem;
+    }
+
+    .brands-second-title-svg {
+        width: 80% !important;
+        max-width: 200px !important;
+        margin-bottom: 2rem;
+    }
+
+    .keywords-container {
+        flex-direction: column;
+        gap: 3rem;
+        margin: 2rem 0 0 0;
+    }
+
+    .keyword1-title-svg,
+    .keyword2-title-svg,
+    .keyword3-title-svg {
+        width: 120px !important;
+        margin-bottom: 1rem;
+    }
+
+    .keyword1-image-svg,
+    .keyword2-image-svg,
+    .keyword3-image-svg {
+        width: 80px !important;
+        margin: 0.5rem 0 1rem 0;
+    }
+
+    .keyword1-paragraph-svg,
+    .keyword2-paragraph-svg,
+    .keyword3-paragraph-svg {
+        width: 280px !important;
+        margin-top: 1rem;
+    }
+
+    .brands-third-section {
+        padding: 3rem 1rem;
+        min-height: auto;
+        padding-bottom: 5rem;
+    }
+
+    .brands-third-paragraph-svg {
+        width: 90% !important;
+        max-width: 280px !important;
+        padding: 2rem 0 3rem 0;
+    }
+
+    /* Series 페이지(모바일) */
+    .series-first-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .series-first-image-container {
+        margin: 0;
+    }
+
+    .series-first-image-svg {
+        width: 85% !important;
+        max-width: 280px !important;
+    }
+
+    .series-first-image-comment-svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70% !important;
+        max-width: 200px !important;
+    }
+
+    .series-first-comment-svg {
+        width: 90% !important;
+        max-width: 260px !important;
+        margin: 0;
+    }
+
+    .series-second-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .series-second-title-container {
+        margin: 0;
+    }
+
+    .series-second-parentheses-svg {
+        width: 85% !important;
+        max-width: 200px !important;
+    }
+
+    .series-second-title-svg {
+        width: 70% !important;
+        max-width: 150px !important;
+    }
+
+    .series-second-paragraph-svg {
+        width: 95% !important;
+        max-width: 300px !important;
+        margin: 0;
+    }
+
+    .series-third-section {
+        padding: 2rem 1rem;
+        align-items: center;
+        text-align: center;
+        padding-top: 3rem;
+    }
+
+    .series-third-title-svg {
+        width: 95% !important;
+        max-width: 320px !important;
+        margin: 0;
+    }
+
+    .series-third-paragraph-svg {
+        width: 90% !important;
+        max-width: 280px !important;
+        margin-top: 2rem;
+    }
+
+    #series-page .end-comment-svg {
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+    }
+
+    /* Detail 페이지들(모바일) */
+    .back-button {
+        top: 4.5rem;
+        left: 1rem;
+    }
+
+    .detail-back-button-svg {
+        width: 35px !important;
+    }
+
+    .detail1-first-section,
+    .detail2-first-section,
+    .detail3-first-section {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem 1rem 1rem 1rem;
+    }
+
+    .detail1-first-image1-svg,
+    .detail1-first-image3-svg,
+    .detail2-first-image1-svg,
+    .detail2-first-image3-svg,
+    .detail3-first-image1-svg,
+    .detail3-first-image3-svg {
+        width: 120px !important;
+        margin: 0;
+    }
+
+    .detail1-first-image2-svg,
+    .detail2-first-image2-svg,
+    .detail3-first-image2-svg {
+        width: 250px !important;
+        margin: 0;
+    }
+
+    .detail1-second-section,
+    .detail2-second-section,
+    .detail3-second-section {
+        padding: 1.5rem 1rem;
+        transform: none;
+        align-items: center;
+        text-align: center;
+    }
+
+    .detail1-second-title1-svg,
+    .detail2-second-title1-svg,
+    .detail3-second-title1-svg {
+        width: 160px !important;
+        margin: 0;
+    }
+
+    .detail1-second-title2-svg {
+        width: 240px !important;
+        margin: 0.5rem 0;
+    }
+
+    .detail2-second-title2-svg {
+        width: 280px !important;
+        margin: 0.5rem 0;
+    }
+
+    .detail3-second-title2-svg {
+        width: 320px !important;
+        margin: 0.5rem 0;
+    }
+
+    .detail1-second-paragraph-svg {
+        width: 300px !important;
+        margin: 1rem 0;
+    }
+
+    .detail2-second-paragraph-svg {
+        width: 200px !important;
+        margin: 1rem 0;
+    }
+
+    .detail3-second-paragraph-svg {
+        width: 300px !important;
+        margin: 1rem 0;
+    }
+
+    .detail1-third-section,
+    .detail2-third-section,
+    .detail3-third-section {
+        flex-direction: column;
+        gap: 2rem;
+        transform: none;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    #detail-color-container,
+    #detail-size-container {
+        align-items: center;
+        text-align: center;
+    }
+
+    .wall-mount-svg,
+    .standard-svg {
+        margin: 1rem 0 0 0;
+    }
+
+    .detail1-fourth-section,
+    .detail2-fourth-section,
+    .detail3-fourth-section {
+        padding: 2rem 1rem;
+        transform: none;
+        align-items: center;
+    }
+
+    .main-detail-image {
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+
+    .thumbnail-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .thumbnail {
+        width: 50px !important;
+    }
+
+    .detail1-fifth-section,
+    .detail2-fifth-section,
+    .detail3-fifth-section {
+        padding: 2rem 1rem;
+        transform: none;
+        align-items: center;
+        padding-bottom: 5rem;
+    }
+
+    .detail1-fifth-image-svg,
+    .detail2-fifth-image-svg,
+    .detail3-fifth-image-svg {
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+
+    .light-transition {
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+
+    .toggle-switch {
+        width: 60px !important;
+    }
+
+    .toggle-circle {
+        width: 25px !important;
+        top: 1.2rem;
+    }
+
+    .toggle-switch.active .toggle-circle {
+        left: 2.8rem;
+    }
+}
+
+/* 더 작은 화면을 위한 추가 미디어 쿼리 */
+@media screen and (max-width: 480px) {
+    .shop-first-content {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .shop-second-content {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .concept-card {
+        max-width: 280px;
+        padding: 1rem 0.5rem;
+    }
+
+    .flower-default-image,
+    .flower-full-image {
+        width: 180px !important;
+    }
+
+    .flower1-comment,
+    .flower2-comment,
+    .flower3-comment,
+    .flower1-comment-hover,
+    .flower2-comment-hover,
+    .flower3-comment-hover {
+        width: 150px !important;
+    }
+}
