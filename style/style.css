@@ -2762,12 +2762,7 @@ body::-webkit-scrollbar {
 }
 
 .close-menu {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    float: right;
-    margin-right: 1rem;
+    display: none;
 }
 
 .menu-overlay {
