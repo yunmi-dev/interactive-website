@@ -19,6 +19,34 @@
         </ul>
     </nav>
 
+    <!-- 모바일 햄버거 메뉴 -->
+    <div class="hamburger-menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- 일단 모바일 슬라이드 메뉴 -->
+    <div class="slide-menu">
+        <div class="slide-menu-header">
+            <button class="close-menu">&times;</button>
+        </div>
+        <ul class="slide-menu-items">
+            <li data-page="brand">
+                <img src="asset/mobile/slidemenu/Brand.svg" alt="Brand" class="menu-item-svg">
+            </li>
+            <li data-page="series">
+                <img src="asset/mobile/slidemenu/Series.svg" alt="Series" class="menu-item-svg">
+            </li>
+            <li data-page="lighting">
+                <img src="asset/mobile/slidemenu/Lighting.svg" alt="Lighting" class="menu-item-svg">
+            </li>
+        </ul>
+    </div>
+    <div class="menu-overlay"></div>
+
     <div id="shop-page" class="page active">
         <section class="main">
             <!-- 홈 페이지 -->
@@ -1001,6 +1029,36 @@
             if (seriesThirdSection) {
                 seriesThirdObserver.observe(seriesThirdSection);
             }
+        });
+    </script>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const slideMenu = document.querySelector('.slide-menu');
+        const overlay = document.querySelector('.menu-overlay');
+        const closeMenu = document.querySelector('.close-menu');
+
+        function openMenu() {
+            slideMenu.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeMenuFunc() {
+            slideMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        overlay.addEventListener('click', closeMenuFunc);
+
+        // 메뉴 아이템 클릭시 페이지 이동
+        document.querySelectorAll('.slide-menu-items li').forEach(item => {
+            item.addEventListener('click', function () {
+                const page = this.dataset.page;
+                showPage(page + '-page');
+                closeMenuFunc();
+            });
         });
     </script>
 </body>
