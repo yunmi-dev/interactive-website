@@ -2691,11 +2691,6 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-.hamburger-menu.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
 .slide-menu.active {
     opacity: 1;
     visibility: visible;
@@ -2718,17 +2713,18 @@ body::-webkit-scrollbar {
 }
 
 .slide-brand-svg {
-    width: 3rem !important;
+    width: 3.2rem !important;
     height: auto !important;
+    margin-top: 3rem;
 }
 
 .slide-series-svg {
-    width: 3.2rem !important;
+    width: 3.45rem !important;
     height: auto !important;
 }
 
 .slide-lighting-svg {
-    width: 4.1rem !important;
+    width: 4.3rem !important;
     height: auto !important;
 }
 
@@ -2739,12 +2735,12 @@ body::-webkit-scrollbar {
     width: 10.5rem;
     height: 100vh;
     background: white;
-    z-index: 1000;
+    z-index: 1002;
     box-shadow: 3px 0 15px rgba(0, 0, 0, 0.15);
     padding: 3rem 0 2rem 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .slide-menu.active {
@@ -2785,7 +2781,7 @@ body::-webkit-scrollbar {
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
     pointer-events: none;
 }
 
