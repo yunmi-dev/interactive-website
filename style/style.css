@@ -2061,8 +2061,6 @@ body::-webkit-scrollbar {
 
 /* 모바일 디바이스용 미디어 쿼리 */
 @media screen and (max-width: 768px) {
-
-    /* 기본 설정 */
     body {
         padding-top: 0;
     }
@@ -2104,7 +2102,7 @@ body::-webkit-scrollbar {
 
     /* 첫 번째 섹션(모바일) */
     .shop-first-section {
-        height: 100vh;
+        height: 55vh;
         padding: 0;
         display: flex;
         align-items: center;
@@ -2112,6 +2110,7 @@ body::-webkit-scrollbar {
     }
 
     .shop-first-content {
+        position: relative;
         width: 100%;
         height: auto;
         transform: none;
@@ -2119,7 +2118,6 @@ body::-webkit-scrollbar {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: relative;
         padding: 2rem 1rem;
         gap: 1.5rem;
     }
@@ -2129,14 +2127,13 @@ body::-webkit-scrollbar {
     }
 
     .shop-first-tagline-svg {
-        position: static;
-        width: 85% !important;
+        position: fixed;
+        width: 55% !important;
         max-width: 280px !important;
-        margin: 0;
-        transform: none;
-        top: auto;
-        left: auto;
+        top: -16.5rem;
+        left: -3.2rem;
         z-index: 3;
+        transform: none;
     }
 
     .shop-first-vure-logo-svg {
@@ -2723,7 +2720,7 @@ body::-webkit-scrollbar {
 }
 
 .slide-menu-icon-svg {
-    width: 3rem !important;
+    width: 2.7rem !important;
     height: auto !important;
     margin-top: 2.2rem;
     margin-left: 0.2rem;
