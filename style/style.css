@@ -81,31 +81,6 @@ body::-webkit-scrollbar {
     opacity: 0.7;
 }
 
-/* 데탑에선 햄버거 메뉴 숨김 */
-.hamburger-menu {
-    display: none;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001;
-    cursor: pointer;
-}
-
-.hamburger-icon {
-    width: 30px;
-    height: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.hamburger-icon span {
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    transition: all 0.3s ease;
-}
-
 .shop-svg {
     width: 2.5rem !important;
     height: auto !important;
@@ -2707,46 +2682,74 @@ body::-webkit-scrollbar {
     }
 }
 
-.slide-menu {
+/* 데탑에선 햄버거 메뉴 숨김 */
+.hamburger-menu {
     position: fixed;
-    top: 0;
-    left: -300px;
-    width: 280px;
-    height: 100vh;
-    background: white;
-    transition: left 0.3s ease;
-    z-index: 1000;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem 0;
-}
-
-.slide-menu-items li {
-    padding: 1.5rem 2rem;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
     cursor: pointer;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* 아직 크기 조정 필요 */
+.hamburger-menu.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slide-menu.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 메뉴 크기 */
+@media screen and (max-width: 480px) {
+    .slide-menu {
+        width: 8rem;
+        left: 0;
+    }
+}
+
+.slide-menu-icon-svg {
+    width: 3rem !important;
+    height: auto !important;
+    margin-top: 2.2rem;
+    margin-left: 0.2rem;
+    transition: opacity 0.3s ease;
+}
+
 .slide-brand-svg {
-    width: 1rem !important;
+    width: 3rem !important;
     height: auto !important;
 }
 
 .slide-series-svg {
-    width: 1rem !important;
+    width: 3.2rem !important;
     height: auto !important;
 }
 
 .slide-lighting-svg {
-    width: 1rem !important;
+    width: 4.1rem !important;
     height: auto !important;
 }
 
-.slide-menu.active {
+.slide-menu {
+    position: fixed;
+    top: 0;
     left: 0;
+    width: 10.5rem;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.15);
+    padding: 3rem 0 2rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.slide-menu.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .slide-menu-items {
@@ -2755,10 +2758,17 @@ body::-webkit-scrollbar {
 }
 
 .slide-menu-items li {
-    padding: 1rem 2rem;
-    font-size: 18px;
+    padding: 1.5rem 2rem;
     cursor: pointer;
-    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom 제거됨 */
+}
+
+.slide-menu-items {
+    list-style: none;
+    padding: 0;
 }
 
 .close-menu {
@@ -2771,16 +2781,18 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.6); */
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    pointer-events: none;
 }
 
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 /* 더 작은 화면을 위한 추가 미디어 쿼리 */

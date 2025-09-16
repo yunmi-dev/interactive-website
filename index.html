@@ -21,11 +21,7 @@
 
     <!-- 모바일 햄버거 메뉴 -->
     <div class="hamburger-menu">
-        <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <img src="asset/mobile/slidemenu/slide-menu-icon.svg" alt="slide menu icon" class="slide-menu-icon-svg">
     </div>
 
     <!-- 일단 모바일 슬라이드 메뉴 -->
@@ -1041,11 +1037,13 @@
         function openMenu() {
             slideMenu.classList.add('active');
             overlay.classList.add('active');
+            hamburger.classList.add('hidden');
         }
 
         function closeMenuFunc() {
             slideMenu.classList.remove('active');
             overlay.classList.remove('active');
+            hamburger.classList.remove('hidden');
         }
 
         hamburger.addEventListener('click', openMenu);
