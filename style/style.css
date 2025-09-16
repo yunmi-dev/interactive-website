@@ -2130,28 +2130,31 @@ body::-webkit-scrollbar {
         position: fixed;
         width: 55% !important;
         max-width: 280px !important;
-        top: -16.5rem;
+        top: -20rem;
         left: -3.2rem;
         z-index: 3;
         transform: none;
     }
 
     .shop-first-vure-logo-svg {
-        position: static;
-        width: 70% !important;
-        max-width: 220px !important;
-        margin: 0;
+        position: fixed;
+        width: 100% !important;
+        max-width: 260px !important;
         transform: none;
-        top: auto;
-        left: auto;
+        top: -6rem;
+        left: -10.6rem;
         z-index: 1;
         order: 2;
     }
 
-    .black-square {
-        position: static;
-        order: 3;
-        margin-top: -1rem;
+    /* 크기, 위치 안바뀌는 문제 */
+    .shop-first-black-square-svg {
+        position: fixed;
+        width: 1rem !important;
+        height: 2rem !important;
+        top: 0rem !important;
+        left: -30rem !important;
+        z-index: 3;
     }
 
     .shop-first-black-square-svg {
