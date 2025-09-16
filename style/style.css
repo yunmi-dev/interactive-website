@@ -2044,20 +2044,32 @@ body::-webkit-scrollbar {
     height: auto !important;
 }
 
+/* 데탑에선 숨기기 */
+@media screen and (min-width: 769px) {
+    .hamburger-menu {
+        display: none !important;
+    }
+
+    .slide-menu {
+        display: none !important;
+    }
+
+    .menu-overlay {
+        display: none !important;
+    }
+}
+
 /* 모바일 디바이스용 미디어 쿼리 */
 @media screen and (max-width: 768px) {
 
     /* 기본 설정 */
     body {
-        font-size: 14px;
+        padding-top: 0;
     }
 
     /* 네비게이션바(모바일) */
     .navbar {
-        padding: 0.8rem 1.5rem;
-        height: 3.5rem;
-        background-color: rgba(223, 223, 223, 0.9);
-        justify-content: flex-start;
+        display: none;
     }
 
     .nav-menu {
@@ -2066,6 +2078,12 @@ body::-webkit-scrollbar {
 
     .hamburger-menu {
         display: block;
+    }
+
+    #products-page,
+    #brands-page,
+    #series-page {
+        padding-top: 0;
     }
 
     .shop-svg {
@@ -2699,7 +2717,7 @@ body::-webkit-scrollbar {
 /* 메뉴 크기 */
 @media screen and (max-width: 480px) {
     .slide-menu {
-        width: 8rem;
+        width: 7rem;
         left: 0;
     }
 }
@@ -2777,7 +2795,7 @@ body::-webkit-scrollbar {
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* background: rgba(0, 0, 0, 0.6); */
+    background: rgba(0, 0, 0, 0.1);
     z-index: 999;
     opacity: 0;
     visibility: hidden;
