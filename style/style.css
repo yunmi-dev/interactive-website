@@ -1281,14 +1281,21 @@ body::-webkit-scrollbar {
     width: 2rem;
     height: auto;
     opacity: 0;
-    transform: rotate(0deg);
-    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    margin: 2rem 0;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: center center;
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    /* margin: 2rem 0; */
+    position: absolute;
+    top: 18rem;
+    left: 50%;
+    margin-left: -1rem;
+    z-index: 5;
 }
 
 .brands-third-section.animate-effects .brands-third-rectangle {
     opacity: 1;
-    transform: rotate(90deg);
+    transform: translateX(-50%) rotate(45deg);
 }
 
 #series-page {
