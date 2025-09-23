@@ -802,10 +802,37 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
+.lighting-1-container::before,
+.lighting-2-container::before,
+.lighting-3-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../asset/products/rectangle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 200;
+    pointer-events: none;
+}
+
 .lighting-1-container::after,
 .lighting-2-container::after,
 .lighting-3-container::after {
-    display: none;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../asset/products/rectangle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 200;
+    pointer-events: none;
+    display: block;
 }
 
 #products-page .lighting-1-flower-png {
@@ -992,6 +1019,16 @@ body::-webkit-scrollbar {
     opacity: 0;
     transform: translateY(6rem) scale(1.1);
     animation: paragraphSlideUpScale 0.3s ease-out 0.6s forwards;
+}
+
+.brands-first-phrase-svg {
+    position: absolute;
+    top: 7rem !important;
+    left: 6rem !important;
+    width: 7.5rem !important;
+    height: auto !important;
+    z-index: 100;
+    opacity: 1;
 }
 
 @keyframes titleSlideDown {
