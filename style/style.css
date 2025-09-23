@@ -1277,6 +1277,20 @@ body::-webkit-scrollbar {
     transform: translateY(0);
 }
 
+.brands-third-rectangle {
+    width: 2rem;
+    height: auto;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 2rem 0;
+}
+
+.brands-third-section.animate-effects .brands-third-rectangle {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
 #series-page {
     padding-top: 4rem;
     min-height: 100vh;
