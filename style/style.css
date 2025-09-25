@@ -2104,11 +2104,11 @@ body::-webkit-scrollbar {
 
 /* 데탑에선 숨기기 */
 @media screen and (min-width: 769px) {
-    .hamburger-menu {
+    .hamburger-icon {
         display: none !important;
     }
 
-    .slide-menu {
+    .hamburger-menu {
         display: none !important;
     }
 
@@ -2759,7 +2759,7 @@ body::-webkit-scrollbar {
 }
 
 /* 데탑에선 햄버거 메뉴 숨김 */
-.hamburger-menu {
+.hamburger-icon {
     position: fixed;
     top: 1rem;
     left: 1rem;
@@ -2767,20 +2767,20 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-.slide-menu.active {
+.hamburger-menu.active {
     opacity: 1;
     visibility: visible;
 }
 
 /* 메뉴 크기 */
 @media screen and (max-width: 480px) {
-    .slide-menu {
+    .hamburger-menu {
         width: 7rem;
         left: 0;
     }
 }
 
-.slide-menu-icon-svg {
+.hamburger-menu-icon-svg {
     width: 2.7rem !important;
     height: auto !important;
     margin-top: 2.2rem;
@@ -2788,23 +2788,28 @@ body::-webkit-scrollbar {
     transition: opacity 0.3s ease;
 }
 
-.slide-brand-svg {
-    width: 3.2rem !important;
+.hamburger-main-svg {
+    width: 2.5rem !important;
     height: auto !important;
     margin-top: 3rem;
 }
 
-.slide-series-svg {
+.hamburger-brand-svg {
+    width: 3.2rem !important;
+    height: auto !important;
+}
+
+.hamburger-series-svg {
     width: 3.45rem !important;
     height: auto !important;
 }
 
-.slide-lighting-svg {
+.hamburger-lighting-svg {
     width: 4.3rem !important;
     height: auto !important;
 }
 
-.slide-menu {
+.hamburger-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -2819,17 +2824,17 @@ body::-webkit-scrollbar {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.slide-menu.active {
+.hamburger-menu.active {
     opacity: 1;
     visibility: visible;
 }
 
-.slide-menu-items {
+.hamburger-menu-items {
     list-style: none;
     padding: 0;
 }
 
-.slide-menu-items li {
+.hamburger-menu-items li {
     padding: 1.5rem 2rem;
     cursor: pointer;
     display: flex;
@@ -2838,7 +2843,7 @@ body::-webkit-scrollbar {
     /* border-bottom 제거됨 */
 }
 
-.slide-menu-items {
+.hamburger-menu-items {
     list-style: none;
     padding: 0;
 }

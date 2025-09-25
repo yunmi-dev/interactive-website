@@ -20,24 +20,27 @@
     </nav>
 
     <!-- 모바일 햄버거 메뉴 -->
-    <div class="hamburger-menu">
-        <img src="asset/mobile/slidemenu/slide-menu-icon.svg" alt="slide menu icon" class="slide-menu-icon-svg">
+    <div class="hamburger-icon">
+        <img src="asset/mobile/hamburgermenu/slide-menu-icon.svg" alt="slide menu icon" class="slide-menu-icon-svg">
     </div>
 
     <!-- 일단 모바일 슬라이드 메뉴 -->
-    <div class="slide-menu">
-        <div class="slide-menu-header">
+    <div class="hamburger-menu">
+        <div class="hamburger-menu-header">
             <button class="close-menu">&times;</button>
         </div>
-        <ul class="slide-menu-items">
+        <ul class="hamburger-menu-items">
+            <li data-page="main">
+                <img src="asset/mobile/hamburgermenu/Main.svg" alt="Main" class="hamburger-main-svg">
+            </li>
             <li data-page="brand">
-                <img src="asset/mobile/slidemenu/Brand.svg" alt="Brand" class="slide-brand-svg">
+                <img src="asset/mobile/hamburgermenu/Brand.svg" alt="Brand" class="hamburger-brand-svg">
             </li>
             <li data-page="series">
-                <img src="asset/mobile/slidemenu/Series.svg" alt="Series" class="slide-series-svg">
+                <img src="asset/mobile/hamburgermenu/Series.svg" alt="Series" class="hamburger-series-svg">
             </li>
             <li data-page="lighting">
-                <img src="asset/mobile/slidemenu/Lighting.svg" alt="Lighting" class="slide-lighting-svg">
+                <img src="asset/mobile/hamburgermenu/Lighting.svg" alt="Lighting" class="hamburger-lighting-svg">
             </li>
         </ul>
     </div>
@@ -1033,8 +1036,8 @@
     </script>
 
     <script>
-        const hamburger = document.querySelector('.hamburger-menu');
-        const slideMenu = document.querySelector('.slide-menu');
+        const hamburger = document.querySelector('.hamburger-icon');
+        const slideMenu = document.querySelector('.hamburger-menu');
         const overlay = document.querySelector('.menu-overlay');
         const closeMenu = document.querySelector('.close-menu');
 
@@ -1055,7 +1058,7 @@
         overlay.addEventListener('click', closeMenuFunc);
 
         // 메뉴 아이템 클릭시 페이지 이동
-        document.querySelectorAll('.slide-menu-items li').forEach(item => {
+        document.querySelectorAll('.hamburger-menu-items li').forEach(item => {
             item.addEventListener('click', function () {
                 const page = this.dataset.page;
                 showPage(page + '-page');
