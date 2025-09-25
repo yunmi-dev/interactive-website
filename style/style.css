@@ -2216,27 +2216,19 @@ body::-webkit-scrollbar {
         max-width: 260px !important;
         transform: none;
         top: -4.7rem;
-        left: -10.6rem;
+        left: -10.3rem;
         z-index: 1;
         order: 2;
     }
 
-    /* 크기, 위치 안바뀌는 문제 */
     .shop-first-black-square-svg {
-        position: fixed;
-        width: 1rem !important;
-        height: 2rem !important;
-        top: 0rem !important;
-        left: -30rem !important;
+        position: absolute;
+        width: 0.75rem !important;
+        height: 1.2rem !important;
+        top: -4.7rem !important;
+        left: -10.4rem !important;
+        transform: translateX(-50%);
         z-index: 3;
-    }
-
-    .shop-first-black-square-svg {
-        position: static;
-        width: 1.2rem !important;
-        transform: none;
-        top: auto;
-        left: auto;
     }
 
     /* 슬라이더(모바일) */
@@ -2777,7 +2769,7 @@ body::-webkit-scrollbar {
 /* 데탑에선 햄버거 메뉴 숨김 */
 .hamburger-icon {
     position: fixed;
-    top: 1rem;
+    top: 3rem;
     left: 1rem;
     z-index: 1001;
     cursor: pointer;
@@ -2805,23 +2797,23 @@ body::-webkit-scrollbar {
 }
 
 .hamburger-main-svg {
-    width: 2.5rem !important;
+    width: 2.7rem !important;
     height: auto !important;
-    margin-top: 3rem;
+    margin-top: 2.3rem;
 }
 
 .hamburger-brand-svg {
-    width: 3.2rem !important;
-    height: auto !important;
-}
-
-.hamburger-series-svg {
     width: 3.45rem !important;
     height: auto !important;
 }
 
+.hamburger-series-svg {
+    width: 3.7rem !important;
+    height: auto !important;
+}
+
 .hamburger-lighting-svg {
-    width: 4.3rem !important;
+    width: 4.7rem !important;
     height: auto !important;
 }
 
@@ -2856,7 +2848,6 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border-bottom 제거됨 */
 }
 
 .hamburger-menu-items {
