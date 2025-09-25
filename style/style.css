@@ -1381,10 +1381,10 @@ body::-webkit-scrollbar {
 
 .series-first-image-comment-svg {
     position: absolute;
-    top: 20.5%;
-    left: 42.5%;
+    top: 21%;
+    left: 52.5%;
     transform: translate(-50%, -50%);
-    width: 30rem !important;
+    width: 38.5rem !important;
     height: auto !important;
     z-index: 10;
 
