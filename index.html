@@ -30,19 +30,22 @@
             <button class="close-menu">&times;</button>
         </div>
         <ul class="hamburger-menu-items">
-            <li data-page="main">
+            <li data-page="shop-page">
                 <img src="asset/mobile/hamburgermenu/Main.svg" alt="Main" class="hamburger-main-svg">
             </li>
-            <li data-page="brand">
+            <li data-page="brands-page">
                 <img src="asset/mobile/hamburgermenu/Brand.svg" alt="Brand" class="hamburger-brand-svg">
             </li>
-            <li data-page="series">
+            <li data-page="series-page">
                 <img src="asset/mobile/hamburgermenu/Series.svg" alt="Series" class="hamburger-series-svg">
             </li>
-            <li data-page="lighting">
+            <li data-page="products-page">
                 <img src="asset/mobile/hamburgermenu/Lighting.svg" alt="Lighting" class="hamburger-lighting-svg">
             </li>
         </ul>
+        <div class="hamburger-menu-footer">
+            <img src="asset/mobile/hamburgermenu/hamburger-logo.png" alt="Hamburger logo" class="hamburger-logo">
+        </div>
     </div>
     <div class="menu-overlay"></div>
 
@@ -1061,7 +1064,8 @@
         document.querySelectorAll('.hamburger-menu-items li').forEach(item => {
             item.addEventListener('click', function () {
                 const page = this.dataset.page;
-                showPage(page + '-page');
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
                 closeMenuFunc();
             });
         });
