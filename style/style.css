@@ -2188,7 +2188,7 @@ body::-webkit-scrollbar {
 
     /* 첫 번째 섹션(모바일) */
     .shop-first-section {
-        height: 50vh;
+        height: 52vh;
         padding: 0;
         display: flex;
         align-items: center;
@@ -2216,7 +2216,7 @@ body::-webkit-scrollbar {
         position: fixed;
         width: 57% !important;
         max-width: 280px !important;
-        top: -18.5rem;
+        top: -19.5rem;
         left: -2.9rem;
         z-index: 3;
         transform: none;
@@ -2258,7 +2258,7 @@ body::-webkit-scrollbar {
     /* 두 번째 섹션 - about LOVE */
     .shop-second-section {
         height: auto;
-        min-height: 50vh;
+        min-height: 53vh;
         padding: 3rem 1rem;
         display: flex;
         align-items: center;
@@ -2272,21 +2272,22 @@ body::-webkit-scrollbar {
 
     .shop-second-title-svg {
         width: 50% !important;
-        max-width: 280px !important;
+        max-width: 10rem !important;
+        margin-top: 7rem;
         margin-bottom: 2rem;
     }
 
     .shop-second-text-svg {
         width: 95% !important;
-        max-width: 320px !important;
+        max-width: 16rem !important;
         margin-bottom: 2.5rem;
-        top: 0;
+        top: -1.5rem;
         transform: translateY(0);
     }
 
     .connection-button-svg {
         width: 150px !important;
-        top: 0.5rem;
+        top: -2.4rem;
     }
 
     /* 세 번째 섹션 - 제품 카드들(모바일) */
