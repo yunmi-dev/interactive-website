@@ -2104,6 +2104,10 @@ body::-webkit-scrollbar {
 
 /* 데탑에선 숨기기 */
 @media screen and (min-width: 769px) {
+    .mobile-only {
+        display: none !important;
+    }
+
     .hamburger-icon {
         display: none !important;
     }
@@ -2121,6 +2125,14 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 768px) {
     body {
         padding-top: 0;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
     }
 
     /* 네비게이션바(모바일) */
@@ -2176,7 +2188,7 @@ body::-webkit-scrollbar {
 
     /* 첫 번째 섹션(모바일) */
     .shop-first-section {
-        height: 53vh;
+        height: 50vh;
         padding: 0;
         display: flex;
         align-items: center;
@@ -2202,10 +2214,10 @@ body::-webkit-scrollbar {
 
     .shop-first-tagline-svg {
         position: fixed;
-        width: 55% !important;
+        width: 57% !important;
         max-width: 280px !important;
-        top: -19.7rem;
-        left: -3.2rem;
+        top: -18.5rem;
+        left: -2.9rem;
         z-index: 3;
         transform: none;
     }
@@ -2215,7 +2227,7 @@ body::-webkit-scrollbar {
         width: 100% !important;
         max-width: 260px !important;
         transform: none;
-        top: -4.7rem;
+        top: -6rem;
         left: -10.3rem;
         z-index: 1;
         order: 2;
@@ -2225,7 +2237,7 @@ body::-webkit-scrollbar {
         position: absolute;
         width: 0.75rem !important;
         height: 1.2rem !important;
-        top: -4.7rem !important;
+        top: -6rem !important;
         left: -10.4rem !important;
         transform: translateX(-50%);
         z-index: 3;
@@ -2246,7 +2258,7 @@ body::-webkit-scrollbar {
     /* 두 번째 섹션 - about LOVE */
     .shop-second-section {
         height: auto;
-        min-height: 55vh;
+        min-height: 50vh;
         padding: 3rem 1rem;
         display: flex;
         align-items: center;
@@ -2259,7 +2271,7 @@ body::-webkit-scrollbar {
     }
 
     .shop-second-title-svg {
-        width: 85% !important;
+        width: 50% !important;
         max-width: 280px !important;
         margin-bottom: 2rem;
     }
@@ -2273,7 +2285,7 @@ body::-webkit-scrollbar {
     }
 
     .connection-button-svg {
-        width: 180px !important;
+        width: 150px !important;
         top: 0.5rem;
     }
 
