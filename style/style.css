@@ -2292,14 +2292,24 @@ body::-webkit-scrollbar {
 
     /* 세 번째 섹션 - 제품 카드들(모바일) */
     .shop-third-section {
+        position: relative;
         padding: 2rem 1rem;
         min-height: auto;
     }
 
     .lighting-title-svg {
-        align-self: center;
-        margin: 1rem auto 2rem auto;
-        width: 140px !important;
+        margin: 0.3rem 0 0rem 1.4rem;
+        width: 9.5rem !important;
+        position: relative;
+    }
+
+    .shop-third-arrow-mobile {
+        position: absolute;
+        width: 4.6rem !important;
+        height: auto !important;
+        top: 1.5rem;
+        left: 12.5rem;
+        z-index: 10;
     }
 
     .concept-grid {
@@ -2317,46 +2327,107 @@ body::-webkit-scrollbar {
         gap: 1.5rem;
         margin: 0 auto 3rem auto;
         padding: 1.5rem 1rem;
+        text-align: center;
     }
 
     .concept-card.reverse {
         flex-direction: column !important;
     }
 
-    .flower-default-image,
-    .flower-full-image {
-        width: 220px !important;
-        height: auto !important;
-        margin: 0;
-        position: static;
-        transform: none;
-        top: auto;
-        left: auto;
+    .flower-content-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
     }
 
-    .flower-hover-background-svg {
-        display: none;
+    .flower-full-image,
+    .flower-hover-background-svg,
+    .flower1-comment-hover,
+    .flower2-comment-hover,
+    .flower3-comment-hover,
+    .shop-third-hover-dot1,
+    .shop-third-hover-dot2,
+    .shop-third-hover-dot3 {
+        display: none !important;
     }
 
     .flower1-comment,
     .flower2-comment,
-    .flower3-comment,
-    .flower1-comment-hover,
-    .flower2-comment-hover,
-    .flower3-comment-hover {
-        position: static;
-        width: 180px !important;
-        margin: 1rem 0 0 0;
-        left: auto;
-        top: auto;
-        opacity: 1;
+    .flower3-comment {
+        position: static !important;
+        margin: 0 !important;
+        left: auto !important;
+        top: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 
-    /* 호버 효과 제거 및 점 숨김 */
-    .shop-third-hover-dot1,
-    .shop-third-hover-dot2,
-    .shop-third-hover-dot3 {
-        display: none;
+    /* 첫 번째 카드 */
+    .concept-card:first-child .flower-default-image {
+        width: 140px !important;
+        height: auto !important;
+        margin-left: -1.3rem;
+        margin-top: 0rem;
+    }
+
+    .concept-card:first-child .flower1-comment {
+        width: 10px !important;
+        max-width: 10px !important;
+        height: auto !important;
+    }
+
+    /* 두 번째 카드 (reverse) */
+    .concept-card.reverse .flower-default-image {
+        width: 150px !important;
+        height: auto !important;
+    }
+
+    .concept-card.reverse .flower2-comment {
+        width: 130px !important;
+        height: auto !important;
+    }
+
+    /* 세 번째 카드 */
+    .concept-card:last-child .flower-default-image {
+        width: 145px !important;
+        height: auto !important;
+    }
+
+    .concept-card:last-child .flower3-comment {
+        width: 140px !important;
+        height: auto !important;
+    }
+
+    .flower-default-image {
+        margin: 0;
+        position: static !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .concept-card:hover .flower-default-image,
+    .concept-card:hover .flower-full-image,
+    .concept-card:hover .flower-hover-background-svg,
+    .concept-card:hover .flower1-comment,
+    .concept-card:hover .flower2-comment,
+    .concept-card:hover .flower3-comment,
+    .concept-card:hover .flower1-comment-hover,
+    .concept-card:hover .flower2-comment-hover,
+    .concept-card:hover .flower3-comment-hover,
+    .concept-card:hover .shop-third-hover-dot1,
+    .concept-card:hover .shop-third-hover-dot2,
+    .concept-card:hover .shop-third-hover-dot3,
+    .concept-card.reverse:hover .flower-default-image,
+    .concept-card.reverse:hover .flower-full-image,
+    .concept-card:not(.reverse):first-child:hover .flower-default-image,
+    .concept-card:not(.reverse):first-child:hover .flower-full-image,
+    .concept-card:not(.reverse):last-child:hover .flower-default-image,
+    .concept-card:not(.reverse):last-child:hover .flower-full-image {
+        opacity: inherit;
+        transform: none;
     }
 
     /* 고정 홈 버튼 모바일 스타일 */
@@ -2464,6 +2535,16 @@ body::-webkit-scrollbar {
     .brands-first-section {
         padding: 2rem 1rem;
         margin-bottom: 2rem;
+    }
+
+    .brands-first-phrase-svg {
+        position: absolute;
+        margin-top: 5.7rem !important;
+        margin-left: 1.3rem !important;
+        min-width: 6.5rem !important;
+        height: auto !important;
+        z-index: 100;
+        opacity: 1;
     }
 
     .brands-first-title-svg {
@@ -2919,5 +3000,11 @@ body::-webkit-scrollbar {
     .flower2-comment-hover,
     .flower3-comment-hover {
         width: 150px !important;
+    }
+
+    .brands-first-phrase-svg {
+        top: 1.5rem !important;
+        left: 0.8rem !important;
+        width: 4rem !important;
     }
 }
