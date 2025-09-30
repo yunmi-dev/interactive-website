@@ -981,6 +981,7 @@ body::-webkit-scrollbar {
 #brands-page {
     padding-top: 4rem;
     min-height: 100vh;
+    position: relative;
 }
 
 .brands-first-section {
@@ -2534,7 +2535,7 @@ body::-webkit-scrollbar {
 
     .brands-first-section {
         padding: 2rem 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
     }
 
     .brands-first-phrase-svg {
@@ -2545,6 +2546,7 @@ body::-webkit-scrollbar {
         height: auto !important;
         z-index: 100;
         opacity: 1;
+        margin: 0;
     }
 
     .brands-rectangle-mobile {
@@ -2556,6 +2558,7 @@ body::-webkit-scrollbar {
         margin-left: 3rem !important;
         z-index: 100;
         opacity: 1;
+        margin: 0;
         transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -2593,6 +2596,9 @@ body::-webkit-scrollbar {
         width: 100% !important;
         max-width: 18rem !important;
         margin-top: 2.6rem;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .brands-second-section {
@@ -2601,9 +2607,13 @@ body::-webkit-scrollbar {
     }
 
     .brands-second-title-svg {
-        width: 80% !important;
-        max-width: 200px !important;
+        width: 100% !important;
+        max-width: 100px !important;
+        margin-top: 0;
+        margin-left: -2rem !important;
         margin-bottom: 2rem;
+        opacity: 1;
+        transform: none !important;
     }
 
     .keywords-container {
@@ -2617,6 +2627,8 @@ body::-webkit-scrollbar {
     .keyword3-title-svg {
         width: 120px !important;
         margin-bottom: 1rem;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .keyword1-image-svg,
@@ -2624,6 +2636,8 @@ body::-webkit-scrollbar {
     .keyword3-image-svg {
         width: 80px !important;
         margin: 0.5rem 0 1rem 0;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .keyword1-paragraph-svg,
@@ -2631,6 +2645,8 @@ body::-webkit-scrollbar {
     .keyword3-paragraph-svg {
         width: 280px !important;
         margin-top: 1rem;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .brands-third-section {
@@ -2643,6 +2659,7 @@ body::-webkit-scrollbar {
         width: 90% !important;
         max-width: 280px !important;
         padding: 2rem 0 3rem 0;
+        opacity: 1 !important;
     }
 
     /* Series 페이지(모바일) */
