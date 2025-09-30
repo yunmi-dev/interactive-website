@@ -2595,6 +2595,7 @@ body::-webkit-scrollbar {
     .brands-first-paragraph-svg {
         width: 100% !important;
         max-width: 18rem !important;
+        margin-left: -0.5rem;
         margin-top: 2.6rem;
         animation: none !important;
         opacity: 1 !important;
@@ -2608,9 +2609,9 @@ body::-webkit-scrollbar {
 
     .brands-second-title-svg {
         width: 100% !important;
-        max-width: 100px !important;
-        margin-top: 0;
-        margin-left: -2rem !important;
+        max-width: 9rem !important;
+        margin-top: 1.2rem !important;
+        margin-left: -9.5rem !important;
         margin-bottom: 2rem;
         opacity: 1;
         transform: none !important;
@@ -2622,29 +2623,70 @@ body::-webkit-scrollbar {
         margin: 2rem 0 0 0;
     }
 
-    .keyword1-title-svg,
-    .keyword2-title-svg,
-    .keyword3-title-svg {
-        width: 120px !important;
+    .keyword1-title-svg {
+        width: 84px !important;
+        margin-left: -13.3rem;
         margin-bottom: 1rem;
         opacity: 1 !important;
         transform: none !important;
     }
 
-    .keyword1-image-svg,
-    .keyword2-image-svg,
-    .keyword3-image-svg {
-        width: 80px !important;
-        margin: 0.5rem 0 1rem 0;
+    .keyword2-title-svg {
+        width: 51px !important;
+        margin-left: -15.2rem;
+        margin-bottom: 1rem;
+        margin-top: 1.2rem;
         opacity: 1 !important;
         transform: none !important;
     }
 
-    .keyword1-paragraph-svg,
-    .keyword2-paragraph-svg,
-    .keyword3-paragraph-svg {
-        width: 280px !important;
+    .keyword3-title-svg {
+        width: 85px !important;
+        margin-left: -13.2rem;
+        margin-bottom: 1rem;
+        margin-top: 1.3rem;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .keyword1-image-svg {
+        width: 60px !important;
+        margin: 1rem 0 1rem 0;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .keyword2-image-svg {
+        width: 80px !important;
+        margin: 1rem 0 1rem 0;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .keyword3-image-svg {
+        width: 52px !important;
+        margin: 2rem 0 1rem 0;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .keyword1-paragraph-svg {
+        width: 250px !important;
+        margin-top: 1.5rem;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .keyword2-paragraph-svg {
+        width: 260px !important;
         margin-top: 1rem;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .keyword3-paragraph-svg {
+        width: 180px !important;
+        margin-top: 1.7rem;
         opacity: 1 !important;
         transform: none !important;
     }
