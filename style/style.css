@@ -2583,7 +2583,7 @@ body::-webkit-scrollbar {
     }
 
     .brands-back-button-mobile {
-        position: absolute;
+        position: fixed;
         top: 2rem !important;
         right: 1.5rem !important;
         width: 4.3rem !important;
