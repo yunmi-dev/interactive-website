@@ -1024,8 +1024,8 @@ body::-webkit-scrollbar {
 
 .brands-first-phrase-svg {
     position: absolute;
-    top: 7rem !important;
-    left: 6rem !important;
+    top: 7rem;
+    left: 6rem;
     width: 7.5rem !important;
     height: auto !important;
     z-index: 100;
@@ -2320,7 +2320,7 @@ body::-webkit-scrollbar {
     }
 
     .concept-card {
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center;
         width: 100%;
         max-width: 320px;
@@ -2333,14 +2333,6 @@ body::-webkit-scrollbar {
 
     .concept-card.reverse {
         flex-direction: column !important;
-    }
-
-    .flower-content-container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-        justify-content: center;
     }
 
     .flower-full-image,
