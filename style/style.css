@@ -2826,26 +2826,88 @@ body::-webkit-scrollbar {
     .detail1-first-section,
     .detail2-first-section,
     .detail3-first-section {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        gap: 0 !important;
         padding: 2rem 1rem 1rem 1rem;
+        justify-content: center;
+        align-items: center;
     }
 
-    .detail1-first-image1-svg,
-    .detail1-first-image3-svg,
-    .detail2-first-image1-svg,
-    .detail2-first-image3-svg,
-    .detail3-first-image1-svg,
-    .detail3-first-image3-svg {
-        width: 120px !important;
+    .detail1-first-section img,
+    .detail2-first-section img,
+    .detail3-first-section img {
+        display: block;
         margin: 0;
     }
 
-    .detail1-first-image2-svg,
-    .detail2-first-image2-svg,
+    .detail1-first-image1-svg {
+        width: 145px !important;
+        height: auto !important;
+        margin-top: 12rem !important;
+        margin-left: 3.5rem !important;
+        margin-right: 0 !important;
+        flex-shrink: 0;
+    }
+
+    .detail1-first-image2-svg {
+        width: 320px !important;
+        max-width: 450px !important;
+        height: auto !important;
+        margin-top: -5rem !important;
+        margin-left: -6rem !important;
+        margin-right: -4.7rem !important;
+        flex-shrink: 0;
+    }
+
+    .detail1-first-image3-svg {
+        width: 130px !important;
+        height: auto !important;
+        margin-top: 11.5rem !important;
+        margin-left: 0rem !important;
+        margin-right: 3rem !important;
+        flex-shrink: 0;
+    }
+
+    .detail2-first-image1-svg {
+        width: 70px !important;
+        height: auto !important;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .detail2-first-image2-svg {
+        width: 140px !important;
+        height: auto !important;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .detail2-first-image3-svg {
+        width: 70px !important;
+        height: auto !important;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .detail3-first-image1-svg {
+        width: 70px !important;
+        height: auto !important;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
     .detail3-first-image2-svg {
-        width: 250px !important;
+        width: 140px !important;
+        height: auto !important;
         margin: 0;
+        flex-shrink: 0;
+    }
+
+    .detail3-first-image3-svg {
+        width: 70px !important;
+        height: auto !important;
+        margin: 0;
+        flex-shrink: 0;
     }
 
     .detail1-second-section,
