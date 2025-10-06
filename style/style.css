@@ -2815,12 +2815,16 @@ body::-webkit-scrollbar {
 
     /* Detail 페이지들(모바일) */
     .back-button {
-        top: 4.5rem;
-        left: 1rem;
+        position: fixed !important;
+        top: 2rem !important;
+        left: 1rem !important;
+        z-index: 1000 !important;
     }
 
     .detail-back-button-svg {
-        width: 35px !important;
+        width: 4.5rem !important;
+        margin-top: -0.2rem !important;
+        margin-left: 17.7rem !important
     }
 
     .detail1-first-section,
@@ -2915,8 +2919,8 @@ body::-webkit-scrollbar {
     .detail3-second-section {
         padding: 1.5rem 1rem;
         transform: none;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start !important;
+        text-align: left !important;
     }
 
     .detail1-second-title1-svg,
@@ -2962,14 +2966,14 @@ body::-webkit-scrollbar {
         flex-direction: column;
         gap: 2rem;
         transform: none;
-        align-items: center;
+        align-items: flex-start !important;
         padding: 2rem 1rem;
     }
 
     #detail-color-container,
     #detail-size-container {
-        align-items: center;
-        text-align: center;
+        align-items: flex-start !important;
+        text-align: left !important;
     }
 
     .wall-mount-svg,
