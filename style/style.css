@@ -2964,22 +2964,86 @@ body::-webkit-scrollbar {
     .detail1-third-section,
     .detail2-third-section,
     .detail3-third-section {
-        flex-direction: column;
+        flex-direction: row !important;
         gap: 2rem;
         transform: none;
         align-items: flex-start !important;
         padding: 3rem 1rem 1rem 2rem !important;
+        justify-content: space-between;
     }
 
-    #detail-color-container,
+    #detail-color-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        flex: 1;
+        min-width: 0;
+    }
+
     #detail-size-container {
+        display: flex;
+        flex-direction: column;
         align-items: flex-start !important;
         text-align: left !important;
+        gap: 1rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .color-title-svg {
+        width: 3.2rem !important;
+    }
+
+    #color-box-container {
+        position: static !important;
+        top: auto !important;
+        margin-top: 0 !important;
+    }
+
+    #off-on-container {
+        margin-top: -2rem !important;
+        margin-left: -0.1rem !important;
+    }
+
+    .off-svg {
+        width: 1.3rem !important;
+        margin-right: 0.9rem;
+    }
+
+    .on-svg {
+        width: 2.8rem !important;
+        margin-top: 0.1rem !important;
+    }
+
+    .first-detail-color1-svg {
+        width: 2rem !important;
+        margin-right: 1.7rem;
+        margin-left: 0rem;
+    }
+
+    .first-detail-color2-svg,
+    .first-detail-color3-svg {
+        width: 2rem !important;
+        margin-right: 0.05rem;
+    }
+
+    .size-title-svg {
+        width: 2.5rem !important;
+    }
+
+    .detail1-third-size-svg,
+    .detail2-third-size-svg,
+    .detail3-third-size-svg {
+        width: 70% !important;
+        max-width: 200px !important;
     }
 
     .wall-mount-svg,
     .standard-svg {
-        margin: 1rem 0 0 0;
+        width: 3.7rem !important;
+        margin: 1rem 0 0 0 !important;
+        align-self: flex-start !important;
     }
 
     .detail1-fourth-section,
