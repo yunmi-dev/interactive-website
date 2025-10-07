@@ -2927,12 +2927,14 @@ body::-webkit-scrollbar {
     .detail2-second-title1-svg,
     .detail3-second-title1-svg {
         width: 160px !important;
-        margin: 0;
+        margin-left: 0.4rem !important;
     }
 
     .detail1-second-title2-svg {
         width: 233px !important;
         margin: -1rem -0.4rem;
+        margin-left: -0.1rem !important;
+        margin-top: -0.8rem !important;
     }
 
     .detail2-second-title2-svg {
@@ -2946,8 +2948,8 @@ body::-webkit-scrollbar {
     }
 
     .detail1-second-paragraph-svg {
-        width: calc(100vw - 4rem) !important;
-        margin: 1.5rem 0rem auto;
+        width: calc(100vw - 5rem) !important;
+        margin: 1.2rem 0.5rem auto;
         display: block;
     }
 
@@ -2969,7 +2971,16 @@ body::-webkit-scrollbar {
         transform: none;
         align-items: flex-start !important;
         padding: 3rem 1rem 1rem 2rem !important;
-        justify-content: space-between;
+        /* justify-content: space-between; */
+    }
+
+    .detail1-third-section>div:first-child,
+    .detail2-third-section>div:first-child,
+    .detail3-third-section>div:first-child {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
     }
 
     #detail-color-container {
@@ -2979,6 +2990,7 @@ body::-webkit-scrollbar {
         gap: 2rem;
         flex: 1;
         min-width: 0;
+        margin-left: 0.5rem !important;
     }
 
     #detail-size-container {
@@ -2989,16 +3001,17 @@ body::-webkit-scrollbar {
         gap: 1rem;
         flex: 1;
         min-width: 0;
+        margin-top: -0.1rem !important;
     }
 
     .color-title-svg {
-        width: 3.2rem !important;
+        width: 3rem !important;
     }
 
     #color-box-container {
         position: static !important;
         top: auto !important;
-        margin-top: 0 !important;
+        margin-top: -1.5rem !important;
     }
 
     #off-on-container {
@@ -3007,13 +3020,13 @@ body::-webkit-scrollbar {
     }
 
     .off-svg {
-        width: 1.3rem !important;
+        width: 1.2rem !important;
         margin-right: 0.9rem;
     }
 
     .on-svg {
-        width: 2.8rem !important;
-        margin-top: 0.1rem !important;
+        width: 2.5rem !important;
+        margin-top: 0.7rem !important;
     }
 
     .first-detail-color1-svg {
@@ -3029,20 +3042,25 @@ body::-webkit-scrollbar {
     }
 
     .size-title-svg {
-        width: 2.5rem !important;
+        width: 2.3rem !important;
+        margin-left: 2.7rem !important;
     }
 
     .detail1-third-size-svg,
     .detail2-third-size-svg,
     .detail3-third-size-svg {
-        width: 70% !important;
+        width: 5.8rem !important;
         max-width: 200px !important;
+        margin-top: 0.7rem !important;
+        margin-left: 2.65rem !important;
     }
 
     .wall-mount-svg,
     .standard-svg {
-        width: 3.7rem !important;
+        width: 3.5rem !important;
         margin: 1rem 0 0 0 !important;
+        margin-left: 2.7rem !important;
+        margin-top: 1.4rem !important;
         align-self: flex-start !important;
     }
 
