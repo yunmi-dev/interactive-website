@@ -2876,13 +2876,13 @@ body::-webkit-scrollbar {
         width: 145px !important;
         height: auto !important;
         margin-top: 12rem !important;
-        margin-left: 5.5rem !important;
+        margin-left: 6rem !important;
         margin-right: 0 !important;
         flex-shrink: 0;
     }
 
     .detail2-first-image2-svg {
-        width: 320px !important;
+        width: 310px !important;
         max-width: 450px !important;
         height: auto !important;
         margin-top: -3rem !important;
@@ -2896,7 +2896,7 @@ body::-webkit-scrollbar {
         height: auto !important;
         margin-top: 11.5rem !important;
         margin-left: 0rem !important;
-        margin-right: 5.5rem !important;
+        margin-right: 5rem !important;
         flex-shrink: 0;
     }
 
@@ -2937,8 +2937,17 @@ body::-webkit-scrollbar {
         text-align: left !important;
     }
 
-    .detail1-second-title1-svg,
-    .detail2-second-title1-svg,
+    .detail1-second-title1-svg {
+        width: 160px !important;
+        margin-left: 0.4rem !important;
+    }
+
+    .detail2-second-title1-svg {
+        width: 160px !important;
+        margin-top: -0.8rem !important;
+        margin-left: 0.4rem !important;
+    }
+
     .detail3-second-title1-svg {
         width: 160px !important;
         margin-left: 0.4rem !important;
@@ -2953,7 +2962,7 @@ body::-webkit-scrollbar {
 
     .detail2-second-title2-svg {
         width: 280px !important;
-        margin: 0.5rem 0;
+        margin: -0.6rem 0;
     }
 
     .detail3-second-title2-svg {
@@ -2968,8 +2977,9 @@ body::-webkit-scrollbar {
     }
 
     .detail2-second-paragraph-svg {
-        width: 200px !important;
-        margin: 1rem 0;
+        width: calc(100vw - 9.7rem) !important;
+        margin: 0.8rem 0.5rem auto;
+        display: block;
     }
 
     .detail3-second-paragraph-svg {
