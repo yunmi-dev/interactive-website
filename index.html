@@ -812,7 +812,12 @@
 
         function goBack() {
             document.querySelector('.page.active').classList.remove('active');
-            showPage(previousPage);
+
+            if (window.innerWidth <= 768) {
+                showPage('products');
+            } else {
+                showPage(previousPage);
+            }
         }
 
         function showDetailFromProducts(detailNumber) {
