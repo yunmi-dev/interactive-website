@@ -3118,11 +3118,20 @@ body::-webkit-scrollbar {
         padding-bottom: 5rem;
     }
 
+    .light-title-svg {
+        width: 3.1rem !important;
+        height: auto !important;
+        margin-left: -16.3rem;
+        padding-top: 2rem;
+        margin-bottom: 0rem;
+    }
+
     .detail1-fifth-image-svg,
     .detail2-fifth-image-svg,
     .detail3-fifth-image-svg {
-        width: 100% !important;
+        width: calc(100vw * 0.8) !important;
         max-width: 350px !important;
+        margin-top: -1.8rem !important;
     }
 
     .light-transition {
@@ -3131,16 +3140,23 @@ body::-webkit-scrollbar {
     }
 
     .toggle-switch {
-        width: 60px !important;
+        width: 65px !important;
+        margin-top: -0.6rem !important;
     }
 
     .toggle-circle {
-        width: 25px !important;
-        top: 1.2rem;
+        width: 29px !important;
+        top: 0.9rem;
     }
 
     .toggle-switch.active .toggle-circle {
         left: 2.8rem;
+    }
+
+    #detail1-page .end-comment-svg {
+        /* width: 90px !important; */
+        padding-top: 7rem;
+        margin-bottom: -4.5rem;
     }
 }
 
