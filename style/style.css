@@ -3067,24 +3067,46 @@ body::-webkit-scrollbar {
     .detail1-fourth-section,
     .detail2-fourth-section,
     .detail3-fourth-section {
-        padding: 2rem 1rem;
+        padding: 0rem 1rem;
+        margin-top: -2rem !important;
         transform: none;
         align-items: center;
     }
 
     .main-detail-image {
-        width: 100% !important;
-        max-width: 350px !important;
+        width: calc(100vw * 0.8) !important;
+        max-width: 65.5rem !important;
+        height: auto !important;
+        transition: filter 0.1s ease;
+        image-rendering: auto;
+        shape-rendering: auto;
+    }
+
+    .details-title-svg {
+        width: 3.9rem !important;
+        height: auto !important;
+        margin-left: -15.6rem;
+        padding-top: 4rem;
+        margin-bottom: -1.5rem;
     }
 
     .thumbnail-container {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.3rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: -4.5rem;
+        width: calc(100vw * 0.8);
+        max-width: 65.5rem;
+
     }
 
     .thumbnail {
-        width: 50px !important;
+        width: 100% !important;
+        height: auto !important;
+        cursor: pointer;
+        transition: opacity 0s ease;
     }
 
     .detail1-fifth-section,
