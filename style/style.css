@@ -2483,21 +2483,50 @@ body::-webkit-scrollbar {
     #products-page .concept-card {
         width: 100%;
         max-width: 280px;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         height: auto;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0rem;
+        padding-top: 280px;
     }
 
     .lighting-1-container,
     .lighting-2-container,
     .lighting-3-container {
-        position: relative;
+        position: absolute;
         top: 0;
-        left: 0;
-        transform: none;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100% !important;
-        height: 200px !important;
-        margin-bottom: 1rem;
+        height: 280px !important;
+        margin-bottom: 0;
+    }
+
+    .lighting-1-container:hover,
+    .lighting-2-container:hover,
+    .lighting-3-container:hover {
+        cursor: default !important;
+    }
+
+    .lighting-1-container::before,
+    .lighting-2-container::before,
+    .lighting-3-container::before {
+        width: 1.2rem;
+        height: 1.2rem;
+        top: 0rem;
+        left: 0.8rem;
+    }
+
+    .lighting-1-container::after,
+    .lighting-2-container::after,
+    .lighting-3-container::after {
+        width: 1.2rem;
+        height: 1.2rem;
+        bottom: -1px;
+        right: -1px;
     }
 
     #products-page .lighting-1-flower-png,
@@ -2506,38 +2535,39 @@ body::-webkit-scrollbar {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(0.8);
+        transform: translate(-50%, -50%) scale(1) !important;
         width: auto !important;
-        height: 180px !important;
-        filter: grayscale(0%) brightness(1.1);
+        height: 20rem !important;
+        filter: grayscale(0%) !important;
+        transition: none !important;
+        pointer-events: none !important;
     }
 
     #products-page .lighting-1-flower-png:hover,
     #products-page .lighting-2-flower-png:hover,
     #products-page .lighting-3-flower-png:hover {
-        transform: translate(-50%, -50%) scale(0.9);
+        transform: translate(-50%, -50%) scale(1) !important;
+        filter: grayscale(0%) brightness(1.1) !important;
     }
 
     #products-page .lighting-1-title-svg,
     #products-page .lighting-2-title-svg,
     #products-page .lighting-3-title-svg {
         position: static !important;
-        top: auto !important;
-        left: auto !important;
         width: 140px !important;
-        margin: 0.5rem 0;
+        margin: 0 !important;
         padding: 0 !important;
+        display: block;
     }
 
     #products-page .lighting-1-comment-svg,
     #products-page .lighting-2-comment-svg,
     #products-page .lighting-3-comment-svg {
         position: static !important;
-        top: auto !important;
-        left: auto !important;
         width: 60px !important;
-        margin: 0;
+        margin: 0 !important;
         padding: 0 !important;
+        display: block;
     }
 
     /* Brands 페이지 모바일 스타일 */
