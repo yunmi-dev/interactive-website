@@ -3165,17 +3165,34 @@ body::-webkit-scrollbar {
         margin-bottom: 0rem;
     }
 
-    .detail1-fifth-image-svg,
-    .detail2-fifth-image-svg,
-    .detail3-fifth-image-svg {
-        width: calc(100vw * 0.8) !important;
-        max-width: 350px !important;
-        margin-top: -1.8rem !important;
+    .fifth-image-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        width: calc(100vw * 0.8);
+        max-width: 350px;
     }
 
     .light-transition {
+        position: absolute;
+        top: -1.8rem;
+        left: 0;
         width: 100% !important;
-        max-width: 350px !important;
+        max-width: 100% !important;
+        height: auto !important;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        pointer-events: none;
+    }
+
+    .detail1-fifth-image-svg,
+    .detail2-fifth-image-svg,
+    .detail3-fifth-image-svg {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: -1.8rem !important;
     }
 
     .toggle-switch {
