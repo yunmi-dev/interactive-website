@@ -3184,12 +3184,12 @@ body::-webkit-scrollbar {
     }
 
     .toggle-circle {
-        width: 29px !important;
-        top: 0.9rem;
+        width: 30px !important;
+        top: 0.93rem;
     }
 
     .toggle-switch.active .toggle-circle {
-        left: 2.8rem;
+        left: 2.2rem;
     }
 
     #detail1-page .end-comment-svg {
