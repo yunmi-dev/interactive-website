@@ -2459,8 +2459,18 @@ body::-webkit-scrollbar {
     }
 
     #products-page .lighting-title-svg {
-        margin: 1rem auto 2rem auto;
+        margin: 0.7rem 13.6rem 2rem auto;
         width: 140px !important;
+    }
+
+    .products-back-button-mobile {
+        position: fixed;
+        top: 1.8rem !important;
+        right: 1.33rem !important;
+        width: 4.5rem !important;
+        height: auto !important;
+        z-index: 100;
+        cursor: pointer;
     }
 
     #products-page .concept-grid {
