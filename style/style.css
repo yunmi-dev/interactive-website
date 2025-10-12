@@ -2246,14 +2246,18 @@ body::-webkit-scrollbar {
 
     /* 슬라이더(모바일) */
     .series-slider {
-        height: 35px;
+        height: 30px;
         bottom: 0;
     }
 
     .first-series-svg {
-        width: 100px !important;
-        margin-right: 40px;
+        width: 138px !important;
+        margin-right: 140px;
         font-size: 12px;
+    }
+
+    .series-track {
+        animation: slideLeft 18s linear infinite;
     }
 
     /* 두 번째 섹션 - about LOVE */
