@@ -2456,11 +2456,22 @@ body::-webkit-scrollbar {
     /* Products 페이지 모바일 스타일 */
     #products-page {
         padding-top: 3.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #products-page .products-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     #products-page .lighting-title-svg {
-        margin: 0.7rem 13.6rem 2rem auto;
+        margin: 0.7rem 0 0 2.2rem;
         width: 140px !important;
+        align-self: flex-start;
     }
 
     .products-back-button-mobile {
@@ -2475,99 +2486,223 @@ body::-webkit-scrollbar {
 
     #products-page .concept-grid {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
         align-items: center;
-        padding: 0 1rem;
+        padding: 0;
+        width: 100%;
+        max-width: 100vw;
     }
 
     #products-page .concept-card {
         width: 100%;
         max-width: 280px;
-        margin-bottom: 3rem;
+        margin: 0;
         height: auto;
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0rem;
-        padding-top: 280px;
+        gap: 0.5rem;
+        padding: calc(min(75vw, 280px) * 1.3) 0rem 0 0rem;
     }
 
-    .lighting-1-container,
-    .lighting-2-container,
+    .lighting-1-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: -0.7rem !important;
+        transform: translateX(-52.9%);
+        width: min(75vw, 280px) !important;
+        height: auto !important;
+        overflow: visible;
+        pointer-events: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lighting-2-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(75vw, 280px) !important;
+        height: auto !important;
+        overflow: visible;
+        pointer-events: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .lighting-3-container {
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 100% !important;
-        height: 280px !important;
-        margin-bottom: 0;
+        width: min(75vw, 280px) !important;
+        height: auto !important;
+        overflow: visible;
+        pointer-events: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .lighting-1-container:hover,
+    /* .lighting-1-container:hover,
     .lighting-2-container:hover,
     .lighting-3-container:hover {
         cursor: default !important;
-    }
+    } */
 
     .lighting-1-container::before,
     .lighting-2-container::before,
     .lighting-3-container::before {
-        width: 1.2rem;
-        height: 1.2rem;
-        top: 0rem;
-        left: 0.8rem;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 7.5%;
+        height: 7.5%;
+        background-image: url('../asset/products/rectangle.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 200;
+        pointer-events: none;
     }
 
     .lighting-1-container::after,
     .lighting-2-container::after,
     .lighting-3-container::after {
-        width: 1.2rem;
-        height: 1.2rem;
-        bottom: -1px;
-        right: -1px;
+        content: '';
+        position: absolute;
+        bottom: -1.6%;
+        right: 0;
+        width: 7.5%;
+        height: 7.5%;
+        background-image: url('../asset/products/rectangle.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 200;
+        pointer-events: none;
+        display: block;
     }
 
-    #products-page .lighting-1-flower-png,
-    #products-page .lighting-2-flower-png,
-    #products-page .lighting-3-flower-png {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1) !important;
-        width: auto !important;
-        height: 20rem !important;
+    #products-page .lighting-1-flower-png {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
         filter: grayscale(0%) !important;
         transition: none !important;
         pointer-events: none !important;
+        display: block;
     }
 
-    #products-page .lighting-1-flower-png:hover,
+    #products-page .lighting-2-flower-png {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        filter: grayscale(0%) !important;
+        transition: none !important;
+        pointer-events: none !important;
+        display: block;
+    }
+
+    #products-page .lighting-3-flower-png {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none !important;
+        width: 120% !important;
+        max-width: 120% !important;
+        height: auto !important;
+        clip-path: none !important;
+        object-fit: contain !important;
+        filter: grayscale(0%) !important;
+        transition: none !important;
+        pointer-events: none !important;
+        display: block;
+    }
+
+    /* #products-page .lighting-1-flower-png:hover,
     #products-page .lighting-2-flower-png:hover,
     #products-page .lighting-3-flower-png:hover {
-        transform: translate(-50%, -50%) scale(1) !important;
-        filter: grayscale(0%) brightness(1.1) !important;
+        transform: translate(-50%, -50%) !important;
+        filter: grayscale(0%) !important;
+    } */
+
+    #products-page .lighting-1-title-svg {
+        position: absolute !important;
+        left: calc(50% - min(75vw, 280px) / 2) !important;
+        top: calc(min(75vw, 280px) * 1.3) !important;
+        width: 111px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block;
     }
 
-    #products-page .lighting-1-title-svg,
-    #products-page .lighting-2-title-svg,
+    #products-page .lighting-2-title-svg {
+        position: static !important;
+        width: 113px !important;
+        margin: -0.8rem 0 0 -16rem !important;
+        padding: 0 !important;
+        display: block;
+        align-self: flex-start;
+        margin-left: calc((100vw - 75vw) / 2) !important;
+    }
+
     #products-page .lighting-3-title-svg {
         position: static !important;
-        width: 140px !important;
-        margin: 0 !important;
+        width: 111px !important;
+        margin: -0.8rem 0 0 -16rem !important;
         padding: 0 !important;
         display: block;
+        align-self: flex-start;
+        margin-left: calc((100vw - 75vw) / 2) !important;
     }
 
-    #products-page .lighting-1-comment-svg,
-    #products-page .lighting-2-comment-svg,
-    #products-page .lighting-3-comment-svg {
+    #products-page .lighting-1-comment-svg {
         position: static !important;
-        width: 60px !important;
-        margin: 0 !important;
+        width: 50px !important;
+        margin: 2.3rem 0 0 -7.5rem !important;
+        left: -10rem !important;
         padding: 0 !important;
         display: block;
+        align-self: flex-start;
+        margin-left: calc((100vw - 75vw) / 2) !important;
+    }
+
+    #products-page .lighting-2-comment-svg {
+        position: static !important;
+        width: 90px !important;
+        margin: 2.3rem 0 0 -7.5rem !important;
+        padding: 0 !important;
+        display: block;
+        align-self: flex-start;
+        margin-left: calc((100vw - 75vw) / 2) !important;
+    }
+
+    #products-page .lighting-3-comment-svg {
+        position: static !important;
+        width: 49px !important;
+        margin: 2.3rem 0 0 -7.5rem !important;
+        padding: 0 !important;
+        display: block;
+        align-self: flex-start;
+        margin-left: calc((100vw - 75vw) / 2) !important;
     }
 
     /* Brands 페이지 모바일 스타일 */
