@@ -2189,7 +2189,7 @@ body::-webkit-scrollbar {
 
     /* 첫 번째 섹션(모바일) */
     .shop-first-section {
-        height: 52vh;
+        height: 57vh;
         padding: 0;
         display: flex;
         align-items: center;
@@ -2259,7 +2259,7 @@ body::-webkit-scrollbar {
     /* 두 번째 섹션 - about LOVE */
     .shop-second-section {
         height: auto;
-        min-height: 53vh;
+        min-height: 57vh;
         padding: 3rem 1rem;
         display: flex;
         align-items: center;
@@ -2701,6 +2701,12 @@ body::-webkit-scrollbar {
         display: block;
     }
 
+    #products-page .end-comment-svg {
+        width: 90px !important;
+        margin-bottom: -4rem;
+        padding-top: 12rem;
+    }
+
     /* Brands 페이지 모바일 스타일 */
     #brands-page {
         padding-top: 3.5rem;
@@ -2899,6 +2905,12 @@ body::-webkit-scrollbar {
         opacity: 1 !important;
     }
 
+    #brands-page .end-comment-svg {
+        width: 90px !important;
+        padding-bottom: 0.7rem;
+        margin-bottom: -4.5rem;
+    }
+
     /* Series 페이지(모바일) */
     .series-first-section {
         flex-direction: column;
@@ -2980,8 +2992,9 @@ body::-webkit-scrollbar {
     }
 
     #series-page .end-comment-svg {
-        padding-top: 3rem;
-        padding-bottom: 5rem;
+        width: 90px !important;
+        padding-bottom: 0.7rem;
+        padding-top: 7rem;
     }
 
     /* Detail 페이지들(모바일) */
