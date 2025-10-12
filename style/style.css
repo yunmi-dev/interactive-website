@@ -2788,7 +2788,7 @@ body::-webkit-scrollbar {
 
     .brands-second-section {
         padding: 2rem 1rem;
-        padding-bottom: 3rem;
+        padding-bottom: 0rem;
     }
 
     .brands-second-title-svg {
@@ -2898,23 +2898,63 @@ body::-webkit-scrollbar {
 
     .brands-third-paragraph-svg {
         width: 100% !important;
-        max-width: 310px !important;
-        padding: 2rem 0 3rem 0;
+        max-width: 21rem !important;
+        padding: 10rem 0 3rem 0;
         opacity: 1 !important;
+    }
+
+    .brands-third-effect1 {
+        position: absolute;
+        top: -1rem;
+        left: -1.5rem;
+        width: 18rem !important;
+        height: auto !important;
+    }
+
+    .brands-third-effect2 {
+        position: absolute;
+        top: 17rem;
+        right: -1rem;
+        width: 13rem !important;
+        height: auto !important;
+    }
+
+    .brands-third-effect3 {
+        position: absolute;
+        top: 10rem;
+        left: 10.8rem;
+        width: 12rem !important;
+        height: auto !important;
+    }
+
+    .brands-third-effect4 {
+        position: absolute;
+        top: 18.5rem;
+        left: 4.7rem;
+        width: 8rem !important;
+        height: auto !important;
     }
 
     .brands-third-rectangle {
         width: 100% !important;
-        max-width: 2rem !important;
-        /* padding: 1rem 0 3rem 0; */
-        margin-top: -18rem;
-        opacity: 1 !important;
+        max-width: 1.8rem !important;
+        margin-top: -9rem;
+        position: absolute;
+        left: 53%;
+        transform: translateX(-50%) rotate(0deg);
+        /* 애니메이션 추가 */
+        animation: brandThirdRectangleRotate 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+        opacity: 1;
+    }
+
+    .brands-third-section.animate-effects .brands-third-rectangle {
+        opacity: 1;
     }
 
     #brands-page .end-comment-svg {
         width: 90px !important;
-        padding-bottom: 0.7rem;
-        margin-bottom: -4.5rem;
+        margin-top: 3rem;
+        padding-bottom: 1.5rem;
     }
 
     /* Series 페이지(모바일) */
@@ -3436,6 +3476,18 @@ body::-webkit-scrollbar {
 
     100% {
         transform: rotate(45deg);
+    }
+}
+
+@keyframes brandThirdRectangleRotate {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) rotate(-10deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) rotate(45deg);
     }
 }
 
