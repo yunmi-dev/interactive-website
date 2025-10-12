@@ -2742,7 +2742,8 @@ body::-webkit-scrollbar {
         z-index: 100;
         opacity: 1;
         margin: 0;
-        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        animation: rectangleRotate 0.3s ease-out 0.6s forwards;
+        transform: rotate(0deg);
     }
 
     .brands-first-rectangle-mobile.rotated {
@@ -3425,6 +3426,16 @@ body::-webkit-scrollbar {
 .hamburger-menu.active {
     opacity: 1;
     visibility: visible;
+}
+
+@keyframes rectangleRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+    }
 }
 
 /* 메뉴 크기 */
