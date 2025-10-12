@@ -808,10 +808,18 @@
             const pages = document.querySelectorAll('.page');
             const homeButton = document.querySelector('.fixed-home-button');
 
+            // 강제로 스크롤 초기화
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+
             // 모든 애니메이션 클래스 리셋
             document.querySelectorAll('.animate, .animate-paragraph, .animate-effects').forEach(el => {
                 el.classList.remove('animate', 'animate-paragraph', 'animate-effects');
             });
+            document.querySelectorAll('.rotated, .rotated-third').forEach(el => {
+                el.classList.remove('rotated', 'rotated-third');
+            }); // 모바일 rectangle 회전 클래스 리셋
 
             pages.forEach(page => page.classList.remove('active'));
 
@@ -838,9 +846,19 @@
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById('detail' + detailNumber + '-page').classList.add('active');
             window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
         }
 
         function goBack() {
+            // 애니메이션 리셋
+            document.querySelectorAll('.animate, .animate-paragraph, .animate-effects').forEach(el => {
+                el.classList.remove('animate', 'animate-paragraph', 'animate-effects');
+            });
+            document.querySelectorAll('.rotated, .rotated-third').forEach(el => {
+                el.classList.remove('rotated', 'rotated-third');
+            });
+
             document.querySelector('.page.active').classList.remove('active');
 
             if (window.innerWidth <= 768) {
@@ -856,6 +874,8 @@
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById('detail' + detailNumber + '-page').classList.add('active');
             window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
         }
 
         function changeMainImage(thumbnail) {
@@ -1028,8 +1048,8 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            // shop-second-section 애니메이션
             const secondSection = document.querySelector('.shop-second-section');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
@@ -1087,12 +1107,9 @@
                 brandsThirdParagraphObserver.observe(brandsThirdSection);
                 brandsThirdEffectsObserver.observe(brandsThirdSection);
             }
-        });
 
-        // series-second-section 애니메이션
-        document.addEventListener('DOMContentLoaded', function () {
+            // series-second-section 애니메이션
             const seriesSecondSection = document.querySelector('.series-second-section');
-
             const seriesSecondObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && entry.intersectionRatio >= 1) {
@@ -1109,7 +1126,6 @@
 
             // series-third-section 애니메이션
             const seriesThirdSection = document.querySelector('.series-third-section');
-
             const seriesThirdObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
@@ -1118,11 +1134,62 @@
                 });
             }, {
                 threshold: 0.5,
-                rootMargin: '300px 0px -300px 0px' // 300px 일찍 트리거 (임시)
+                rootMargin: '300px 0px -300px 0px'
             });
 
             if (seriesThirdSection) {
                 seriesThirdObserver.observe(seriesThirdSection);
+            }
+
+            // 모바일에서만 작동하는 brands rectangle 애니메이션
+            if (window.innerWidth <= 768) {
+                // brands-first-rectangle 애니메이션
+                const brandsFirstRectangle = document.querySelector('.brands-first-rectangle-mobile');
+                const brandsFirstObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('rotated');
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                if (brandsFirstRectangle) {
+                    brandsFirstObserver.observe(brandsFirstRectangle);
+                }
+
+                // brands-second-rectangle 애니메이션
+                const brandsSecondRectangle = document.querySelector('.brands-second-rectangle-mobile');
+                const brandsSecondRectangleObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('rotated');
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                if (brandsSecondRectangle) {
+                    brandsSecondRectangleObserver.observe(brandsSecondRectangle);
+                }
+
+                // brands-third-rectangle 애니메이션
+                const brandsThirdRectangle = document.querySelector('.brands-third-rectangle');
+                const brandsThirdRectangleObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('rotated-third');
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+
+                if (brandsThirdRectangle) {
+                    brandsThirdRectangleObserver.observe(brandsThirdRectangle);
+                }
             }
         });
     </script>
@@ -1155,6 +1222,14 @@
                 e.stopPropagation();
                 const page = this.parentElement.dataset.page;
                 const pageId = page.replace('-page', '');
+
+                // 애니메이션 리셋 추가
+                document.querySelectorAll('.animate, .animate-paragraph, .animate-effects').forEach(el => {
+                    el.classList.remove('animate', 'animate-paragraph', 'animate-effects');
+                });
+                document.querySelectorAll('.rotated, .rotated-third').forEach(el => {
+                    el.classList.remove('rotated', 'rotated-third');
+                });
 
                 // 모든 페이지 숨기기
                 document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
