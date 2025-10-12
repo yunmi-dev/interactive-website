@@ -1223,7 +1223,15 @@
                 const page = this.parentElement.dataset.page;
                 const pageId = page.replace('-page', '');
 
-                // 애니메이션 리셋 추가
+                // 1. 먼저 모든 페이지 숨기기
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+                // 2. 스크롤 최상단으로 올림
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+
+                // 3. 애니메이션 리셋
                 document.querySelectorAll('.animate, .animate-paragraph, .animate-effects').forEach(el => {
                     el.classList.remove('animate', 'animate-paragraph', 'animate-effects');
                 });
@@ -1231,19 +1239,14 @@
                     el.classList.remove('rotated', 'rotated-third');
                 });
 
-                // 모든 페이지 숨기기
-                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-
-                // 선택된 페이지만 표시
-                document.getElementById(page).classList.add('active');
-
-                // 스크롤 최상단으로
-                window.scrollTo(0, 0);
-                document.documentElement.scrollTop = 0;
-                document.body.scrollTop = 0;
+                // 4. 약간의 딜레이 주고 페이지 표시 (IntersectionObserver가 제대로 작동하도록)
+                setTimeout(() => {
+                    document.getElementById(page).classList.add('active');
+                }, 50);
 
                 // 메뉴 닫기
                 closeMenuFunc();
+                // 페이지전환시 자동으로 최상단으로 올리는 과정에서 애니메이션이 실행되어버리는 문제 해결
             });
         });
     </script>
