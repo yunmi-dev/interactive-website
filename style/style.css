@@ -2457,8 +2457,13 @@ body::-webkit-scrollbar {
     #products-page {
         padding-top: 3.5rem;
         width: 100%;
+        display: none;
+    }
+
+    #products-page.active {
         display: flex;
         justify-content: center;
+        min-height: 100vh;
     }
 
     #products-page .products-section {
@@ -2466,6 +2471,8 @@ body::-webkit-scrollbar {
         display: flex;
         flex-direction: column;
         align-items: center;
+        min-height: 100vh;
+        padding-bottom: 5rem;
     }
 
     #products-page .lighting-title-svg {
@@ -3465,12 +3472,20 @@ body::-webkit-scrollbar {
     padding: 0;
 }
 
+.hamburger-menu-items li img {
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+}
+
 .hamburger-menu-items li {
     padding: 1.5rem 2rem;
-    cursor: pointer;
+    cursor: default;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 10;
 }
 
 .hamburger-menu-items {

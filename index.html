@@ -1145,12 +1145,25 @@
         closeMenu.addEventListener('click', closeMenuFunc);
         overlay.addEventListener('click', closeMenuFunc);
 
-        // 메뉴 아이템 클릭시 페이지 이동
-        document.querySelectorAll('.hamburger-menu-items li').forEach(item => {
-            item.addEventListener('click', function () {
-                const page = this.dataset.page;
+        // 메뉴 아이템의 이미지 클릭시 페이지 이동
+        document.querySelectorAll('.hamburger-menu-items li img').forEach(img => {
+            img.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const page = this.parentElement.dataset.page;
+                const pageId = page.replace('-page', '');
+
+                // 모든 페이지 숨기기
                 document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+                // 선택된 페이지만 표시
                 document.getElementById(page).classList.add('active');
+
+                // 스크롤 최상단으로
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+
+                // 메뉴 닫기
                 closeMenuFunc();
             });
         });
