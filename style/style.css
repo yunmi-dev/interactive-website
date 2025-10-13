@@ -2978,15 +2978,15 @@ body::-webkit-scrollbar {
     .series-first-image-container {
         position: relative;
         margin: 0;
-        margin-left: -5vw;
+        margin-left: -3vw;
+        margin-top: 5vw;
         width: 75vw;
         height: 75vw;
     }
 
     .series-first-image-svg {
         position: absolute;
-        width: 54vw !important;
-        height: auto !important;
+        width: 58vw !important;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -2996,21 +2996,20 @@ body::-webkit-scrollbar {
 
     .series-first-image-comment-svg {
         position: absolute;
+        width: calc(75vw * 0.78) !important;
         top: calc(50% - 12vw);
         left: 50%;
         transform: translate(-50%, -50%);
-        width: calc(75vw * 0.73) !important;
-        height: auto !important;
         margin: 0 !important;
         padding: 0 !important;
     }
 
     .series-first-comment-svg {
         position: absolute;
-        top: calc(36% + 2vw);
-        left: 33.8%;
-        transform: translateX(-50%);
-        width: calc(75vw * 0.68) !important;
+        top: 69%;
+        left: 46.5%;
+        transform: translateX(-50%, -50%);
+        width: calc(75vw * 0.73) !important;
         height: auto !important;
         margin: 0 !important;
         padding: 0 !important;
