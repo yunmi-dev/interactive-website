@@ -3099,15 +3099,12 @@ body::-webkit-scrollbar {
         position: relative;
         width: 90vw;
         height: 90vw;
-        max-width: 350px;
-        max-height: 350px;
         margin: 0 auto;
     }
 
     .series-third-rectangle-mobile {
         position: absolute;
         width: 4.6vw !important;
-        max-width: 20px !important;
         height: auto !important;
         top: calc(50% - 71vw);
         right: 4%;
@@ -3124,8 +3121,7 @@ body::-webkit-scrollbar {
 
     .series-third-title-svg {
         position: absolute;
-        width: 80vw !important;
-        max-width: 350px !important;
+        width: 88% !important;
         top: calc(50% - 64vw);
         right: calc(50% - 44vw);
         transform: translateX(-50%);
@@ -3136,7 +3132,6 @@ body::-webkit-scrollbar {
     .series-third-paragraph-svg {
         position: absolute;
         width: 82vw !important;
-        /* max-width: 300px !important; */
         top: calc(50% - 43vw);
         right: calc(50% - 42vw);
         transform: translateX(-50%);
