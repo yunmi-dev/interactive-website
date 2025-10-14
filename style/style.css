@@ -1461,7 +1461,7 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    padding-top: 5rem;
+    padding-top: 9rem;
 }
 
 .series-second-title-container {
@@ -1477,6 +1477,10 @@ body::-webkit-scrollbar {
 }
 
 .series-second-parentheses-svg {
+    position: absolute;
+    top: 10%;
+    left: 11vw;
+    transform: translate(-50%, -50%);
     width: 21.5rem !important;
     height: auto !important;
     display: block;
@@ -1484,10 +1488,10 @@ body::-webkit-scrollbar {
 
 .series-second-title-svg {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 11vw;
     transform: translate(-50%, -50%);
-    width: 16.6rem !important;
+    width: 18rem !important;
     height: auto !important;
     padding-right: 0.4rem;
     padding-top: 0.1rem;
@@ -1495,11 +1499,14 @@ body::-webkit-scrollbar {
 }
 
 .series-second-paragraph-svg {
+    position: absolute;
     width: 44rem !important;
     height: auto !important;
+    top: -1.3vw;
+    left: 25vw;
     flex-shrink: 0;
-    margin-top: 2rem;
-    margin-right: 18.5rem;
+    /* margin-top: 0rem; */
+    /* margin-right: 0rem; */
 
     opacity: 0;
     transform: translate(150px, 100px) scale(1.5);
@@ -1517,12 +1524,12 @@ body::-webkit-scrollbar {
 }
 
 .series-third-section {
-    padding: 8rem 14rem 8rem 8rem;
+    padding: 0rem 14rem 8rem 8rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 3rem;
-    padding-top: 31.5rem;
+    padding-top: 20rem;
 }
 
 .series-third-title-svg {
