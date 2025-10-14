@@ -159,9 +159,9 @@ body::-webkit-scrollbar {
 
 .shop-first-vure-logo-svg {
     position: absolute;
-    top: 8.7rem;
-    left: -39.75rem;
-    width: 35rem !important;
+    top: 7rem;
+    left: -41rem;
+    width: 48% !important;
     height: auto !important;
     z-index: 1;
 
@@ -194,6 +194,18 @@ body::-webkit-scrollbar {
     animation:
         squareSpinOnly 0.3s ease-out 0.35s forwards,
         fadeIn 0.6s ease-out 0.35s forwards;
+}
+
+.shop-first-memo-box {
+    position: absolute;
+    top: -31%;
+    left: 10%;
+    width: 33% !important;
+    height: auto !important;
+    z-index: 1;
+
+    opacity: 0;
+    animation: fadeIn 0.35s ease-out 0.35s forwards;
 }
 
 .shop-second-section {
@@ -1395,8 +1407,12 @@ body::-webkit-scrollbar {
 }
 
 .series-first-comment-svg {
+    position: absolute;
     width: 30rem !important;
     height: auto !important;
+    top: 45%;
+    right: -130%;
+
     flex-shrink: 0;
     margin-right: 5.5rem;
     margin-top: 1.7rem;
