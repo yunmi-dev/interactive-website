@@ -62,7 +62,7 @@
                             class="shop-first-black-square-svg">
                     </div>
                     <img src="asset/shop/first/shop-first-memo-box.png" alt="shop-first-memo-box"
-                        class="shop-first-memo-box">
+                        class="shop-first-memo-box" onclick="showPage('memo')">
                 </div>
 
                 <div class="series-slider">
@@ -251,6 +251,10 @@
                 <img src="asset/end-comment.svg" alt="end comment svg" class="end-comment-svg">
             </section>
         </section>
+    </div>
+
+    <div id="memo-page" class="page">
+        <img src="asset/memo/memo-vure-logo.png" alt="memo-vure-logo" class="memo-vure-logo">
     </div>
 
     <div id="products-page" class="page">
@@ -829,6 +833,7 @@
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             const homeButton = document.querySelector('.fixed-home-button');
+            const navbar = document.querySelector('.navbar');
 
             // 강제로 스크롤 초기화
             window.scrollTo(0, 0);
@@ -852,6 +857,13 @@
             setTimeout(() => {
                 document.getElementById(pageId + '-page').classList.add('active');
             }, 50);
+
+            // memo 페이지일 때 navbar 숨기기
+            if (pageId === 'memo') {
+                navbar.style.display = 'none';
+            } else {
+                navbar.style.display = 'flex';
+            }
 
             if (pageId === 'brands' || pageId === 'series') {
                 homeButton.style.display = 'flex';

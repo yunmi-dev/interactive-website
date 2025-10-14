@@ -703,6 +703,16 @@ body::-webkit-scrollbar {
     display: block;
 }
 
+/* 메모 페이지 */
+#memo-page {
+    padding-top: 4rem;
+    min-height: 100vh;
+    background-image: url('../asset/memo/memo-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .products-page {
     padding-top: 6rem;
     min-height: auto;
