@@ -254,7 +254,39 @@
     </div>
 
     <div id="memo-page" class="page">
-        <img src="asset/memo/memo-vure-logo.png" alt="memo-vure-logo" class="memo-vure-logo">
+        <img src="asset/memo/memo-vure-logo.png" alt="memo-vure-logo" class="memo-vure-logo" onclick="showPage('shop')">
+
+        <!-- 관리 버튼들 -->
+        <div class="memo-controls" style="display: none;">
+            <button class="memo-control-btn" onclick="exportMemos()">내보내기</button>
+            <button class="memo-control-btn" onclick="importMemos()">가져오기</button>
+            <button class="memo-control-btn" onclick="clearAllMemos()">전체 초기화</button>
+        </div>
+
+        <div class="memo-container">
+            <!-- 메모 입력 영역 -->
+            <div class="memo-input-container">
+                <div class="memo-input-wrapper">
+                    <input type="text" class="memo-input" id="memoInput" placeholder="응원 메시지를 남겨주세요..." maxlength="100">
+                    <img src="asset/memo/memo-page-right-arrow.png" alt="submit" class="memo-submit-arrow"
+                        onclick="addMemo()">
+                </div>
+            </div>
+
+            <!-- 메모 페이지들 -->
+            <div id="memo-pages-container"></div>
+
+            <!-- 페이지네이션 -->
+            <div class="memo-pagination">
+                <img src="asset/memo/memo-page-left-arrow.png" alt="left" class="memo-page-arrow" id="prevPageBtn"
+                    onclick="changeMemoPage(-1)">
+                <div class="memo-page-numbers" id="pageNumbers"></div>
+                <img src="asset/memo/memo-page-right-arrow.png" alt="right" class="memo-page-arrow" id="nextPageBtn"
+                    onclick="changeMemoPage(1)">
+            </div>
+        </div>
+
+        <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImportFile(event)">
     </div>
 
     <div id="products-page" class="page">
@@ -1282,6 +1314,349 @@
                 closeMenuFunc();
                 // 페이지전환시 자동으로 최상단으로 올리는 과정에서 애니메이션이 실행되어버리는 문제 해결
             });
+        });
+    </script>
+
+    <script>
+        // 메모 페이지 초기화
+        function initMemoPages() {
+            const container = document.getElementById('memo-pages-container');
+            const pageNumbers = document.getElementById('pageNumbers');
+
+            // 페이지 컨테이너 생성
+            container.innerHTML = '';
+            memoData.pages.forEach((_, index) => {
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'memo-page-content';
+                pageDiv.id = `memo-page-${index}`;
+                if (index === 0) pageDiv.classList.add('active');
+                container.appendChild(pageDiv);
+            });
+
+            // 페이지 번호 생성
+            updatePageNumbers();
+
+            // 모든 메모 렌더링
+            renderAllMemos();
+        }
+
+        // 페이지 번호 업데이트
+        function updatePageNumbers() {
+            const pageNumbers = document.getElementById('pageNumbers');
+            pageNumbers.innerHTML = '';
+
+            // 각 페이지 숫자별 개별 크기 설정 (여기서 직접 조정하세요)
+            const pageSizes = {
+                1: '1.5rem',
+                2: '2rem',
+                3: '1.6rem',
+                4: '1.4rem',
+                5: '1.5rem',
+                6: '1.7rem',
+                // 필요한 만큼 추가
+            };
+
+            memoData.pages.forEach((_, index) => {
+                const img = document.createElement('img');
+                img.src = `asset/memo/memo-page-${index + 1}.png`;
+                img.className = 'memo-page-number';
+                img.dataset.page = index;
+                if (index === memoData.currentPage) img.classList.add('active');
+                img.onclick = () => goToMemoPage(index);
+                pageNumbers.appendChild(img);
+            });
+
+            updateArrowButtons();
+        }
+
+        // 화살표 버튼 상태 업데이트
+        function updateArrowButtons() {
+            const prevBtn = document.getElementById('prevPageBtn');
+            const nextBtn = document.getElementById('nextPageBtn');
+
+            prevBtn.classList.toggle('disabled', memoData.currentPage === 0);
+            nextBtn.classList.toggle('disabled', memoData.currentPage === memoData.pages.length - 1);
+        }
+
+        // 메모 페이지 이동
+        function changeMemoPage(direction) {
+            const newPage = memoData.currentPage + direction;
+            if (newPage >= 0 && newPage < memoData.pages.length) {
+                goToMemoPage(newPage);
+            }
+        }
+
+        function goToMemoPage(pageIndex) {
+            document.querySelectorAll('.memo-page-content').forEach(p => p.classList.remove('active'));
+            document.getElementById(`memo-page-${pageIndex}`).classList.add('active');
+
+            document.querySelectorAll('.memo-page-number').forEach(n => n.classList.remove('active'));
+            document.querySelector(`[data-page="${pageIndex}"]`).classList.add('active');
+
+            memoData.currentPage = pageIndex;
+            updateArrowButtons();
+        }
+
+        // 랜덤 위치 생성 (겹치지 않도록)
+        function getRandomPosition(existingMemos) {
+            const container = document.querySelector('.memo-container');
+            const containerRect = container.getBoundingClientRect();
+
+            const margin = 50;
+            const memoWidth = 200;
+            const memoHeight = 100;
+            const centerZone = {
+                left: containerRect.width / 2 - 350,
+                right: containerRect.width / 2 + 350,
+                top: containerRect.height / 2 - 200,
+                bottom: containerRect.height / 2 + 200
+            };
+
+            let attempts = 0;
+            let position;
+
+            while (attempts < 50) {
+                position = {
+                    left: Math.random() * (containerRect.width - memoWidth - margin * 2) + margin,
+                    top: Math.random() * (containerRect.height - memoHeight - margin * 2 - 150) + margin
+                };
+
+                // 중앙 입력창 영역 피하기
+                if (position.left > centerZone.left && position.left < centerZone.right &&
+                    position.top > centerZone.top && position.top < centerZone.bottom) {
+                    attempts++;
+                    continue;
+                }
+
+                // 다른 메모와 겹치는지 확인
+                const overlaps = existingMemos.some(memo => {
+                    const dx = Math.abs(memo.left - position.left);
+                    const dy = Math.abs(memo.top - position.top);
+                    return dx < memoWidth + 20 && dy < memoHeight + 20;
+                });
+
+                if (!overlaps) break;
+                attempts++;
+            }
+
+            return position;
+        }
+
+        // 메모 추가
+        function addMemo() {
+            const input = document.getElementById('memoInput');
+            const text = input.value.trim();
+
+            if (!text) {
+                alert('메모 내용을 입력해주세요.');
+                return;
+            }
+
+            const currentPageMemos = memoData.pages[memoData.currentPage];
+
+            // 현재 페이지가 가득 찼으면 새 페이지 생성
+            if (currentPageMemos.length >= memoData.maxMemosPerPage) {
+                memoData.pages.push([]);
+                memoData.currentPage = memoData.pages.length - 1;
+
+                // 새 페이지 DOM 추가
+                const container = document.getElementById('memo-pages-container');
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'memo-page-content';
+                pageDiv.id = `memo-page-${memoData.currentPage}`;
+                container.appendChild(pageDiv);
+
+                updatePageNumbers();
+                goToMemoPage(memoData.currentPage);
+            }
+
+            const position = getRandomPosition(memoData.pages[memoData.currentPage]);
+
+            const memo = {
+                id: Date.now(),
+                text: text,
+                left: position.left,
+                top: position.top,
+                page: memoData.currentPage
+            };
+
+            memoData.pages[memoData.currentPage].push(memo);
+            renderMemo(memo);
+
+            input.value = '';
+            saveMemoData();
+        }
+
+        // 메모 렌더링
+        function renderMemo(memo) {
+            const pageDiv = document.getElementById(`memo-page-${memo.page}`);
+            const memoDiv = document.createElement('div');
+            memoDiv.className = 'memo-item';
+            memoDiv.id = `memo-${memo.id}`;
+            memoDiv.style.left = `${memo.left}px`;
+            memoDiv.style.top = `${memo.top}px`;
+            memoDiv.innerHTML = `
+            ${memo.text}
+            <button class="delete-btn" onclick="deleteMemo(${memo.id})">×</button>
+        `;
+
+            // 드래그 기능
+            makeDraggable(memoDiv, memo);
+
+            pageDiv.appendChild(memoDiv);
+        }
+
+        // 모든 메모 렌더링
+        function renderAllMemos() {
+            memoData.pages.forEach((pageMemos, pageIndex) => {
+                const pageDiv = document.getElementById(`memo-page-${pageIndex}`);
+                pageDiv.innerHTML = '';
+                pageMemos.forEach(memo => renderMemo(memo));
+            });
+        }
+
+        // 메모 삭제
+        function deleteMemo(id) {
+            if (!confirm('이 메모를 삭제하시겠습니까?')) return;
+
+            memoData.pages.forEach((pageMemos, pageIndex) => {
+                const index = pageMemos.findIndex(m => m.id === id);
+                if (index !== -1) {
+                    pageMemos.splice(index, 1);
+                    document.getElementById(`memo-${id}`).remove();
+                    saveMemoData();
+                }
+            });
+        }
+
+        // 드래그 기능
+        function makeDraggable(element, memo) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+            element.onmousedown = dragMouseDown;
+
+            function dragMouseDown(e) {
+                if (e.target.classList.contains('delete-btn')) return;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+
+                const newTop = element.offsetTop - pos2;
+                const newLeft = element.offsetLeft - pos1;
+
+                element.style.top = newTop + "px";
+                element.style.left = newLeft + "px";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+
+                memo.left = element.offsetLeft;
+                memo.top = element.offsetTop;
+                saveMemoData();
+            }
+        }
+
+        // 메모데이터 저장하기
+        let memoData = {
+            pages: [[]],
+            currentPage: 0,
+            maxMemosPerPage: 20
+        };
+
+        function loadMemoData() {
+            const saved = localStorage.getItem('memoData');
+            if (saved) {
+                try {
+                    memoData = JSON.parse(saved);
+                } catch (e) {
+                    console.error('데이터 로드 실패:', e);
+                }
+            }
+        }
+
+        function saveMemoData() {
+            localStorage.setItem('memoData', JSON.stringify(memoData));
+            console.log('메모 데이터 저장됨');
+        }
+
+        function exportMemos() {
+            const dataStr = JSON.stringify(memoData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            const date = new Date().toISOString().split('T')[0];
+            link.download = `memos_${date}.json`;
+            link.click();
+
+            alert('메모가 JSON 파일로 저장되었습니다.');
+        }
+
+        function importMemos() {
+            document.getElementById('importFile').click();
+        }
+
+        function handleImportFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const imported = JSON.parse(e.target.result);
+                    memoData = imported;
+                    initMemoPages();
+                    alert('메모를 불러왔습니다.');
+                } catch (error) {
+                    alert('파일을 읽는 중 오류가 발생했습니다.');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        // 전체 초기화
+        function clearAllMemos() {
+            if (!confirm('모든 메모를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) return;
+
+            memoData = {
+                pages: [[]],
+                currentPage: 0,
+                maxMemosPerPage: 20
+            };
+
+            localStorage.removeItem('memoData');
+            initMemoPages();
+            alert('모든 메모가 삭제되었습니다.');
+        }
+
+        // Enter 키로 메모 추가
+        document.addEventListener('DOMContentLoaded', function () {
+            const memoInput = document.getElementById('memoInput');
+            if (memoInput) {
+                memoInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        addMemo();
+                    }
+                });
+            }
+
+            if (document.getElementById('memo-page')) {
+                loadMemoData();
+                initMemoPages();
+            }
         });
     </script>
 </body>

@@ -198,8 +198,8 @@ body::-webkit-scrollbar {
 
 .shop-first-memo-box {
     position: absolute;
-    top: -31%;
-    left: 10%;
+    top: -31.5%;
+    left: 17%;
     width: 33% !important;
     height: auto !important;
     z-index: 1;
@@ -705,12 +705,203 @@ body::-webkit-scrollbar {
 
 /* 메모 페이지 */
 #memo-page {
+    position: relative;
     padding-top: 4rem;
     min-height: 100vh;
     background-image: url('../asset/memo/memo-background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.memo-vure-logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 12rem;
+    height: auto;
+    cursor: pointer;
+}
+
+.memo-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 8rem);
+    padding: 2rem;
+}
+
+.memo-input-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.memo-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 2px solid #000;
+    padding-bottom: 0.5rem;
+}
+
+.memo-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Edensor', Arial, sans-serif;
+    padding: 0.5rem;
+}
+
+.memo-submit-arrow {
+    width: 2rem;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.memo-submit-arrow:hover {
+    transform: translateX(5px);
+}
+
+.memo-item {
+    position: absolute;
+    background: #fff9e6;
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    max-width: 200px;
+    word-wrap: break-word;
+    font-family: 'Edensor', Arial, sans-serif;
+    font-size: 0.9rem;
+    cursor: move;
+    user-select: none;
+    z-index: 1;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.memo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.memo-item .delete-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    display: none;
+}
+
+.memo-item:hover .delete-btn {
+    display: block;
+}
+
+.memo-pagination {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.memo-page-arrow {
+    width: 1.3rem;
+    height: auto;
+    margin-top: 0.1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.memo-page-arrow:hover {
+    opacity: 0.7;
+}
+
+.memo-page-arrow.disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.memo-page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.memo-page-number {
+    height: auto;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.memo-page-number.active {
+    opacity: 1;
+}
+
+.memo-page-number:hover {
+    opacity: 0.8;
+}
+
+.memo-controls {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.memo-control-btn {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-family: 'Edensor', Arial, sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.memo-control-btn:hover {
+    background: #000;
+    color: white;
+}
+
+.memo-page-content {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.memo-page-content.active {
+    display: block;
 }
 
 .products-page {
