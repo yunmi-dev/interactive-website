@@ -855,7 +855,8 @@ body::-webkit-scrollbar {
 }
 
 .memo-page-number {
-    height: auto;
+    width: 0.5rem !important;
+    height: auto !important;
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 0.3s ease;
