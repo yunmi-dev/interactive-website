@@ -819,45 +819,74 @@ body::-webkit-scrollbar {
 
 .memo-item {
     position: absolute;
-    background: #fff9e6;
-    border: 1px solid #000;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
-    max-width: 200px;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 120px;
+    max-height: 300px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(0, 0, 0, 0.02);
+    border-radius: 26px;
+    backdrop-filter: blur(25px);
+    box-shadow:
+        7px 6px 14px 0px rgba(0, 0, 0, 0.25),
+        2px 2px 4px 0px rgba(145, 153, 168, 0.25) inset,
+        6px 6px 13.3px 0px rgba(255, 255, 255, 0.23) inset;
+    padding: 13px 11px;
     word-wrap: break-word;
     font-family: 'Noto Sans KR', Arial, sans-serif;
     font-size: 0.9rem;
-    cursor: move;
+    cursor: default;
     user-select: none;
     z-index: 1;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.memo-content {
+    flex: 1;
+    overflow: hidden;
+    line-height: 1.4;
+    color: #333;
+    margin-top: 0.3rem !important;
+    margin-left: 0.5rem !important;
+    margin-bottom: 10px;
+}
+
+.memo-more-btn {
+    position: absolute;
+    bottom: 13px;
+    right: 11px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.memo-more-btn:hover {
+    transform: scale(1.1);
 }
 
 .memo-item:hover {
-    transform: scale(1.05);
-    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    box-shadow:
+        10px 8px 18px 0px rgba(0, 0, 0, 0.3),
+        2px 2px 4px 0px rgba(145, 153, 168, 0.25) inset,
+        6px 6px 13.3px 0px rgba(255, 255, 255, 0.23) inset;
     z-index: 10;
 }
 
-.memo-item .delete-btn {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 20px;
-    height: 20px;
-    background: #ff4444;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 1;
-    display: none;
+/* 메모 확장됐을때 */
+.memo-item.expanded {
+    max-height: none;
+    height: auto;
+    z-index: 20;
 }
 
-.memo-item:hover .delete-btn {
-    display: block;
+.memo-item.expanded .memo-content {
+    overflow: visible;
+    white-space: pre-wrap;
 }
 
 .memo-pagination {

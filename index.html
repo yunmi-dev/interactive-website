@@ -1408,19 +1408,21 @@
             updateArrowButtons();
         }
 
-        // 랜덤 위치 생성 (겹치지 않도록)
+        // 랜덤 위치 생성 (memo-input-container 피하도록)
         function getRandomPosition(existingMemos) {
             const container = document.querySelector('.memo-container');
             const containerRect = container.getBoundingClientRect();
 
             const margin = 50;
-            const memoWidth = 200;
-            const memoHeight = 100;
-            const centerZone = {
-                left: containerRect.width / 2 - 350,
-                right: containerRect.width / 2 + 350,
-                top: containerRect.height / 2 - 200,
-                bottom: containerRect.height / 2 + 200
+            const memoWidth = 400; // 최대 메모 너비
+            const memoHeight = 300; // 최대 메모 높이
+
+            // input-container 영역 정의 (실제 CSS 값 기준)
+            const inputZone = {
+                left: 543 - 50, // 여유분 추가
+                right: 543 + 589 + 50, // 여유분 추가
+                top: 409.85 - 50, // 여유분 추가
+                bottom: 409.85 + 321.31 + 50 // 여유분 추가
             };
 
             let attempts = 0;
@@ -1432,22 +1434,17 @@
                     top: Math.random() * (containerRect.height - memoHeight - margin * 2 - 150) + margin
                 };
 
-                // 중앙 입력창 영역 피하기
-                if (position.left > centerZone.left && position.left < centerZone.right &&
-                    position.top > centerZone.top && position.top < centerZone.bottom) {
+                // input-container 영역 피하기
+                if (position.left < inputZone.right &&
+                    position.left + memoWidth > inputZone.left &&
+                    position.top < inputZone.bottom &&
+                    position.top + memoHeight > inputZone.top) {
                     attempts++;
                     continue;
                 }
 
-                // 다른 메모와 겹치는지 확인
-                const overlaps = existingMemos.some(memo => {
-                    const dx = Math.abs(memo.left - position.left);
-                    const dy = Math.abs(memo.top - position.top);
-                    return dx < memoWidth + 20 && dy < memoHeight + 20;
-                });
-
-                if (!overlaps) break;
-                attempts++;
+                // 다른 메모와 겹치는 것은 허용 (이 부분 제거)
+                break;
             }
 
             return position;
@@ -1506,13 +1503,13 @@
             memoDiv.id = `memo-${memo.id}`;
             memoDiv.style.left = `${memo.left}px`;
             memoDiv.style.top = `${memo.top}px`;
-            memoDiv.innerHTML = `
-            ${memo.text}
-            <button class="delete-btn" onclick="deleteMemo(${memo.id})">×</button>
-        `;
 
-            // 드래그 기능
-            makeDraggable(memoDiv, memo);
+            memoDiv.innerHTML = `
+            <div class="memo-content">${memo.text}</div>
+            <img src="asset/memo/memo-box/memo-more-btn.svg" alt="더보기" class="memo-more-btn" onclick="expandMemo(this)">
+            `;
+
+            adjustMemoSize(memoDiv, memo.text);
 
             pageDiv.appendChild(memoDiv);
         }
@@ -1669,6 +1666,43 @@
                 initMemoPages();
             }
         });
+
+        // 메모 확장/축소 함수
+        function expandMemo(button) {
+            const memoItem = button.closest('.memo-item');
+            const isExpanded = memoItem.classList.contains('expanded');
+
+            if (isExpanded) {
+                memoItem.classList.remove('expanded');
+                button.style.transform = 'rotate(0deg)';
+            } else {
+                memoItem.classList.add('expanded');
+                button.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // 메모 생성 시 크기 자동 조절 함수
+        function adjustMemoSize(memoElement, content) {
+            const tempDiv = document.createElement('div');
+            tempDiv.style.visibility = 'hidden';
+            tempDiv.style.position = 'absolute';
+            tempDiv.style.width = '200px'; // 최소 너비
+            tempDiv.style.padding = '13px 11px';
+            tempDiv.style.fontFamily = "'Noto Sans KR', Arial, sans-serif";
+            tempDiv.style.fontSize = '0.9rem';
+            tempDiv.style.lineHeight = '1.4';
+            tempDiv.innerHTML = content;
+
+            document.body.appendChild(tempDiv);
+
+            let width = Math.max(200, Math.min(400, tempDiv.scrollWidth + 50));
+            let height = Math.max(120, Math.min(300, tempDiv.scrollHeight + 50));
+
+            document.body.removeChild(tempDiv);
+
+            memoElement.style.width = width + 'px';
+            memoElement.style.height = height + 'px';
+        }
     </script>
 </body>
 
