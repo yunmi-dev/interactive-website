@@ -266,10 +266,22 @@
         <div class="memo-container">
             <!-- 메모 입력 영역 -->
             <div class="memo-input-container">
-                <div class="memo-input-wrapper">
-                    <input type="text" class="memo-input" id="memoInput" placeholder="응원 메시지를 남겨주세요..." maxlength="100">
-                    <img src="asset/memo/memo-page-right-arrow.png" alt="submit" class="memo-submit-arrow"
-                        onclick="addMemo()">
+                <div class="memo-input-background">
+                    <!-- 한글 텍스트 -->
+                    <img src="asset/memo/memo-box/memo-title-ko.svg" alt="memo title ko" class="memo-title-ko">
+                    <!-- 영어 텍스트 -->
+                    <img src="asset/memo/memo-box/memo-title-en.svg" alt="memo title en" class="memo-title-en">
+
+                    <!-- 입력 필드 -->
+                    <div class="memo-input-wrapper">
+                        <input type="text" class="memo-input" id="memoInput" placeholder="" maxlength="100">
+                        <img src="asset/memo/memo-box/memo-submit-btn.svg" alt="submit" class="memo-submit-btn"
+                            onclick="addMemo()">
+                    </div>
+
+                    <!-- VURE로 이동하기 버튼 -->
+                    <img src="asset/memo/memo-box/memo-goto-main.svg" alt="VURE로 이동하기" class="memo-goto-main"
+                        onclick="showPage('shop')">
                 </div>
             </div>
 
@@ -285,7 +297,6 @@
                     onclick="changeMemoPage(1)">
             </div>
         </div>
-
         <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImportFile(event)">
     </div>
 

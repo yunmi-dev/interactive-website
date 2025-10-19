@@ -732,43 +732,89 @@ body::-webkit-scrollbar {
 
 .memo-input-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    background: white;
-    border: 2px solid #000;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top: 30%;
+    left: 30%;
+    width: 589px;
+    height: 321.3065185546875px;
+}
+
+.memo-input-background {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(0, 0, 0, 0.02);
+    border-radius: 26px;
+    backdrop-filter: blur(25px);
+    box-shadow:
+        7px 6px 14px 0px rgba(0, 0, 0, 0.25),
+        2px 2px 4px 0px rgba(145, 153, 168, 0.25) inset,
+        6px 6px 13.3px 0px rgba(255, 255, 255, 0.23) inset;
+    padding: 27px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+
+.memo-title-ko {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-top: 0.2rem !important;
+}
+
+.memo-title-en {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    margin-top: 0.1rem !important;
 }
 
 .memo-input-wrapper {
+    width: 561px;
+    height: 66.5565185546875px;
+    margin-top: 0.5rem;
+    background: #E0E0E1;
+    border-radius: 13px;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.07) inset;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    border-bottom: 2px solid #000;
-    padding-bottom: 0.5rem;
+    justify-content: space-between;
+    padding: 7px 8px;
 }
 
 .memo-input {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 1.2rem;
-    font-family: 'Edensor', Arial, sans-serif;
-    padding: 0.5rem;
+    background: transparent;
+    font-size: 1.1rem;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
+    color: #333;
 }
 
-.memo-submit-arrow {
-    width: 2rem;
-    height: auto;
+.memo-submit-btn {
+    width: auto;
+    height: 48px;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
-.memo-submit-arrow:hover {
-    transform: translateX(5px);
+.memo-submit-btn:hover {
+    transform: scale(1.05);
+}
+
+.memo-goto-main {
+    width: auto;
+    height: auto;
+    margin-right: 22.5rem !important;
+    max-width: 100%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.memo-goto-main:hover {
+    opacity: 0.8;
 }
 
 .memo-item {
@@ -780,7 +826,7 @@ body::-webkit-scrollbar {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
     max-width: 200px;
     word-wrap: break-word;
-    font-family: 'Edensor', Arial, sans-serif;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
     font-size: 0.9rem;
     cursor: move;
     user-select: none;
@@ -883,7 +929,7 @@ body::-webkit-scrollbar {
     background: white;
     border: 2px solid #000;
     border-radius: 5px;
-    font-family: 'Edensor', Arial, sans-serif;
+    font-family: 'Noto Sans KR', Arial, sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
