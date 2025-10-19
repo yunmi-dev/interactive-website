@@ -726,16 +726,17 @@ body::-webkit-scrollbar {
 .memo-container {
     position: relative;
     width: 100%;
-    height: calc(100vh - 8rem);
-    padding: 2rem;
+    height: calc(100vh - 4rem);
+    padding: 1rem;
 }
 
 .memo-input-container {
     position: absolute;
     top: 30%;
-    left: 30%;
+    left: 33%;
     width: 589px;
     height: 321.3065185546875px;
+    z-index: 100;
 }
 
 .memo-input-background {
@@ -869,11 +870,7 @@ body::-webkit-scrollbar {
 }
 
 .memo-item:hover {
-    transform: scale(1.02);
-    box-shadow:
-        10px 8px 18px 0px rgba(0, 0, 0, 0.3),
-        2px 2px 4px 0px rgba(145, 153, 168, 0.25) inset,
-        6px 6px 13.3px 0px rgba(255, 255, 255, 0.23) inset;
+    transform: scale(1.01);
     z-index: 10;
 }
 

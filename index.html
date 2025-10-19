@@ -1408,46 +1408,90 @@
             updateArrowButtons();
         }
 
-        // 랜덤 위치 생성 (memo-input-container 피하도록)
+        // 랜덤 위치 생성
         function getRandomPosition(existingMemos) {
             const container = document.querySelector('.memo-container');
             const containerRect = container.getBoundingClientRect();
 
-            const margin = 50;
-            const memoWidth = 400; // 최대 메모 너비
-            const memoHeight = 300; // 최대 메모 높이
+            const margin = 20;
+            const memoWidth = 400;
+            const memoHeight = 300;
+            const overlapTolerance = 5; // 5px 겹침 허용
 
-            // input-container 영역 정의 (실제 CSS 값 기준)
+            // input-container 영역 (5px 여유 추가)
             const inputZone = {
-                left: 543 - 50, // 여유분 추가
-                right: 543 + 589 + 50, // 여유분 추가
-                top: 409.85 - 50, // 여유분 추가
-                bottom: 409.85 + 321.31 + 50 // 여유분 추가
+                left: 543 - overlapTolerance,
+                right: 543 + 589 + overlapTolerance,
+                top: 409.85 - overlapTolerance,
+                bottom: 409.85 + 321.31 + overlapTolerance
             };
 
-            let attempts = 0;
-            let position;
+            // 페이지를 격자로 나누어 밀도 계산
+            const gridSize = 150; // 격자 크기 줄여서 더 세밀하게
+            const gridCols = Math.ceil(containerRect.width / gridSize);
+            const gridRows = Math.ceil(containerRect.height / gridSize);
 
-            while (attempts < 50) {
-                position = {
+            // 각 격자의 메모 개수 계산
+            const grid = Array(gridRows).fill().map(() => Array(gridCols).fill(0));
+
+            existingMemos.forEach(memo => {
+                const gridX = Math.floor(memo.left / gridSize);
+                const gridY = Math.floor(memo.top / gridSize);
+                if (gridX >= 0 && gridX < gridCols && gridY >= 0 && gridY < gridRows) {
+                    grid[gridY][gridX]++;
+                }
+            });
+
+            let attempts = 0;
+            let bestPosition = null;
+            let lowestDensity = Infinity;
+
+            while (attempts < 300) { // 시도 횟수 증가
+                const position = {
                     left: Math.random() * (containerRect.width - memoWidth - margin * 2) + margin,
-                    top: Math.random() * (containerRect.height - memoHeight - margin * 2 - 150) + margin
+                    top: Math.random() * (containerRect.height - memoHeight - margin * 2) + margin
                 };
 
-                // input-container 영역 피하기
-                if (position.left < inputZone.right &&
-                    position.left + memoWidth > inputZone.left &&
-                    position.top < inputZone.bottom &&
-                    position.top + memoHeight > inputZone.top) {
+                // input-container 중심부와 겹치는지 확인 (5px 여유 적용)
+                const overlapsInputCore = !(position.left + memoWidth < inputZone.left ||
+                    position.left > inputZone.right ||
+                    position.top + memoHeight < inputZone.top ||
+                    position.top > inputZone.bottom);
+
+                if (overlapsInputCore) {
                     attempts++;
                     continue;
                 }
 
-                // 다른 메모와 겹치는 것은 허용 (이 부분 제거)
-                break;
+                // 해당 위치의 밀도 계산
+                const gridX = Math.floor(position.left / gridSize);
+                const gridY = Math.floor(position.top / gridSize);
+
+                if (gridX >= 0 && gridX < gridCols && gridY >= 0 && gridY < gridRows) {
+                    const density = grid[gridY][gridX];
+
+                    // y좌표 다양성을 위한 보너스 (위아래 끝쪽에 보너스)
+                    const yVarietyBonus = (position.top < containerRect.height * 0.3 ||
+                        position.top > containerRect.height * 0.7) ? -1 : 0;
+                    const adjustedDensity = density + yVarietyBonus;
+
+                    if (adjustedDensity < lowestDensity) {
+                        lowestDensity = adjustedDensity;
+                        bestPosition = position;
+                    }
+
+                    if (adjustedDensity <= 0) {
+                        return position;
+                    }
+                }
+
+                attempts++;
             }
 
-            return position;
+            return bestPosition || {
+                left: Math.random() * (containerRect.width - memoWidth - margin * 2) + margin,
+                top: Math.random() * (containerRect.height - memoHeight - margin * 2) + margin
+            };
         }
 
         // 메모 추가
