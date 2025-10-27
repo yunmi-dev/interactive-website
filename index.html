@@ -293,10 +293,10 @@
 
             <!-- 페이지네이션 -->
             <div class="memo-pagination">
-                <img src="asset/memo/memo-page-left-arrow.png" alt="left" class="memo-page-arrow" id="prevPageBtn"
+                <img src="asset/memo/pagination/memo-page-left-arrow.png" alt="left" class="memo-page-arrow" id="prevPageBtn"
                     onclick="changeMemoPage(-1)">
                 <div class="memo-page-numbers" id="pageNumbers"></div>
-                <img src="asset/memo/memo-page-right-arrow.png" alt="right" class="memo-page-arrow" id="nextPageBtn"
+                <img src="asset/memo/pagination/memo-page-right-arrow.png" alt="right" class="memo-page-arrow" id="nextPageBtn"
                     onclick="changeMemoPage(1)">
             </div>
         </div>
@@ -1372,7 +1372,7 @@
 
             memoData.pages.forEach((_, index) => {
                 const img = document.createElement('img');
-                img.src = `asset/memo/memo-page-${index + 1}.png`;
+                img.src = `asset/memo/pagination/memo-page-${index + 1}.png`;
                 img.className = 'memo-page-number';
                 img.dataset.page = index;
                 if (index === memoData.currentPage) img.classList.add('active');
