@@ -1552,6 +1552,8 @@
             memoDiv.id = `memo-${memo.id}`;
             memoDiv.style.left = `${memo.left}px`;
             memoDiv.style.top = `${memo.top}px`;
+            memoDiv.style.position = 'absolute';
+            memoDiv.style.cursor = 'move';
 
             memoDiv.innerHTML = `
             <div class="memo-content">${memo.text.replace(/\n/g, '<br>')}</div>
@@ -1561,6 +1563,8 @@
             adjustMemoSize(memoDiv, memo.text);
 
             pageDiv.appendChild(memoDiv);
+
+            makeDraggable(memoDiv, memo);
         }
 
         // 모든 메모 렌더링
@@ -1593,7 +1597,7 @@
             element.onmousedown = dragMouseDown;
 
             function dragMouseDown(e) {
-                if (e.target.classList.contains('delete-btn')) return;
+                if (e.target.classList.contains('memo-more-btn')) return;
                 e.preventDefault();
                 pos3 = e.clientX;
                 pos4 = e.clientY;

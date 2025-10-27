@@ -842,13 +842,23 @@ body::-webkit-scrollbar {
     word-wrap: break-word;
     font-family: 'Noto Sans KR', Arial, sans-serif;
     font-size: 0.9rem;
-    cursor: default;
+    cursor: move;
     user-select: none;
     z-index: 1;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.memo-item:hover {
+    transform: scale(1.01);
+    z-index: 10;
+}
+
+.memo-item:active {
+    opacity: 0.8; /* 드래그 중 투명도 */
+    z-index: 100;
 }
 
 .memo-content {
@@ -861,6 +871,7 @@ body::-webkit-scrollbar {
     margin-bottom: 10px;
     word-wrap: break-word;
     white-space: pre-wrap;
+    pointer-events: none; /* 텍스트 클릭이 드래그를 방해하지 않도록 */
 }
 
 .memo-more-btn {
@@ -871,15 +882,11 @@ body::-webkit-scrollbar {
     height: 24px;
     cursor: pointer;
     transition: transform 0.2s ease;
+    pointer-events: auto; /* 더보기 버튼은 클릭 가능하도록 */
 }
 
 .memo-more-btn:hover {
     transform: scale(1.1);
-}
-
-.memo-item:hover {
-    transform: scale(1.01);
-    z-index: 10;
 }
 
 /* 메모 확장됐을때 */
