@@ -264,17 +264,20 @@
         </div>
 
         <div class="memo-container">
+
             <!-- 메모 입력 영역 -->
             <div class="memo-input-container">
                 <div class="memo-input-background">
+
                     <!-- 한글 텍스트 -->
                     <img src="asset/memo/memo-box/memo-title-ko.svg" alt="memo title ko" class="memo-title-ko">
+
                     <!-- 영어 텍스트 -->
                     <img src="asset/memo/memo-box/memo-title-en.svg" alt="memo title en" class="memo-title-en">
 
                     <!-- 입력 필드 -->
                     <div class="memo-input-wrapper">
-                        <input type="text" class="memo-input" id="memoInput" placeholder="" maxlength="100">
+                        <textarea class="memo-input" id="memoInput" placeholder="" maxlength="100" rows="1"></textarea>
                         <img src="asset/memo/memo-box/memo-submit-btn.svg" alt="submit" class="memo-submit-btn"
                             onclick="addMemo()">
                     </div>
@@ -1536,6 +1539,8 @@
             renderMemo(memo);
 
             input.value = '';
+            // textarea 높이 초기화
+            input.style.height = 'auto';
             saveMemoData();
         }
 
@@ -1549,7 +1554,7 @@
             memoDiv.style.top = `${memo.top}px`;
 
             memoDiv.innerHTML = `
-            <div class="memo-content">${memo.text}</div>
+            <div class="memo-content">${memo.text.replace(/\n/g, '<br>')}</div>
             <img src="asset/memo/memo-box/memo-more-btn.svg" alt="더보기" class="memo-more-btn" onclick="expandMemo(this)">
             `;
 
@@ -1694,15 +1699,25 @@
             alert('모든 메모가 삭제되었습니다.');
         }
 
-        // Enter 키로 메모 추가
+        // textarea 자동 높이 조절 함수
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        // DOMContentLoaded 이벤트
         document.addEventListener('DOMContentLoaded', function () {
             const memoInput = document.getElementById('memoInput');
             if (memoInput) {
-                memoInput.addEventListener('keypress', function (e) {
-                    if (e.key === 'Enter') {
-                        addMemo();
-                    }
+                // 엔터키 이벤트 제거 (기존 keypress 이벤트 핸들러 제거)
+                // 대신 textarea의 자동 크기 조절만 추가
+                memoInput.addEventListener('input', function () {
+                    autoResizeTextarea(this);
                 });
+
+                // 초기 높이 설정
+                memoInput.style.resize = 'none';
+                memoInput.style.overflow = 'hidden';
             }
 
             if (document.getElementById('memo-page')) {
@@ -1725,28 +1740,43 @@
             }
         }
 
-        // 메모 생성 시 크기 자동 조절 함수
+        // 메모 생성 시 크기 자동 조절 함수 (수정됨)
         function adjustMemoSize(memoElement, content) {
-            const tempDiv = document.createElement('div');
-            tempDiv.style.visibility = 'hidden';
-            tempDiv.style.position = 'absolute';
-            tempDiv.style.width = '250px'; // 최소 너비
-            tempDiv.style.height = '100px';
-            tempDiv.style.padding = '13px 11px';
-            tempDiv.style.fontFamily = "'Noto Sans KR', Arial, sans-serif";
-            tempDiv.style.fontSize = '0.9rem';
-            tempDiv.style.lineHeight = '1.4';
-            tempDiv.innerHTML = content;
+            // 줄바꿈을 고려한 텍스트 길이 계산
+            const lines = content.split('\n');
+            const totalChars = content.replace(/\n/g, '').length; // 줄바꿈 제외한 실제 글자 수
+            const lineCount = lines.length;
 
-            document.body.appendChild(tempDiv);
+            // 12자 이하이고 한 줄인 경우 작은 크기로 설정
+            if (totalChars <= 12 && lineCount === 1) {
+                // 작은 크기 메모
+                memoElement.style.width = '180px';  // 작은 너비
+                memoElement.style.height = '100px'; // 작은 높이
+                memoElement.classList.add('small-memo');
+            } else {
+                // 기본 크기 메모 (기존 크기 계산 로직 사용)
+                const tempDiv = document.createElement('div');
+                tempDiv.style.visibility = 'hidden';
+                tempDiv.style.position = 'absolute';
+                tempDiv.style.width = '250px';
+                tempDiv.style.height = '100px';
+                tempDiv.style.padding = '13px 11px';
+                tempDiv.style.fontFamily = "'Noto Sans KR', Arial, sans-serif";
+                tempDiv.style.fontSize = '0.9rem';
+                tempDiv.style.lineHeight = '1.4';
+                tempDiv.innerHTML = content.replace(/\n/g, '<br>');
 
-            let width = Math.max(200, Math.min(400, tempDiv.scrollWidth + 50));
-            let height = Math.max(120, Math.min(300, tempDiv.scrollHeight + 50));
+                document.body.appendChild(tempDiv);
 
-            document.body.removeChild(tempDiv);
+                let width = Math.max(200, Math.min(400, tempDiv.scrollWidth + 50));
+                let height = Math.max(120, Math.min(300, tempDiv.scrollHeight + 50));
 
-            memoElement.style.width = width + 'px';
-            memoElement.style.height = height + 'px';
+                document.body.removeChild(tempDiv);
+
+                memoElement.style.width = width + 'px';
+                memoElement.style.height = height + 'px';
+                memoElement.classList.add('regular-memo');
+            }
         }
     </script>
 </body>

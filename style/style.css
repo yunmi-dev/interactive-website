@@ -786,11 +786,17 @@ body::-webkit-scrollbar {
 
 .memo-input {
     flex: 1;
+    background: transparent;
+    min-height: 40px;
+    max-height: 120px;
+    resize: none;
+    overflow: hidden;
+    line-height: 1.4;
+    padding: 8px;
     border: none;
     outline: none;
-    background: transparent;
-    font-size: 1.1rem;
-    font-family: 'Noto Sans KR', Arial, sans-serif;
+    font-family: inherit;
+    font-size: inherit;
     color: #333;
 }
 
@@ -853,6 +859,8 @@ body::-webkit-scrollbar {
     margin-top: 0.3rem !important;
     margin-left: 0.5rem !important;
     margin-bottom: 10px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .memo-more-btn {
