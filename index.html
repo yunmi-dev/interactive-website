@@ -1552,6 +1552,9 @@
             input.style.height = 'auto';
             saveMemoData();
 
+            // 메모가 추가된 페이지로 이동
+            goToMemoPage(memoData.currentPage);
+
             // 메모 추가 후 자동 포커스
             focusMemoInput();
         }
