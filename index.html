@@ -293,11 +293,11 @@
 
             <!-- 페이지네이션 -->
             <div class="memo-pagination">
-                <img src="asset/memo/pagination/memo-page-left-arrow.png" alt="left" class="memo-page-arrow" id="prevPageBtn"
-                    onclick="changeMemoPage(-1)">
+                <img src="asset/memo/pagination/memo-page-left-arrow.png" alt="left" class="memo-page-arrow"
+                    id="prevPageBtn" onclick="changeMemoPage(-1)">
                 <div class="memo-page-numbers" id="pageNumbers"></div>
-                <img src="asset/memo/pagination/memo-page-right-arrow.png" alt="right" class="memo-page-arrow" id="nextPageBtn"
-                    onclick="changeMemoPage(1)">
+                <img src="asset/memo/pagination/memo-page-right-arrow.png" alt="right" class="memo-page-arrow"
+                    id="nextPageBtn" onclick="changeMemoPage(1)">
             </div>
         </div>
         <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleImportFile(event)">
@@ -915,6 +915,16 @@
                 homeButton.style.display = 'flex';
             } else {
                 homeButton.style.display = 'none';
+            }
+
+            // memo 페이지를 보여줄 때 입력란에 포커스 잡히게
+            if (pageId === 'memo') {
+                setTimeout(() => {
+                    const memoInput = document.getElementById('memoInput');
+                    if (memoInput) {
+                        memoInput.focus();
+                    }
+                }, 100);
             }
         }
 
@@ -1539,9 +1549,11 @@
             renderMemo(memo);
 
             input.value = '';
-            // textarea 높이 초기화
             input.style.height = 'auto';
             saveMemoData();
+
+            // 메모 추가 후 자동 포커스
+            focusMemoInput();
         }
 
         // 메모 렌더링
@@ -1713,7 +1725,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const memoInput = document.getElementById('memoInput');
             if (memoInput) {
-                // 엔터키 이벤트 제거 (기존 keypress 이벤트 핸들러 제거)
+                // 엔터키 이벤트 제거 (기존 keypress 이벤트 핸들러 제거함)
                 // 대신 textarea의 자동 크기 조절만 추가
                 memoInput.addEventListener('input', function () {
                     autoResizeTextarea(this);
@@ -1722,13 +1734,38 @@
                 // 초기 높이 설정
                 memoInput.style.resize = 'none';
                 memoInput.style.overflow = 'hidden';
+
+                // 페이지 로드 시 자동 포커스
+                memoInput.focus();
             }
 
             if (document.getElementById('memo-page')) {
                 loadMemoData();
                 initMemoPages();
             }
+
+            // 즉시 포커스 시도
+            focusMemoInput();
+
+            // 100ms 후에도 한번 더 시도
+            setTimeout(focusMemoInput, 100);
+
+            setTimeout(focusMemoInput, 200);
         });
+
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden && document.getElementById('memo-page')) {
+                setTimeout(focusMemoInput, 50);
+            }
+        });
+
+        // 메모 입력란에 포커스 주기
+        function focusMemoInput() {
+            const memoInput = document.getElementById('memoInput');
+            if (memoInput) {
+                memoInput.focus();
+            }
+        }
 
         // 메모 확장/축소 함수
         function expandMemo(button) {
