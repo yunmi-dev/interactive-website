@@ -82,23 +82,23 @@ body::-webkit-scrollbar {
 }
 
 .shop-svg {
-    width: 2.8rem !important;
+    width: 2.65rem !important;
     height: auto !important;
     margin-top: 0.3rem !important;
 }
 
 .products-svg {
-    width: 4.5rem !important;
+    width: 4.2rem !important;
     height: auto !important;
 }
 
 .brands-svg {
-    width: 3.6rem !important;
+    width: 3.35rem !important;
     height: auto !important;
 }
 
 .series-svg {
-    width: 3.4rem !important;
+    width: 3.15rem !important;
     height: auto !important;
 }
 
