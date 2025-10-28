@@ -161,8 +161,8 @@ body::-webkit-scrollbar {
 .shop-first-vure-logo-svg {
     position: absolute;
     top: 7rem;
-    left: -41rem;
-    width: 52% !important;
+    left: -42.8rem;
+    width: 57% !important;
     height: auto !important;
     z-index: 1;
 
@@ -172,8 +172,8 @@ body::-webkit-scrollbar {
 
 .shop-first-tagline-svg {
     position: absolute;
-    top: -14.7rem;
-    left: -430px;
+    top: -16rem;
+    left: -26.5rem !important;
     transform: translateX(-50%);
     width: 28rem !important;
     height: auto !important;
@@ -186,8 +186,8 @@ body::-webkit-scrollbar {
 .shop-first-black-square-svg {
     position: absolute;
     top: 7.8rem;
-    left: -40.9rem;
-    width: 2rem !important;
+    left: -43.3rem;
+    width: 2.2rem !important;
     height: auto !important;
     z-index: 2;
 
@@ -199,9 +199,9 @@ body::-webkit-scrollbar {
 
 .shop-first-memo-box {
     position: absolute;
-    top: -31%;
-    left: 17%;
-    width: 38% !important;
+    top: -34%;
+    left: 18%;
+    width: 40% !important;
     height: auto !important;
     z-index: 1;
 
