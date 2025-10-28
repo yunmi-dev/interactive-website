@@ -82,17 +82,23 @@ body::-webkit-scrollbar {
 }
 
 .shop-svg {
-    width: 2.5rem !important;
+    width: 2.8rem !important;
     height: auto !important;
+    margin-top: 0.3rem !important;
 }
 
 .products-svg {
-    width: 3.9rem !important;
+    width: 4.5rem !important;
     height: auto !important;
 }
 
 .brands-svg {
-    width: 3rem !important;
+    width: 3.6rem !important;
+    height: auto !important;
+}
+
+.series-svg {
+    width: 3.4rem !important;
     height: auto !important;
 }
 
@@ -110,11 +116,6 @@ body::-webkit-scrollbar {
 
 .fixed-home-button-svg {
     width: 9rem !important;
-    height: auto !important;
-}
-
-.series-svg {
-    width: 2.85rem !important;
     height: auto !important;
 }
 
@@ -161,7 +162,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 7rem;
     left: -41rem;
-    width: 48% !important;
+    width: 52% !important;
     height: auto !important;
     z-index: 1;
 
@@ -174,7 +175,7 @@ body::-webkit-scrollbar {
     top: -14.7rem;
     left: -430px;
     transform: translateX(-50%);
-    width: 25rem !important;
+    width: 28rem !important;
     height: auto !important;
     z-index: 3;
 
@@ -184,9 +185,9 @@ body::-webkit-scrollbar {
 
 .shop-first-black-square-svg {
     position: absolute;
-    top: 7.45rem;
+    top: 7.8rem;
     left: -40.9rem;
-    width: 1.9rem !important;
+    width: 2rem !important;
     height: auto !important;
     z-index: 2;
 
@@ -198,9 +199,9 @@ body::-webkit-scrollbar {
 
 .shop-first-memo-box {
     position: absolute;
-    top: -31.5%;
+    top: -31%;
     left: 17%;
-    width: 33% !important;
+    width: 38% !important;
     height: auto !important;
     z-index: 1;
 
@@ -857,7 +858,8 @@ body::-webkit-scrollbar {
 }
 
 .memo-item:active {
-    opacity: 0.8; /* 드래그 중 투명도 */
+    opacity: 0.8;
+    /* 드래그 중 투명도 */
     z-index: 100;
 }
 
@@ -871,7 +873,8 @@ body::-webkit-scrollbar {
     margin-bottom: 10px;
     word-wrap: break-word;
     white-space: pre-wrap;
-    pointer-events: none; /* 텍스트 클릭이 드래그를 방해하지 않도록 */
+    pointer-events: none;
+    /* 텍스트 클릭이 드래그를 방해하지 않도록 */
 }
 
 .memo-more-btn {
@@ -882,7 +885,8 @@ body::-webkit-scrollbar {
     height: 24px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    pointer-events: auto; /* 더보기 버튼은 클릭 가능하도록 */
+    pointer-events: auto;
+    /* 더보기 버튼은 클릭 가능하도록 */
 }
 
 .memo-more-btn:hover {
@@ -909,7 +913,8 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.4rem; /* 화살표와 숫자 사이 */
+    gap: 1.4rem;
+    /* 화살표와 숫자 사이 */
     background: none;
     padding: 0;
     border-radius: 0;
@@ -938,7 +943,8 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2.1rem; /* 숫자들 사이 */
+    gap: 2.1rem;
+    /* 숫자들 사이 */
 }
 
 .memo-page-number {
