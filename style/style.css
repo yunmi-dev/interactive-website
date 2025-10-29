@@ -3393,7 +3393,7 @@ body::-webkit-scrollbar {
     .series-second-paragraph-svg {
         position: absolute;
         width: 79vw !important;
-        top: calc(50% - 72.5vw);
+        top: calc(50% - 63vw);
         left: -3%;
         opacity: 1 !important;
         transform: none !important;
