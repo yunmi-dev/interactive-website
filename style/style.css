@@ -1956,7 +1956,7 @@ body::-webkit-scrollbar {
     padding: 3.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    margin-left: 6.2rem !important;
+    margin-left: 12rem !important;
 }
 
 #detail-color-container {
