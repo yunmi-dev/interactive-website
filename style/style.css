@@ -1952,11 +1952,11 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: flex-start;
     gap: 13rem;
-    transform: translateX(-6.4rem);
+    transform: translateX(-5.9rem);
     padding: 3.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    margin-left: 12rem !important;
+    margin-left: 12.5rem !important;
 }
 
 #detail-color-container {
