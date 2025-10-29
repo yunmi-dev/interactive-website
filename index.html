@@ -599,7 +599,9 @@
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image2.svg" alt="fifth image2"
-                    class="detail1-fifth-image-svg light-image" id="lightImage2">
+                    class="detail1-fifth-image-svg light-image desktop-only" id="lightImage2">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image2-mobile.png" alt="fifth image2"
+                    class="detail1-fifth-image-svg light-image mobile-only" id="lightImage2">
                 <div class="toggle-switch" onclick="toggleLight(2)">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
@@ -608,7 +610,9 @@
 
             <div class="fifth-image-container">
                 <img src="asset/detail/detail1/fifth/detail1-fifth-image3.svg" alt="fifth image3"
-                    class="detail1-fifth-image-svg light-image" id="lightImage3">
+                    class="detail1-fifth-image-svg light-image desktop-only" id="lightImage3">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image3-mobile.png" alt="fifth image3"
+                    class="detail1-fifth-image-svg light-image mobile-only" id="lightImage3">
                 <div class="toggle-switch" onclick="toggleLight(3)">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
@@ -1042,9 +1046,13 @@
 
             toggle.classList.toggle('active');
 
+            const isMobile = window.innerWidth <= 768;
+            const fileExtension = isMobile ? '.png' : '.svg';
+            const mobileSuffix = isMobile ? '-mobile' : '';
+
             const targetSrc = toggle.classList.contains('active')
-                ? `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light.svg`
-                : `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.svg`;
+                ? `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light${mobileSuffix}${fileExtension}`
+                : `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}${mobileSuffix}${fileExtension}`;
 
             if (toggle.classList.contains('active')) {
                 background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-off.svg';
