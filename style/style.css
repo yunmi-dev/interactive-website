@@ -789,7 +789,6 @@ body::-webkit-scrollbar {
     flex: 1;
     background: transparent;
     min-height: 40px;
-    max-height: 120px;
     resize: none;
     overflow: hidden;
     line-height: 1.4;
