@@ -1957,6 +1957,7 @@ body::-webkit-scrollbar {
     padding: 3.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    margin-left: 12.99rem !important;
 }
 
 #detail-color-container {
@@ -2260,6 +2261,7 @@ body::-webkit-scrollbar {
     padding: 3.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    margin-left: 12.5rem !important;
 }
 
 .detail2-third-size-svg {
@@ -2381,6 +2383,7 @@ body::-webkit-scrollbar {
     padding: 3.8rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    margin-left: 12.5rem !important;
 }
 
 .detail3-third-size-svg {
