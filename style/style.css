@@ -3657,6 +3657,7 @@ body::-webkit-scrollbar {
         align-items: flex-start !important;
         padding: 3rem 1rem 1rem 2rem !important;
         /* justify-content: space-between; */
+        margin-left: 0 !important;
     }
 
     .detail1-third-section>div:first-child,
