@@ -548,7 +548,7 @@ body::-webkit-scrollbar {
 .shop-third-hover-dot1 {
     position: absolute;
     top: 10.5rem;
-    left: 80.4rem;
+    left: 70rem;
     width: 1.8rem !important;
     height: auto !important;
     opacity: 0;
@@ -564,8 +564,8 @@ body::-webkit-scrollbar {
 
 .shop-third-hover-dot2 {
     position: absolute;
-    top: 12rem;
-    left: 83.1rem;
+    top: 9rem;
+    left: 1rem;
     width: 1.8rem !important;
     height: auto !important;
     opacity: 0;
@@ -582,7 +582,7 @@ body::-webkit-scrollbar {
 .shop-third-hover-dot3 {
     position: absolute;
     top: 8.7rem;
-    left: 80.4rem;
+    left: 69rem;
     width: 1.8rem !important;
     height: auto !important;
     opacity: 0;
