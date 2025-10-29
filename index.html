@@ -586,7 +586,8 @@
             <img src="asset/detail/Light.svg" alt="light title" class="light-title-svg">
 
             <div class="fifth-image-container">
-                <img src="asset/detail/detail1/fifth/detail1-fifth-image1.png" alt="fifth image1" class="detail1-fifth-image-svg light-image" id="lightImage1">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image1.png" alt="fifth image1"
+                    class="detail1-fifth-image-svg light-image" id="lightImage1">
                 <div class="toggle-switch" onclick="toggleLight(1)">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
@@ -594,7 +595,8 @@
             </div>
 
             <div class="fifth-image-container">
-                <img src="asset/detail/detail1/fifth/detail1-fifth-image2.png" alt="fifth image2" class="detail1-fifth-image-svg light-image" id="lightImage2">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image2.png" alt="fifth image2"
+                    class="detail1-fifth-image-svg light-image" id="lightImage2">
                 <div class="toggle-switch" onclick="toggleLight(2)">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
@@ -602,7 +604,8 @@
             </div>
 
             <div class="fifth-image-container">
-                <img src="asset/detail/detail1/fifth/detail1-fifth-image3.png" alt="fifth image3" class="detail1-fifth-image-svg light-image" id="lightImage3">
+                <img src="asset/detail/detail1/fifth/detail1-fifth-image3.png" alt="fifth image3"
+                    class="detail1-fifth-image-svg light-image" id="lightImage3">
                 <div class="toggle-switch" onclick="toggleLight(3)">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail1/fifth/toggle/detail1-circle-off.svg" class="toggle-circle">
@@ -706,7 +709,8 @@
             <img src="asset/detail/Light.svg" alt="light title" class="light-title-svg">
 
             <div class="fifth-image-container">
-                <img src="asset/detail/detail2/fifth/detail2-fifth-image1.png" alt="fifth image1" class="detail2-fifth-image-svg light-image" id="lightImage2_1">
+                <img src="asset/detail/detail2/fifth/detail2-fifth-image1.png" alt="fifth image1"
+                    class="detail2-fifth-image-svg light-image" id="lightImage2_1">
                 <div class="toggle-switch" onclick="toggleLight2(1)">
                     <img src="asset/detail/detail2/fifth/toggle/detail2-background-off.svg" class="toggle-background">
                     <img src="asset/detail/detail2/fifth/toggle/detail2-circle-off.svg" class="toggle-circle">
@@ -1338,6 +1342,7 @@
         });
     </script>
 
+
     <script>
         // 메모 페이지 초기화
         function initMemoPages() {
@@ -1670,80 +1675,20 @@
         };
 
         function loadMemoData() {
-            try {
-                const saved = localStorage.getItem('memoData');
-                if (saved) {
-                    const parsed = JSON.parse(saved);
-                    // 데이터 유효성 검사
-                    if (parsed && parsed.pages && Array.isArray(parsed.pages)) {
-                        memoData = parsed;
-                        console.log('메모 데이터 로드됨:', memoData.pages.length + '페이지');
-                        return;
-                    }
+            const saved = localStorage.getItem('memoData');
+            if (saved) {
+                try {
+                    memoData = JSON.parse(saved);
+                } catch (e) {
+                    console.error('데이터 로드 실패:', e);
                 }
-            } catch (error) {
-                console.error('메모 데이터 로드 실패:', error);
             }
-
-            // 기본값 설정 (기존 데이터가 없을 때만)
-            memoData = {
-                pages: [[]],
-                currentPage: 0,
-                maxMemosPerPage: 20
-            };
-            console.log('새로운 메모 데이터 시작');
         }
 
         function saveMemoData() {
             localStorage.setItem('memoData', JSON.stringify(memoData));
             console.log('메모 데이터 저장됨');
         }
-
-        // 메모 5분마다 자동 백업
-        function autoBackupMemos() {
-            setInterval(() => {
-                if (memoData && memoData.pages.some(page => page.length > 0)) {
-                    const backupKey = 'memoBackup_' + Date.now();
-                    localStorage.setItem(backupKey, JSON.stringify(memoData));
-                    console.log('자동 백업 완료:', backupKey);
-
-                    // 오래된 백업 삭제 (최근 10개만 유지)
-                    const backupKeys = Object.keys(localStorage)
-                        .filter(key => key.startsWith('memoBackup_'))
-                        .sort()
-                        .reverse();
-
-                    while (backupKeys.length > 10) {
-                        const oldKey = backupKeys.pop();
-                        localStorage.removeItem(oldKey);
-                    }
-                }
-            }, 5 * 60 * 1000); // 5분마다
-        }
-
-
-        // 메모 복구 함수
-        function recoverMemos() {
-            const backupKeys = Object.keys(localStorage)
-                .filter(key => key.startsWith('memoBackup_'))
-                .sort()
-                .reverse();
-
-            if (backupKeys.length > 0) {
-                const latestBackup = localStorage.getItem(backupKeys[0]);
-                if (latestBackup) {
-                    memoData = JSON.parse(latestBackup);
-                    saveMemoData();
-                    initMemoPages();
-                    alert('최신 백업에서 메모를 복구했습니다.');
-                    return true;
-                }
-            }
-            alert('복구할 백업이 없습니다.');
-            return false;
-        }
-
-
 
         function exportMemos() {
             const dataStr = JSON.stringify(memoData, null, 2);
@@ -1780,77 +1725,6 @@
             reader.readAsText(file);
             event.target.value = '';
         }
-
-        // 안전한 메모 추출 (여러 포맷)
-        function safeExportMemos() {
-            try {
-                // JSON 형태로 추출
-                const jsonData = JSON.stringify(memoData, null, 2);
-                const jsonBlob = new Blob([jsonData], { type: 'application/json' });
-                const jsonLink = document.createElement('a');
-                jsonLink.href = URL.createObjectURL(jsonBlob);
-                const date = new Date().toISOString().split('T')[0];
-                jsonLink.download = `vure_exhibition_memos_${date}.json`;
-                jsonLink.click();
-
-                // 텍스트 형태로도 추출
-                let textContent = `VURE 전시회 메모 - ${new Date().toLocaleString()}\n\n`;
-                memoData.pages.forEach((page, pageIndex) => {
-                    if (page.length > 0) {
-                        textContent += `=== 페이지 ${pageIndex + 1} ===\n`;
-                        page.forEach((memo, memoIndex) => {
-                            textContent += `${memoIndex + 1}. ${memo.content}\n`;
-                            textContent += `   작성일: ${memo.timestamp}\n\n`;
-                        });
-                    }
-                });
-
-                const textBlob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
-                const textLink = document.createElement('a');
-                textLink.href = URL.createObjectURL(textBlob);
-                textLink.download = `vure_exhibition_memos_${date}.txt`;
-                textLink.click();
-
-                alert('메모가 JSON과 TXT 형태로 모두 저장되었습니다!');
-                console.log('추출된 메모 수:', memoData.pages.reduce((total, page) => total + page.length, 0));
-
-            } catch (error) {
-                console.error('메모 추출 실패:', error);
-                alert('메모 추출에 실패했습니다. 콘솔을 확인해주세요.');
-            }
-        }
-
-        // 긴급 복구 함수 (모든 localStorage 데이터 확인용)
-        function emergencyMemoRecovery() {
-            console.log('=== 긴급 메모 복구 시작 ===');
-
-            // 모든 localStorage 키 확인
-            const allKeys = Object.keys(localStorage);
-            console.log('localStorage 키들:', allKeys);
-
-            // 메모 관련 데이터 찾기
-            const memoKeys = allKeys.filter(key =>
-                key.includes('memo') || key.includes('Memo') || key.includes('MEMO')
-            );
-
-            console.log('메모 관련 키들:', memoKeys);
-
-            // 각 키의 데이터 확인
-            memoKeys.forEach(key => {
-                try {
-                    const data = localStorage.getItem(key);
-                    console.log(`${key}:`, JSON.parse(data));
-                } catch (e) {
-                    console.log(`${key}: (텍스트)`, data);
-                }
-            });
-        }
-
-        // 전역 함수로 등록 (콘솔에서 쉽게 사용)
-        window.safeExportMemos = safeExportMemos;
-        window.exhibitionMemoStats = exhibitionMemoStats;
-        window.recoverMemos = recoverMemos;
-        window.emergencyMemoRecovery = emergencyMemoRecovery;
 
         // 전체 초기화
         function clearAllMemos() {
@@ -1903,20 +1777,7 @@
             setTimeout(focusMemoInput, 100);
 
             setTimeout(focusMemoInput, 200);
-
-            // 자동 백업 시작
-            autoBackupMemos();
-
-            // 메모 통계 출력
-            setTimeout(() => {
-                exhibitionMemoStats();
-            }, 1000);
         });
-
-        window.safeExportMemos = safeExportMemos;
-        window.exhibitionMemoStats = exhibitionMemoStats;
-        window.recoverMemos = recoverMemos;
-        window.emergencyMemoRecovery = emergencyMemoRecovery;
 
         document.addEventListener('visibilitychange', function () {
             if (!document.hidden && document.getElementById('memo-page')) {
