@@ -1052,13 +1052,9 @@
 
             toggle.classList.toggle('active');
 
-            const isMobile = window.innerWidth <= 768;
-            const fileExtension = isMobile ? '.png' : '.svg';
-            const mobileSuffix = isMobile ? '-mobile' : '';
-
             const targetSrc = toggle.classList.contains('active')
-                ? `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light${mobileSuffix}${fileExtension}`
-                : `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}${mobileSuffix}${fileExtension}`;
+                ? `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}-light.png`
+                : `asset/detail/detail1/fifth/detail1-fifth-image${imageNumber}.png`;
 
             if (toggle.classList.contains('active')) {
                 background.src = 'asset/detail/detail1/fifth/toggle/detail1-background-off.svg';
@@ -1068,22 +1064,21 @@
                 circle.src = 'asset/detail/detail1/fifth/toggle/detail1-circle-off.svg';
             }
 
-            // const transitionImg = document.createElement('img');
-            // transitionImg.src = targetSrc;
-            // transitionImg.className = 'light-transition';
-            // transitionImg.style.opacity = '0';
+            const transitionImg = document.createElement('img');
+            transitionImg.src = targetSrc;
+            transitionImg.className = 'light-transition';
+            transitionImg.style.opacity = '0';
 
-            // container.appendChild(transitionImg);
+            container.appendChild(transitionImg);
 
-            // setTimeout(() => {
-            //     transitionImg.style.opacity = '1';
-            // }, 10);
+            setTimeout(() => {
+                transitionImg.style.opacity = '1';
+            }, 10);
 
-            // setTimeout(() => {
-            //     lightImg.src = targetSrc;
-            //     container.removeChild(transitionImg);
-            // }, 400);
-            lightImg.src = targetSrc;
+            setTimeout(() => {
+                lightImg.src = targetSrc;
+                container.removeChild(transitionImg);
+            }, 400);
         }
 
         function toggleLight2(imageNumber) {
