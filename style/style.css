@@ -734,7 +734,7 @@ body::-webkit-scrollbar {
 .memo-input-container {
     position: absolute;
     top: 30%;
-    left: 33%;
+    left: 35%;
     width: 589px;
     height: 321.3065185546875px;
     z-index: 100;
